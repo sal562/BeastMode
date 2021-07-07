@@ -11,6 +11,7 @@ struct LandingPageView: View {
     
     //MARK: - Properties
     @State private var titleIsAnimating = false
+    @State private var scaledAmount = false
     
     var body: some View {
        
@@ -27,6 +28,7 @@ struct LandingPageView: View {
                     .fontWeight(.bold)
                     .foregroundColor(.white)
                     .animation(.easeInOut)
+                    .scaleEffect(scaledAmount ? 0.5 : 1.0)
                 
                 Spacer()
                 
@@ -41,8 +43,7 @@ struct LandingPageView: View {
                         }
                         .frame(width: 300, height: 60)
                         .foregroundColor(.white)
-                        .background(Color.black)
-                        .opacity(0.8)
+                        .background(Color.red)
                         .shadow(radius: 10)
                     })
             }
