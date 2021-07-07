@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		36DA7EB626958C2900726698 /* BeastModeFitnessApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DA7EB526958C2900726698 /* BeastModeFitnessApp.swift */; };
-		36DA7EB826958C2900726698 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DA7EB726958C2900726698 /* ContentView.swift */; };
+		36DA7EB826958C2900726698 /* LandingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DA7EB726958C2900726698 /* LandingPageView.swift */; };
 		36DA7EBA26958C2C00726698 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36DA7EB926958C2C00726698 /* Assets.xcassets */; };
 		36DA7EBD26958C2C00726698 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36DA7EBC26958C2C00726698 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -16,7 +16,7 @@
 /* Begin PBXFileReference section */
 		36DA7EB226958C2900726698 /* BeastModeFitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeastModeFitness.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36DA7EB526958C2900726698 /* BeastModeFitnessApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeastModeFitnessApp.swift; sourceTree = "<group>"; };
-		36DA7EB726958C2900726698 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		36DA7EB726958C2900726698 /* LandingPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPageView.swift; sourceTree = "<group>"; };
 		36DA7EB926958C2C00726698 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		36DA7EBC26958C2C00726698 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		36DA7EBE26958C2C00726698 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -53,7 +53,7 @@
 			isa = PBXGroup;
 			children = (
 				36DA7EB526958C2900726698 /* BeastModeFitnessApp.swift */,
-				36DA7EB726958C2900726698 /* ContentView.swift */,
+				36DA7EB726958C2900726698 /* LandingPageView.swift */,
 				36DA7EB926958C2C00726698 /* Assets.xcassets */,
 				36DA7EBE26958C2C00726698 /* Info.plist */,
 				36DA7EBB26958C2C00726698 /* Preview Content */,
@@ -139,7 +139,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				36DA7EB826958C2900726698 /* ContentView.swift in Sources */,
+				36DA7EB826958C2900726698 /* LandingPageView.swift in Sources */,
 				36DA7EB626958C2900726698 /* BeastModeFitnessApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
