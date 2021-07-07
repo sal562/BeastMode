@@ -8,18 +8,25 @@
 import SwiftUI
 
 struct LandingPageView: View {
+    
+    //MARK: - Properties
+    @State private var titleIsAnimating = false
+    
     var body: some View {
        
         ZStack {
-           Image("s")
+           Image("beastmodeBackground")
             .resizable()
+            .scaledToFill()
             .edgesIgnoringSafeArea(.all)
             
             VStack {
                 Spacer()
-                Text("BeastMode")
+                Text("BEAST MODE")
                     .font(.largeTitle)
+                    .fontWeight(.bold)
                     .foregroundColor(.white)
+                    .animation(.easeInOut)
                 
                 Spacer()
                 
@@ -32,13 +39,16 @@ struct LandingPageView: View {
                             .font(.title)
                         Text("Start A Workout")
                         }
-                        .frame(width: 250, height: 60)
-                        .cornerRadius(12)
-                        .background(Color.black)
+                        .frame(width: 300, height: 60)
                         .foregroundColor(.white)
-                        .opacity(0.80)
+                        .background(Color.black)
+                        .opacity(0.8)
+                        .shadow(radius: 10)
                     })
             }
+            .onAppear(perform: {
+                titleIsAnimating.toggle()
+            })
         }
         
        
