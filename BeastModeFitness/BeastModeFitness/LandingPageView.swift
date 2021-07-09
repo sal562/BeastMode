@@ -59,6 +59,7 @@ struct LandingPageView: View {
                     Image("beastmodeBackground")
                         .resizable()
                         .scaledToFill()
+                        .overlay(Color.black.opacity(0.4))
                         //centers image in middle
                         .frame(width: geometry.size.width)
                         .edgesIgnoringSafeArea(.all)
