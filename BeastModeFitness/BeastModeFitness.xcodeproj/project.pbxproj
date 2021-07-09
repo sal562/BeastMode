@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3672B6B9269804DF00026B89 /* WorkoutPlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3672B6B8269804DF00026B89 /* WorkoutPlanView.swift */; };
 		3672B6BB2698452E00026B89 /* MainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3672B6BA2698452E00026B89 /* MainButton.swift */; };
+		3672B6BD2698470A00026B89 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3672B6BC2698470A00026B89 /* Color+Extension.swift */; };
 		36DA7EB626958C2900726698 /* BeastModeFitnessApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DA7EB526958C2900726698 /* BeastModeFitnessApp.swift */; };
 		36DA7EB826958C2900726698 /* LandingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DA7EB726958C2900726698 /* LandingPageView.swift */; };
 		36DA7EBA26958C2C00726698 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36DA7EB926958C2C00726698 /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 /* Begin PBXFileReference section */
 		3672B6B8269804DF00026B89 /* WorkoutPlanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutPlanView.swift; sourceTree = "<group>"; };
 		3672B6BA2698452E00026B89 /* MainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButton.swift; sourceTree = "<group>"; };
+		3672B6BC2698470A00026B89 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		36DA7EB226958C2900726698 /* BeastModeFitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeastModeFitness.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36DA7EB526958C2900726698 /* BeastModeFitnessApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeastModeFitnessApp.swift; sourceTree = "<group>"; };
 		36DA7EB726958C2900726698 /* LandingPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPageView.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				36DA7EBB26958C2C00726698 /* Preview Content */,
 				3672B6B8269804DF00026B89 /* WorkoutPlanView.swift */,
 				3672B6BA2698452E00026B89 /* MainButton.swift */,
+				3672B6BC2698470A00026B89 /* Color+Extension.swift */,
 			);
 			path = BeastModeFitness;
 			sourceTree = "<group>";
@@ -146,6 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				36DA7EB826958C2900726698 /* LandingPageView.swift in Sources */,
+				3672B6BD2698470A00026B89 /* Color+Extension.swift in Sources */,
 				3672B6B9269804DF00026B89 /* WorkoutPlanView.swift in Sources */,
 				36DA7EB626958C2900726698 /* BeastModeFitnessApp.swift in Sources */,
 				3672B6BB2698452E00026B89 /* MainButton.swift in Sources */,
