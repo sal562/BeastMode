@@ -12,23 +12,31 @@ struct WorkoutPlanView: View {
     //MARK: - Properties
     
     var body: some View {
-        VStack {
-            Section {
-                Text("Exercise")
+        Section {
+            VStack {
                 HStack {
-                    Text("PullUps")
+                    Text("Exercise")
+                        .font(.system(size: 22, weight: .semibold, design: .rounded))
                     Spacer()
-                    Button(action: {
-                        //Pick exercise
-                    }, label: {
-                        Image(systemName: "arrowtriangle.down.square")
-                    })
                 }
-                .padding()
+                .padding(12)
+                Button(action: {
+                    //ADD EXERCISE
+                }, label: {
+                    HStack {
+                        Text("Pullups")
+                            .font(.system(size: 28, weight: .semibold, design: .rounded))
+                        Spacer()
+                        Image(systemName: "arrowtriangle.down.square")
+                                .font(.system(size: 38, weight: .regular, design: .rounded))
+                            .foregroundColor(.primary)
+                    }
+                    .foregroundColor(.primary)
+                    .padding()
+                    })
             }
-            .background(Color.gray.opacity(0.4))
+            .navigationBarTitle("Pick an Exercise")
         }
-        .navigationBarTitle("Pick an Exercise")
     }
 }
 
