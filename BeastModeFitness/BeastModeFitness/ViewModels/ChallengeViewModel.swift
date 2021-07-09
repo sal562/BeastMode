@@ -11,5 +11,12 @@ import SwiftUI
 final class ChallengeViewModel: ObservedObject {
     
     //MARK: - Properties
+    @Published private(set) var dropdownChoices: [ChallengeViewModel]()
+    
+    extension ChallengeViewModel {
+        struct ChallengeStartedViewModel: DropdownItemsProtocol {
+            
+        }
+    }
     
 }
