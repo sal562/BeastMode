@@ -11,8 +11,6 @@ import SwiftUI
  Current Issues
  no color consistency - create theme with light and dark mode
  background image shifting to right
- back button using default blue
- 
  */
 
 struct LandingPageView: View {
@@ -29,48 +27,48 @@ struct LandingPageView: View {
             NavigationView {
                 VStack {
                     Spacer().frame(height: geometry.size.height * 0.10)
-                        Text("BEAST MODE")
-                            .font(.system(size: 48, weight: .heavy, design: .rounded))
-                            .foregroundColor(.white)
-//                            .offset(y: -250)
-                        Spacer()
-                        
+                    Text("BEAST MODE")
+                        .font(.system(size: 48, weight: .heavy, design: .rounded))
+                        .foregroundColor(.white)
+                    Spacer()
+                    
                     NavigationLink(
                         destination: WorkoutPlanView(),
                         tag: 1,
                         selection: $selection) {
                         Button(action: {
-                                    //start a workout
-                                    selection = 1
-                                }, label: {
-                                    
-                                    HStack(spacing: 20) {
-                                    Image(systemName: "plus.square")
-                                        .font(.title)
-                                    Text("Start A Workout")
-                                    }//end of hstack
-                                    .frame(width: 300, height: 60)
-                                    .foregroundColor(.white)
-                                    .background(Color.red)
-                                    .shadow(radius: 10)
-                                })
-                                //end of button
+                            //start a workout
+                            selection = 1
+                        }, label: {
+                            HStack(alignment: .center,spacing: 8) {
+                                Image(systemName: "plus.square")
+                                    .font(.system(size: 28, weight: .bold, design: .rounded))
+                                Text("Start A Workout")
+                                    .font(.system(size: 28, weight: .bold, design: .rounded))
+                            }//end of hstack
+                            .frame(width: 300, height: 60)
+                            .foregroundColor(.white)
+                            .background(Color.red)
+                            .shadow(radius: 10)
+                        })
+                        //end of button
                         .cornerRadius(12.0)
                     }
-                    } // Root VStack
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .background(
-                        Image("beastmodeBackground")
-                         .resizable()
-                         .scaledToFill()
-                         .edgesIgnoringSafeArea(.all)
-                    )
-                    .onAppear(perform: {
-                        titleIsAnimating.toggle()
+                } // Root VStack
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .background(
+                    Image("beastmodeBackground")
+                        .resizable()
+                        .scaledToFill()
+                        .edgesIgnoringSafeArea(.all)
+                )
+                .onAppear(perform: {
+                    titleIsAnimating.toggle()
                 })
-            }
+            } //end of NavView
+            .accentColor(.primary)
         }
-        }
+    }
 }
 
 struct ContentView_Previews: PreviewProvider {
