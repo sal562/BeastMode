@@ -9,8 +9,24 @@
 import SwiftUI
 
 struct WorkoutPlanView: View {
+    //MARK: - Properties
+    
     var body: some View {
-        Text("Workout Plan View")
+        VStack {
+            Section {
+                HStack {
+                    Text("PullUps")
+                    Spacer()
+                    Button(action: {
+                        //Pick exercise
+                    }, label: {
+                        Image(systemName: "chevron.down.circle")
+                    })
+                }
+                .padding()
+            }
+        }.navigationBarTitle("HOOO")
+        
     }
 }
 
