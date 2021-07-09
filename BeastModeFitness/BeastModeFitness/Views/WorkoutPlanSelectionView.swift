@@ -1,5 +1,5 @@
 //
-//  WorkoutPlanView.swift
+//  WorkoutPlanSelectionView.swift
 //  BeastModeFitness
 //
 //  Created by sal562 on 7/9/21.
@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct WorkoutPlanView: View {
+struct WorkoutPlanSelectionView: View {
     //MARK: - Properties
     
     var body: some View {
@@ -34,9 +34,10 @@ struct WorkoutPlanView: View {
                     }
                     
                 })//button
-                .buttonStyle(MainButtonCustomStyle())
+                .buttonStyle(MainButtonCustomStyle(fillColor: .primaryButton))
                 .padding(.horizontal, 20)
             }//vStack
+            .padding(10)
             .navigationBarTitle("Pick an Exercise")
         }
     }
@@ -46,11 +47,11 @@ struct WorkoutPlanView_Previews: PreviewProvider {
     static var previews: some View {
         //light Mode
         NavigationView {
-            WorkoutPlanView()
+            WorkoutPlanSelectionView()
         }
         
         NavigationView {
-            WorkoutPlanView()
+            WorkoutPlanSelectionView()
         }.environment(\.colorScheme, .dark)
     }
 }

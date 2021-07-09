@@ -12,4 +12,6 @@ import SwiftUI
 
 extension Color {
     static let darkPrimaryColor = Color(red: 110/255, green: 155/255, blue: 195/255, opacity: 0.3)
+    
+    static let primaryButton = Color("primaryButton")
 }

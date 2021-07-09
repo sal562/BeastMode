@@ -32,7 +32,7 @@ struct LandingPageView: View {
                     Spacer()
                     
                     NavigationLink(
-                        destination: WorkoutPlanView(),
+                        destination: WorkoutPlanSelectionView(),
                         tag: 1,
                         selection: $selection) {
                         Button(action: {
