@@ -9,15 +9,35 @@
 import SwiftUI
 
 struct CreateWorkoutView: View {
+    
+    @State private var isActive = false
+    
     var body: some View {
-        VStack {
-            WorkoutPlanSelectionView()
-            WorkoutPlanSelectionView()
-            WorkoutPlanSelectionView()
-            WorkoutPlanSelectionView()
-            Spacer()
+        ScrollView {
+            VStack(spacing: 5) {
+                WorkoutPlanSelectionView()
+                WorkoutPlanSelectionView()
+                WorkoutPlanSelectionView()
+                WorkoutPlanSelectionView()
+                Spacer()
+                //create navLink using nextButton
+                NavigationLink(
+                    destination: ReminderView(),
+                    isActive: $isActive) {
+                    Button(action: {
+                        //Next Page
+                        isActive.toggle()
+                    }, label: {
+                        Text("Next")
+                            .font(.system(size: 24, weight: .semibold, design: .rounded))
+                    })
+                    .buttonStyle(MainButtonCustomStyle())
+                    .padding(.horizontal, 20)
+                }
+            }
+            .navigationTitle("Create a Workout")
+            .navigationBarBackButtonHidden(true)
         }
-        .navigationTitle("Create a Workout")
     }
 }
 

@@ -35,7 +35,7 @@ struct WorkoutPlanSelectionView: View {
                     
                 })//button
                 .buttonStyle(MainButtonCustomStyle(fillColor: .primaryButton))
-                .padding(.horizontal, 20)
+                .padding(.horizontal, 10)
             }//vStack
             .padding(10)
             .navigationBarTitle("Pick an Exercise")
