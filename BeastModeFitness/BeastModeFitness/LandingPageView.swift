@@ -7,55 +7,72 @@
 
 import SwiftUI
 
+/*
+ Current Issues
+ no color consistency - create theme with light and dark mode
+ background image shifting to right
+ title low and off center
+ back button using default blue
+ 
+ */
+
 struct LandingPageView: View {
     
     //MARK: - Properties
     @State private var titleIsAnimating = false
     @State private var scaledAmount = false
     
+    @State private var selection: Int? = nil
+    
     var body: some View {
                    
+        NavigationView {
             VStack {
-                Spacer()
-                Text("BEAST MODE")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                    .foregroundColor(.white)
-                    .animation(.easeInOut)
-                    .scaleEffect(scaledAmount ? 0.25 : 1.0)
-                
-                Spacer()
-                
-                    Button(action: {
-                        //start a workout
-                        NavigationLink("Start Workout", destination:
-                                       Text("StartingWorkout")
-                                       )
-                    }, label: {
-                        
-                        HStack(spacing: 20) {
-                        Image(systemName: "plus.square")
-                            .font(.title)
-                        Text("Start A Workout")
-                        }//end of hstack
-                        .frame(width: 300, height: 60)
+                    Spacer()
+                    Text("BEAST MODE")
+                        .font(.largeTitle)
+                        .fontWeight(.bold)
                         .foregroundColor(.white)
-                        .background(Color.red)
-                        .shadow(radius: 10)
-                    })
-                    //end of button
+                        .animation(.easeInOut)
+                        .scaleEffect(scaledAmount ? 0.25 : 1.0)
+                    
+                    Spacer()
+                    
+                NavigationLink(
+                    destination: WorkoutPlanView(),
+                    tag: 1,
+                    selection: $selection) {
+                    Button(action: {
+                                //start a workout
+                                selection = 1
+                            }, label: {
+                                
+                                HStack(spacing: 20) {
+                                Image(systemName: "plus.square")
+                                    .font(.title)
+                                Text("Start A Workout")
+                                }//end of hstack
+                                .frame(width: 300, height: 60)
+                                .foregroundColor(.white)
+                                .background(Color.red)
+                                .shadow(radius: 10)
+                            })
+                            //end of button
                     .cornerRadius(12.0)
+                }
+                
 
-            }
-            .background(
-                Image("beastmodeBackground")
-                 .resizable()
-                 .scaledToFill()
-                 .edgesIgnoringSafeArea(.all)
-            )
-            .onAppear(perform: {
-                titleIsAnimating.toggle()
+                }
+                .background(
+                    Image("beastmodeBackground")
+                     .resizable()
+                     .scaledToFill()
+                     .edgesIgnoringSafeArea(.all)
+                )
+                .onAppear(perform: {
+                    titleIsAnimating.toggle()
             })
+        }
         }
 }
 
