@@ -17,15 +17,22 @@ struct ReminderView: View {
             WorkoutPlanSelectionView()
             
             Spacer()
-            Button(action: {}, label: {
-                Text("Create")
-                    .font(.system(size: 24, weight: .semibold, design: .rounded))
-            })
-            .buttonStyle(MainButtonCustomStyle())
+
+                Button(action: {}, label: {
+                    HStack(spacing: 10) {
+                    Image(systemName: "clock.arrow.2.circlepath")
+                        .font(.system(size: 24, weight: .semibold, design: .rounded))
+                    Text("Create New Reminder")
+                        .font(.system(size: 24, weight: .semibold, design: .rounded))
+                        .foregroundColor(.primary)
+                    }})
+                .buttonStyle(MainButtonCustomStyle())
+         
             
             Button(action: {}, label: {
                 Text("Skip Reminders for Now")
                     .font(.system(size: 24, weight: .semibold, design: .rounded))
+                    .foregroundColor(.primary)
             })
             .buttonStyle(MainButtonCustomStyle())
         }
