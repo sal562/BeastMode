@@ -14,24 +14,33 @@ struct WorkoutPlanView: View {
     var body: some View {
         VStack {
             Section {
+                Text("Exercise")
                 HStack {
                     Text("PullUps")
                     Spacer()
                     Button(action: {
                         //Pick exercise
                     }, label: {
-                        Image(systemName: "chevron.down.circle")
+                        Image(systemName: "arrowtriangle.down.square")
                     })
                 }
                 .padding()
             }
-        }.navigationBarTitle("HOOO")
-        
+            .background(Color.gray.opacity(0.4))
+        }
+        .navigationBarTitle("Pick an Exercise")
     }
 }
 
 struct WorkoutPlanView_Previews: PreviewProvider {
     static var previews: some View {
-        WorkoutPlanView()
+        //light Mode
+        NavigationView {
+            WorkoutPlanView()
+        }
+        
+        NavigationView {
+            WorkoutPlanView()
+        }.environment(\.colorScheme, .dark)
     }
 }
