@@ -11,7 +11,6 @@ import SwiftUI
  Current Issues
  no color consistency - create theme with light and dark mode
  background image shifting to right
- title low and off center
  back button using default blue
  
  */
@@ -29,14 +28,11 @@ struct LandingPageView: View {
         GeometryReader { geometry in
             NavigationView {
                 VStack {
-                        Spacer()
+                    Spacer().frame(height: geometry.size.height * 0.10)
                         Text("BEAST MODE")
                             .font(.system(size: 48, weight: .heavy, design: .rounded))
                             .foregroundColor(.white)
-                            .animation(.easeInOut)
-                            .scaleEffect(scaledAmount ? 0.25 : 1.0)
-                            .offset(y: -250.0)
-                        
+//                            .offset(y: -250)
                         Spacer()
                         
                     NavigationLink(
