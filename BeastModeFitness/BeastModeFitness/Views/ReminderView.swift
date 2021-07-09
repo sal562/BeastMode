@@ -9,8 +9,27 @@
 import SwiftUI
 
 struct ReminderView: View {
+    //MARK: - Properties
+    
     var body: some View {
-        Text("Hello, Reminder!")
+        VStack {
+            Spacer()
+            WorkoutPlanSelectionView()
+            
+            Spacer()
+            Button(action: {}, label: {
+                Text("Create")
+                    .font(.system(size: 24, weight: .semibold, design: .rounded))
+            })
+            .buttonStyle(MainButtonCustomStyle())
+            
+            Button(action: {}, label: {
+                Text("Skip Reminders for Now")
+                    .font(.system(size: 24, weight: .semibold, design: .rounded))
+            })
+            .buttonStyle(MainButtonCustomStyle())
+        }
+        .navigationTitle("Reminders")
     }
 }
 
