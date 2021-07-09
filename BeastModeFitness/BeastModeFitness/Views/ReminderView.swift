@@ -30,11 +30,14 @@ struct ReminderView: View {
          
             
             Button(action: {}, label: {
-                Text("Skip Reminders for Now")
-                    .font(.system(size: 24, weight: .semibold, design: .rounded))
-                    .foregroundColor(.primary)
-            })
-            .buttonStyle(MainButtonCustomStyle())
+                    HStack(spacing: 10) {
+                    Image(systemName: "xmark.octagon")
+                        .font(.system(size: 24, weight: .semibold, design: .rounded))
+                    Text("     Skip and Continue   ")
+                        .font(.system(size: 24, weight: .semibold, design: .rounded))
+                        .foregroundColor(.primary)
+                    }})
+                .buttonStyle(MainButtonCustomStyle())
         }
         .navigationTitle("Reminders")
     }
@@ -42,6 +45,11 @@ struct ReminderView: View {
 
 struct ReminderView_Previews: PreviewProvider {
     static var previews: some View {
-        ReminderView()
+        NavigationView {
+            ReminderView()
+        }
+        NavigationView {
+            ReminderView()
+        }.environment(\.colorScheme, .dark)
     }
 }
