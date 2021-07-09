@@ -12,6 +12,7 @@
 		3672B6BD2698470A00026B89 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3672B6BC2698470A00026B89 /* Color+Extension.swift */; };
 		3672B6C026984E8600026B89 /* CreateWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3672B6BF26984E8600026B89 /* CreateWorkoutView.swift */; };
 		3672B6C2269850C400026B89 /* ReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3672B6C1269850C400026B89 /* ReminderView.swift */; };
+		36B9652E26986A030058A8A3 /* ChallengeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B9652D26986A030058A8A3 /* ChallengeViewModel.swift */; };
 		36DA7EB626958C2900726698 /* BeastModeFitnessApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DA7EB526958C2900726698 /* BeastModeFitnessApp.swift */; };
 		36DA7EB826958C2900726698 /* LandingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DA7EB726958C2900726698 /* LandingPageView.swift */; };
 		36DA7EBA26958C2C00726698 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36DA7EB926958C2C00726698 /* Assets.xcassets */; };
@@ -24,6 +25,7 @@
 		3672B6BC2698470A00026B89 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		3672B6BF26984E8600026B89 /* CreateWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateWorkoutView.swift; sourceTree = "<group>"; };
 		3672B6C1269850C400026B89 /* ReminderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderView.swift; sourceTree = "<group>"; };
+		36B9652D26986A030058A8A3 /* ChallengeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeViewModel.swift; sourceTree = "<group>"; };
 		36DA7EB226958C2900726698 /* BeastModeFitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeastModeFitness.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36DA7EB526958C2900726698 /* BeastModeFitnessApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeastModeFitnessApp.swift; sourceTree = "<group>"; };
 		36DA7EB726958C2900726698 /* LandingPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPageView.swift; sourceTree = "<group>"; };
@@ -54,6 +56,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		36B9652C269869C40058A8A3 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				36B9652D26986A030058A8A3 /* ChallengeViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		36DA7EA926958C2900726698 = {
 			isa = PBXGroup;
 			children = (
@@ -73,6 +83,7 @@
 		36DA7EB426958C2900726698 /* BeastModeFitness */ = {
 			isa = PBXGroup;
 			children = (
+				36B9652C269869C40058A8A3 /* ViewModels */,
 				36DA7EB526958C2900726698 /* BeastModeFitnessApp.swift */,
 				36DA7EB926958C2C00726698 /* Assets.xcassets */,
 				36DA7EBE26958C2C00726698 /* Info.plist */,
@@ -164,6 +175,7 @@
 			files = (
 				3672B6C026984E8600026B89 /* CreateWorkoutView.swift in Sources */,
 				36DA7EB826958C2900726698 /* LandingPageView.swift in Sources */,
+				36B9652E26986A030058A8A3 /* ChallengeViewModel.swift in Sources */,
 				3672B6BD2698470A00026B89 /* Color+Extension.swift in Sources */,
 				3672B6C2269850C400026B89 /* ReminderView.swift in Sources */,
 				3672B6B9269804DF00026B89 /* WorkoutPlanSelectionView.swift in Sources */,

@@ -36,7 +36,7 @@ struct LandingPageView: View {
                         tag: 1,
                         selection: $selection) {
                         Button(action: {
-                            //start a workout
+                            ///start a workout
                             selection = 1
                         }, label: {
                             HStack(alignment: .center,spacing: 8) {
@@ -50,10 +50,10 @@ struct LandingPageView: View {
                             .background(Color.red)
                             .shadow(radius: 10)
                         })
-                        //end of button
+                        ///end of button
                         .cornerRadius(12.0)
                     }
-                } // Root VStack
+                } /// Root VStack
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background(
                     Image("beastmodeBackground")
@@ -65,6 +65,7 @@ struct LandingPageView: View {
                         .edgesIgnoringSafeArea(.all)
                 )
                 .onAppear(perform: {
+                    ///disabled animation for testing
                     titleIsAnimating.toggle()
                 })
             } //end of NavView

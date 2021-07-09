@@ -18,7 +18,10 @@ struct ReminderView: View {
             
             Spacer()
 
-                Button(action: {}, label: {
+                Button(action: {
+                    ///create new reminder
+                    print("New Reminder Pressed")
+                }, label: {
                     HStack(spacing: 10) {
                     Image(systemName: "clock.arrow.2.circlepath")
                         .font(.system(size: 24, weight: .semibold, design: .rounded))
@@ -29,7 +32,11 @@ struct ReminderView: View {
                 .buttonStyle(MainButtonCustomStyle())
          
             
-            Button(action: {}, label: {
+            Button(action: {
+                ///Skip Button
+                print("Skip Button Pressed")
+                
+            }, label: {
                     HStack(spacing: 10) {
                     Image(systemName: "xmark.octagon")
                         .font(.system(size: 24, weight: .semibold, design: .rounded))
@@ -40,6 +47,7 @@ struct ReminderView: View {
                 .buttonStyle(MainButtonCustomStyle())
         }
         .navigationTitle("Reminders")
+        .padding(.bottom, 20)
     }
 }
 

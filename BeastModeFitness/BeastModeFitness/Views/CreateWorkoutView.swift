@@ -37,6 +37,7 @@ struct CreateWorkoutView: View {
             }
             .navigationTitle("Create a Workout")
             .navigationBarBackButtonHidden(true)
+            .padding(.bottom, 20)
         }
     }
 }
