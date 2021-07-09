@@ -10,7 +10,6 @@ import SwiftUI
 /*
  Current Issues
  no color consistency - create theme with light and dark mode
- background image shifting to right
  */
 
 struct LandingPageView: View {
@@ -60,6 +59,8 @@ struct LandingPageView: View {
                     Image("beastmodeBackground")
                         .resizable()
                         .scaledToFill()
+                        //centers image in middle
+                        .frame(width: geometry.size.width)
                         .edgesIgnoringSafeArea(.all)
                 )
                 .onAppear(perform: {
