@@ -78,6 +78,8 @@ struct LandingPageView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
+//        LandingPageView().previewDevice(PreviewDevice(rawValue: "iPhone 7"))
+//        LandingPageView().previewDevice(PreviewDevice(rawValue: "iPhone 12 Pro Max"))
         LandingPageView()
     }
 }
