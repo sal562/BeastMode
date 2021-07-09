@@ -28,18 +28,24 @@ struct LandingPageView: View {
                 
                     Button(action: {
                         //start a workout
+                        NavigationLink("Start Workout", destination:
+                                       Text("StartingWorkout")
+                                       )
                     }, label: {
                         
                         HStack(spacing: 20) {
                         Image(systemName: "plus.square")
                             .font(.title)
                         Text("Start A Workout")
-                        }
+                        }//end of hstack
                         .frame(width: 300, height: 60)
                         .foregroundColor(.white)
                         .background(Color.red)
                         .shadow(radius: 10)
                     })
+                    //end of button
+                    .cornerRadius(12.0)
+
             }
             .background(
                 Image("beastmodeBackground")
