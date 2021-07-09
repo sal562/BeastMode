@@ -19,22 +19,24 @@ struct WorkoutPlanView: View {
                         .font(.system(size: 22, weight: .semibold, design: .rounded))
                     Spacer()
                 }
-                .padding(12)
+                .padding(.top, 10)
+                .padding(.horizontal, 10)
                 Button(action: {
-                    //ADD EXERCISE
+                    //ADD EXERCISE HERE
                 }, label: {
                     HStack {
                         Text("Pullups")
                             .font(.system(size: 28, weight: .semibold, design: .rounded))
                         Spacer()
                         Image(systemName: "arrowtriangle.down.square")
-                                .font(.system(size: 38, weight: .regular, design: .rounded))
+                            .font(.system(size: 38, weight: .regular, design: .rounded))
                             .foregroundColor(.primary)
                     }
-                    .foregroundColor(.primary)
-                    .padding()
-                    })
-            }
+                    
+                })//button
+                .buttonStyle(MainButtonCustomStyle())
+                .padding(.horizontal, 20)
+            }//vStack
             .navigationBarTitle("Pick an Exercise")
         }
     }

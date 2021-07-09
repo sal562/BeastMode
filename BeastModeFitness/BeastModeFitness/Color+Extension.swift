@@ -8,6 +8,8 @@
 
 import SwiftUI
 
+//Add Extension to Color
+
 extension Color {
     static let darkPrimaryColor = Color(red: 110/255, green: 155/255, blue: 195/255, opacity: 0.3)
 }
