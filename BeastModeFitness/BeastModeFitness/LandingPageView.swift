@@ -14,13 +14,7 @@ struct LandingPageView: View {
     @State private var scaledAmount = false
     
     var body: some View {
-       
-        ZStack {
-           Image("beastmodeBackground")
-            .resizable()
-            .scaledToFill()
-            .edgesIgnoringSafeArea(.all)
-            
+                   
             VStack {
                 Spacer()
                 Text("BEAST MODE")
@@ -28,7 +22,7 @@ struct LandingPageView: View {
                     .fontWeight(.bold)
                     .foregroundColor(.white)
                     .animation(.easeInOut)
-                    .scaleEffect(scaledAmount ? 0.5 : 1.0)
+                    .scaleEffect(scaledAmount ? 0.25 : 1.0)
                 
                 Spacer()
                 
@@ -47,13 +41,16 @@ struct LandingPageView: View {
                         .shadow(radius: 10)
                     })
             }
+            .background(
+                Image("beastmodeBackground")
+                 .resizable()
+                 .scaledToFill()
+                 .edgesIgnoringSafeArea(.all)
+            )
             .onAppear(perform: {
                 titleIsAnimating.toggle()
             })
         }
-        
-       
-    }
 }
 
 struct ContentView_Previews: PreviewProvider {
