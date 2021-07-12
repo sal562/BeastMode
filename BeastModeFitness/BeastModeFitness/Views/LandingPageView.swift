@@ -10,6 +10,7 @@ import SwiftUI
 /*
  Current Issues
  no color consistency - create theme with light and dark mode
+ add haptic feedback
  */
 
 struct LandingPageView: View {
@@ -68,7 +69,7 @@ struct LandingPageView: View {
                     ///disabled animation for testing
                     titleIsAnimating.toggle()
                 })
-            } //end of NavView
+            } ///end of NavView
             .accentColor(.primary)
         }
     }
@@ -76,8 +77,8 @@ struct LandingPageView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-//        LandingPageView().previewDevice(PreviewDevice(rawValue: "iPhone 7"))
-//        LandingPageView().previewDevice(PreviewDevice(rawValue: "iPhone 12 Pro Max"))
+///        LandingPageView().previewDevice(PreviewDevice(rawValue: "iPhone 7"))
+///        LandingPageView().previewDevice(PreviewDevice(rawValue: "iPhone 12 Pro Max"))
         LandingPageView()
     }
 }
