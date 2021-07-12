@@ -31,6 +31,13 @@ extension CreateChallengeViewModel {
         
         ///init TypeOfChallengePart
         init(type: TypeOfChallengePart) {
+            switch type {
+            case .exercise:
+                self.options
+            default:
+                <#code#>
+            }
+            
             self.type = type
         }
         
@@ -44,7 +51,7 @@ extension CreateChallengeViewModel {
         }
         
         ///exercise options
-        enum ExerciseOption: String, DropdownOptionProtocol {
+        enum ExerciseOption: String,CaseIterable, DropdownOptionProtocol {
             ///Types of Exercise
             case pushups
             case pullups
@@ -63,7 +70,7 @@ extension CreateChallengeViewModel {
         }
         
         ///Starting Options
-        enum StartOption: Int, DropdownOptionProtocol {
+        enum StartOption: Int,CaseIterable, DropdownOptionProtocol {
             ///Types of Exercise
             case one = 1, two, three, four, five
             
@@ -76,7 +83,7 @@ extension CreateChallengeViewModel {
         }
         
         ///Daily Increase Options
-        enum DailyIncreaseOption: Int, DropdownOptionProtocol {
+        enum DailyIncreaseOption: Int,CaseIterable, DropdownOptionProtocol {
             ///Types of Exercise
             case one = 1, two, three, four, five
             
@@ -90,7 +97,7 @@ extension CreateChallengeViewModel {
         
         
         ///Length Of Challenge
-        enum LengthOfChallenge: Int, DropdownOptionProtocol {
+        enum LengthOfChallenge: Int,CaseIterable, DropdownOptionProtocol {
             ///Types of Exercise
             case seven = 7, fourteen = 14, twentyOne = 21, twentyEight = 28
             
