@@ -11,6 +11,7 @@ import SwiftUI
  Current Issues
  no color consistency - create theme with light and dark mode
  add haptic feedback
+ Unable to select multiple options check closures
  */
 
 struct LandingPageView: View {
