@@ -60,45 +60,49 @@ extension CreateChallengeViewModel {
                       formatted: rawValue.capitalized,
                       isSelected: self == .pushups)
             }
-            
-            ///Starting Options
-            enum StartOption: Int, DropdownOptionProtocol {
-                ///Types of Exercise
-                case one = 1, two, three, four, five
-                
-                ///Second Exercise Option
-                var toDropdownOption: DropdownOption {
-                    .init(type: .number(rawValue),
-                          formatted: "\(rawValue)",
-                          isSelected: self == .one)
-                }
-                
-                ///Daily Increase Options
-                enum DailyIncreaseOption: Int, DropdownOptionProtocol {
-                    ///Types of Exercise
-                    case one = 1, two, three, four, five
-                    
-                    ///Second Exercise Option
-                    var toDropdownOption: DropdownOption {
-                        .init(type: .number(rawValue),
-                              formatted: "+\(rawValue)",
-                              isSelected: self == .one)
-                    }
-                    
-                    ///Length Of Challenge
-                    enum LengthOfChallenge: Int, DropdownOptionProtocol {
-                        ///Types of Exercise
-                        case seven = 7, fourteen = 14, twentyOne = 21, twentyEight = 28
-                        
-                        ///Second Exercise Option
-                        var toDropdownOption: DropdownOption {
-                            .init(type: .number(rawValue),
-                                  formatted: "\(rawValue) days",
-                                  isSelected: self == .seven)
-                        }
-            
-            
         }
+        
+        ///Starting Options
+        enum StartOption: Int, DropdownOptionProtocol {
+            ///Types of Exercise
+            case one = 1, two, three, four, five
+            
+            ///Second Exercise Option
+            var toDropdownOption: DropdownOption {
+                .init(type: .number(rawValue),
+                      formatted: "\(rawValue)",
+                      isSelected: self == .one)
+            }
+        }
+        
+        ///Daily Increase Options
+        enum DailyIncreaseOption: Int, DropdownOptionProtocol {
+            ///Types of Exercise
+            case one = 1, two, three, four, five
+            
+            ///Second Exercise Option
+            var toDropdownOption: DropdownOption {
+                .init(type: .number(rawValue),
+                      formatted: "+\(rawValue)",
+                      isSelected: self == .one)
+            }
+        }
+        
+        
+        ///Length Of Challenge
+        enum LengthOfChallenge: Int, DropdownOptionProtocol {
+            ///Types of Exercise
+            case seven = 7, fourteen = 14, twentyOne = 21, twentyEight = 28
+            
+            ///Second Exercise Option
+            var toDropdownOption: DropdownOption {
+                .init(type: .number(rawValue),
+                      formatted: "\(rawValue) days",
+                      isSelected: self == .seven)
+            }
+        }
+        
+        
     }
 }
 
