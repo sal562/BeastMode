@@ -18,9 +18,12 @@ final class CreateChallengeViewModel: ObservableObject {
 
 
 extension CreateChallengeViewModel {
+    
     struct ChallengeStartedViewModel: DropdownItemsProtocol {
         var options: [DropdownOption]
-        var headerTitle: String
+        var headerTitle: String {
+            type.rawValue
+        }
         var dropdownTitle: String
         var isSelected: Bool
         
@@ -28,7 +31,7 @@ extension CreateChallengeViewModel {
         
         ///init TypeOfChallengePart
         init(type: TypeOfChallengePart) {
-            
+            self.type = type
         }
         
         ///determine type of challenge
@@ -38,6 +41,11 @@ extension CreateChallengeViewModel {
             case increase = "Daily Increase"
             case length = "Length of Challenge"
             
+        }
+        
+        ///exercise options
+        enum ExerciseOptions: DropdownOption {
+            case 
         }
     }
 }

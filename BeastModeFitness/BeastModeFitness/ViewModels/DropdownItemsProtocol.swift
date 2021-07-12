@@ -16,6 +16,10 @@ protocol DropdownItemsProtocol {
     var isSelected: Bool { get }
 }
 
+protocol DropdownOptionProtocol {
+    var toDropdownOption: DropdownOption { get }
+}
+
 struct DropdownOption {
     enum DropdownOptionType {
         case text(String)
