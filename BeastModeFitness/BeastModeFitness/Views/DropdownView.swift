@@ -24,7 +24,7 @@ struct DropdownView<T: DropdownItemProtocol>: View {
                 .padding(.top, 10)
                 .padding(.horizontal, 10)
                 Button(action: {
-                    //ADD EXERCISE HERE
+                    ///update selected state when button is pressed
                     viewModel.isSelected = true
                 }, label: {
                     HStack {

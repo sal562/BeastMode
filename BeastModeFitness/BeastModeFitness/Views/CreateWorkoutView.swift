@@ -9,33 +9,29 @@
 import SwiftUI
 
 struct CreateWorkoutView: View {
-    
+    //MARK: - Properties
     @State private var isActive = false
-    
     @StateObject var viewModel = CreateChallengeViewModel()
     
     ///computed property for dropdownList
     var dropdownList: some View {
         ForEach(viewModel.dropdowns.indices, id: \.self) { index in
-//            DropdownView(viewModel: $viewModel.dropdowns[index])
+            DropdownView(viewModel: $viewModel.dropdowns[index])
         }
     }
     
     var body: some View {
         ScrollView {
             VStack {
-//                DropdownView()
-//                DropdownView()
-//                DropdownView()
-//                DropdownView()
+                ///instanciate dropdownlist
                 dropdownList
                 Spacer()
-                //create navLink using nextButton
+                ///create navLink using nextButton
                 NavigationLink(
                     destination: ReminderView(),
                     isActive: $isActive) {
                     Button(action: {
-                        //Next Page
+                        ///Next Page
                         isActive.toggle()
                     }, label: {
                         Text("Next")
@@ -45,6 +41,16 @@ struct CreateWorkoutView: View {
                     .padding(.horizontal, 20)
                 }
             }
+            ///add action sheet
+            .actionSheet(isPresented: Binding<Bool>(get: {
+                viewModel.hasSelectedDropdown
+            }, set: { _ in
+                
+            }), content: {
+                ActionSheet(title: Text("Select"), buttons: [.default(Text("Test"),action: {
+                    //action Sheet
+                })])
+            })
             .navigationTitle("Create a Workout")
             .navigationBarBackButtonHidden(true)
             .padding(.bottom, 20)

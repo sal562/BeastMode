@@ -18,9 +18,10 @@ class CreateChallengeViewModel: ObservableObject {
         .init(type: .increase),
         .init(type: .length)
     ]
+    var hasSelectedDropdown: Bool {
+        dropdowns.first(where: { $0.isSelected }) != nil
+    }
 }
-
-
 
 extension CreateChallengeViewModel {
     
@@ -67,10 +68,10 @@ extension CreateChallengeViewModel {
             case pushups
             case pullups
             case burpees
-//            case squats
-//            case dips
-//            case situps
-//            case planking
+            case squats
+            case dips
+            case situps
+            case planking
             
             ///First Exercise Option
             var toDropdownOption: DropdownOption {
