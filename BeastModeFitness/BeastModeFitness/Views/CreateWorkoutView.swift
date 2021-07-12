@@ -20,6 +20,16 @@ struct CreateWorkoutView: View {
         }
     }
     
+    ///create actionSheet
+    var actionSheet: ActionSheet {
+        ActionSheet(title: Text("Select"), buttons: viewModel.displayedOptions.indices.map { index in
+            let option = viewModel.displayedOptions[index]
+            return .default(Text(option.formatted)) {
+                viewModel.send(.selectOption(index: index))
+            }
+        })
+    }
+    
     var body: some View {
         ScrollView {
             VStack {
@@ -45,13 +55,8 @@ struct CreateWorkoutView: View {
             .actionSheet(isPresented: Binding<Bool>(get: {
                 viewModel.hasSelectedDropdown
             }, set: { _ in
-                
             }), content: {
-                ActionSheet(title: Text("Select"), buttons: viewModel.displayedOptions.map {
-                    ActionSheet.Button.default(Text($0.formatted)) {
-                        
-                    }
-                })
+                actionSheet
             })
             .navigationTitle("Create a Workout")
             .navigationBarBackButtonHidden(true)
