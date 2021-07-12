@@ -47,9 +47,11 @@ struct CreateWorkoutView: View {
             }, set: { _ in
                 
             }), content: {
-                ActionSheet(title: Text("Select"), buttons: [.default(Text("Test"),action: {
-                    //action Sheet
-                })])
+                ActionSheet(title: Text("Select"), buttons: viewModel.displayedOptions.map {
+                    ActionSheet.Button.default(Text($0.formatted)) {
+                        
+                    }
+                })
             })
             .navigationTitle("Create a Workout")
             .navigationBarBackButtonHidden(true)
