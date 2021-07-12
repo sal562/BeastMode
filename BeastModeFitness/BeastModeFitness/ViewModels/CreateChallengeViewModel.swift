@@ -40,8 +40,17 @@ class CreateChallengeViewModel: ObservableObject {
         switch action {
         case let .selectOption(index):
             guard let selectDropdownIndex = selectDropdownIndex else { return }
+            clearAllSelectedOptions()
             dropdowns[selectDropdownIndex].options[index].isSelected = true
 
+        }
+    }
+    
+    ///reset all the options
+    func clearAllSelectedOptions() {
+        guard let selectDropdownIndex = selectDropdownIndex else { return }
+        dropdowns[selectDropdownIndex].options.indices.forEach { index in
+            dropdowns[selectDropdownIndex].options[index].isSelected = false
         }
     }
 }
