@@ -9,7 +9,7 @@
 import Foundation
 
 protocol DropdownItemsProtocol {
-        //MARK: - Properties
+    //MARK: - Properties
     var options: [DropdownOption] { get }
     var headerTitle: String { get }
     var dropdownTitle: String { get }

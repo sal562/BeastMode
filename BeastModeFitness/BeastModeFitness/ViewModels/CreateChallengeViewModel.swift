@@ -24,8 +24,15 @@ extension CreateChallengeViewModel {
         var dropdownTitle: String
         var isSelected: Bool
         
+        private let type: TypeOfChallengePart
+        
+        ///init TypeOfChallengePart
+        init(type: TypeOfChallengePart) {
+            
+        }
+        
         ///determine type of challenge
-        enum TypeOfChallenge: String, CaseIterable {
+        enum TypeOfChallengePart: String, CaseIterable {
             case exercise = "Exercise"
             case startAmount = "Starting Amount"
             case increase = "Daily Increase"
