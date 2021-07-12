@@ -1,5 +1,5 @@
 //
-//  WorkoutPlanSelectionView.swift
+//  DropdownView.swift
 //  BeastModeFitness
 //
 //  Created by sal562 on 7/9/21.
@@ -8,14 +8,16 @@
 
 import SwiftUI
 
-struct WorkoutPlanSelectionView: View {
-    //MARK: - Properties
+struct DropdownView<T: DropdownItemProtocol>: View {
+    //MARK: - Properties - DropdownView
+    @Binding var viewModel: T
     
     var body: some View {
         Section {
             VStack {
                 HStack {
-                    Text("Exercise")
+//                    Text("Exercise")
+                    Text(viewModel.headerTitle)
                         .font(.system(size: 22, weight: .semibold, design: .rounded))
                     Spacer()
                 }
@@ -23,9 +25,11 @@ struct WorkoutPlanSelectionView: View {
                 .padding(.horizontal, 10)
                 Button(action: {
                     //ADD EXERCISE HERE
+                    viewModel.isSelected = true
                 }, label: {
                     HStack {
                         Text("Pullups")
+                        Text(viewModel.dropdownTitle)
                             .font(.system(size: 28, weight: .semibold, design: .rounded))
                         Spacer()
                         Image(systemName: "arrowtriangle.down.square")
@@ -43,15 +47,15 @@ struct WorkoutPlanSelectionView: View {
     }
 }
 
-struct WorkoutPlanView_Previews: PreviewProvider {
-    static var previews: some View {
-        //light Mode
-        NavigationView {
-            WorkoutPlanSelectionView()
-        }
-        
-        NavigationView {
-            WorkoutPlanSelectionView()
-        }.environment(\.colorScheme, .dark)
-    }
-}
+//struct WorkoutPlanView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        //light Mode
+//        NavigationView {
+//            DropdownView()
+//        }
+//        
+//        NavigationView {
+//            WorkoutPlanSelectionView()
+//        }.environment(\.colorScheme, .dark)
+//    }
+//}

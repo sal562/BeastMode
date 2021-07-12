@@ -8,18 +8,24 @@
 
 import SwiftUI
 
-final class CreateChallengeViewModel: ObservableObject {
+class CreateChallengeViewModel: ObservableObject {
     
     //MARK: - Properties
-    @Published private(set) var dropdownChoices: [CreateChallengeViewModel] = []
-    
-    
+    @Published var dropdowns: [CreateChallengePartViewModel] = [
+            ///init 4 dropdown optionns
+        .init(type: .exercise),
+        .init(type: .startAmount),
+        .init(type: .increase),
+        .init(type: .length)
+    ]
 }
+
 
 
 extension CreateChallengeViewModel {
     
-    struct ChallengeStartedViewModel: DropdownItemsProtocol {
+    ///Setup CreateChallengePartViewModel
+    struct CreateChallengePartViewModel: DropdownItemProtocol {
         var options: [DropdownOption]
         var headerTitle: String {
             type.rawValue
@@ -29,20 +35,19 @@ extension CreateChallengeViewModel {
         }
         var isSelected: Bool = false
         
-        private let type: TypeOfChallengePart
+        let type: TypeOfChallengePart
         
-        ///init TypeOfChallengePart
+        ///init TypeOfChallengePart = Map each enum to dropdown
         init(type: TypeOfChallengePart) {
             switch type {
             case .exercise:
-                self.options = ExerciseOption.allCases.map({ $0.toDropdownOption })
+                self.options = ExerciseOption.allCases.map { $0.toDropdownOption }
             case .startAmount:
-                self.options = StartOption.allCases.map({ $0.toDropdownOption })
+                self.options = StartOption.allCases.map { $0.toDropdownOption }
             case .increase:
-                self.options = DailyIncreaseOption.allCases.map({ $0.toDropdownOption })
+                self.options = DailyIncreaseOption.allCases.map { $0.toDropdownOption }
             case .length:
-                self.options = LengthOfChallenge.allCases.map({ $0.toDropdownOption })
-                
+                self.options = LengthOfChallenge.allCases.map { $0.toDropdownOption }
             }
             self.type = type
         }
@@ -62,10 +67,10 @@ extension CreateChallengeViewModel {
             case pushups
             case pullups
             case burpees
-            case squats
-            case dips
-            case situps
-            case planking
+//            case squats
+//            case dips
+//            case situps
+//            case planking
             
             ///First Exercise Option
             var toDropdownOption: DropdownOption {
@@ -117,5 +122,5 @@ extension CreateChallengeViewModel {
         
         
     }
+    
 }
-

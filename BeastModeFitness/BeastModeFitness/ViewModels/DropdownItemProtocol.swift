@@ -1,5 +1,5 @@
 //
-//  DropdownItemsProtocol.swift
+//  DropdownItemProtocol.swift
 //  BeastModeFitness
 //
 //  Created by sal562 on 7/9/21.
@@ -8,12 +8,12 @@
 
 import Foundation
 
-protocol DropdownItemsProtocol {
+protocol DropdownItemProtocol {
     //MARK: - Properties
     var options: [DropdownOption] { get }
     var headerTitle: String { get }
     var dropdownTitle: String { get }
-    var isSelected: Bool { get }
+    var isSelected: Bool { get set }
 }
 
 protocol DropdownOptionProtocol {

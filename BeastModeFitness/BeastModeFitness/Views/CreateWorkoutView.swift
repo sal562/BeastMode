@@ -12,13 +12,23 @@ struct CreateWorkoutView: View {
     
     @State private var isActive = false
     
+    @StateObject var viewModel = CreateChallengeViewModel()
+    
+    ///computed property for dropdownList
+    var dropdownList: some View {
+        ForEach(viewModel.dropdowns.indices, id: \.self) { index in
+//            DropdownView(viewModel: $viewModel.dropdowns[index])
+        }
+    }
+    
     var body: some View {
         ScrollView {
-            VStack(spacing: 5) {
-                WorkoutPlanSelectionView()
-                WorkoutPlanSelectionView()
-                WorkoutPlanSelectionView()
-                WorkoutPlanSelectionView()
+            VStack {
+//                DropdownView()
+//                DropdownView()
+//                DropdownView()
+//                DropdownView()
+                dropdownList
                 Spacer()
                 //create navLink using nextButton
                 NavigationLink(

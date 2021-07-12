@@ -14,7 +14,7 @@ struct ReminderView: View {
     var body: some View {
         VStack {
             Spacer()
-            WorkoutPlanSelectionView()
+//            DropdownView()
             
             Spacer()
 
