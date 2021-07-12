@@ -24,8 +24,10 @@ extension CreateChallengeViewModel {
         var headerTitle: String {
             type.rawValue
         }
-        var dropdownTitle: String
-        var isSelected: Bool
+        var dropdownTitle: String {
+            options.first(where: { $0.isSelected })?.formatted ?? ""
+        }
+        var isSelected: Bool = false
         
         private let type: TypeOfChallengePart
         
@@ -33,11 +35,15 @@ extension CreateChallengeViewModel {
         init(type: TypeOfChallengePart) {
             switch type {
             case .exercise:
-                self.options
-            default:
-                <#code#>
+                self.options = ExerciseOption.allCases.map({ $0.toDropdownOption })
+            case .startAmount:
+                self.options = StartOption.allCases.map({ $0.toDropdownOption })
+            case .increase:
+                self.options = DailyIncreaseOption.allCases.map({ $0.toDropdownOption })
+            case .length:
+                self.options = LengthOfChallenge.allCases.map({ $0.toDropdownOption })
+                
             }
-            
             self.type = type
         }
         
