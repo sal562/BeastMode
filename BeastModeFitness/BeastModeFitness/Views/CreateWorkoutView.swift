@@ -51,7 +51,7 @@ struct CreateWorkoutView: View {
                     .padding(.horizontal, 20)
                 }
             }
-            ///add action sheet
+            ///add action sheet for selections
             .actionSheet(isPresented: Binding<Bool>(get: {
                 viewModel.hasSelectedDropdown
             }, set: { _ in
