@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>75611823782-p8tul97rkm4nj9g5qk0rtm4uldnbg0hm.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.75611823782-p8tul97rkm4nj9g5qk0rtm4uldnbg0hm</string>
+	<key>API_KEY</key>
+	<string>AIzaSyD35Z1CcJ8o1j-i4d6acsSmO2WdbgwjTKc</string>
+	<key>GCM_SENDER_ID</key>
+	<string>75611823782</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.inceva.BeastModeFitness</string>
+	<key>PROJECT_ID</key>
+	<string>beastmodev1-8f958</string>
+	<key>STORAGE_BUCKET</key>
+	<string>beastmodev1-8f958.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:75611823782:ios:857c547f06947406111e67</string>
+</dict>
+</plist>
