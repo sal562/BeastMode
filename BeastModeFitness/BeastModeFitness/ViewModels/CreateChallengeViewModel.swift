@@ -22,24 +22,24 @@ class CreateChallengeViewModel: ObservableObject {
     enum Action {
         case selectOption(index: Int)
     }
-    
+    ///after selecting a dopdown item
     var hasSelectedDropdown: Bool {
-        selectDropdownIndex != nil
+        dropdowns.first(where: { $0.isSelected }) != nil
     }
-    
-    var selectDropdownIndex: Int? {
+    ///index of selected dropdown - get offset
+    var selectedDropdownIndex: Int? {
         dropdowns.enumerated().first(where: { $0.element.isSelected })?.offset
     }
     
     var displayedOptions: [DropdownOption] {
-        guard let selectDropdownIndex = selectDropdownIndex else { return [] }
+        guard let selectDropdownIndex = selectedDropdownIndex else { return [] }
         return dropdowns[selectDropdownIndex].options
     }
     
     func send(_ action: Action) {
         switch action {
         case let .selectOption(index):
-            guard let selectDropdownIndex = selectDropdownIndex else { return }
+            guard let selectDropdownIndex = selectedDropdownIndex else { return }
             clearAllSelectedOption()
             dropdowns[selectDropdownIndex].options[index].isSelected = true
             clearAllDropdownOption()
@@ -48,7 +48,7 @@ class CreateChallengeViewModel: ObservableObject {
     
     ///reset all the options
     func clearAllSelectedOption() {
-        guard let selectDropdownIndex = selectDropdownIndex else { return }
+        guard let selectDropdownIndex = selectedDropdownIndex else { return }
         dropdowns[selectDropdownIndex].options.indices.forEach { index in
             dropdowns[selectDropdownIndex].options[index].isSelected = false
         }
@@ -56,7 +56,7 @@ class CreateChallengeViewModel: ObservableObject {
     
     ///reset all the dropdown selections
     func clearAllDropdownOption() {
-        guard let selectDropdownIndex = selectDropdownIndex else { return }
+        guard let selectDropdownIndex = selectedDropdownIndex else { return }
         dropdowns[selectDropdownIndex].options.indices.forEach { index in
             dropdowns[selectDropdownIndex].options[index].isSelected = false
         }

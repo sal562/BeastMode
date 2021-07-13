@@ -58,7 +58,7 @@ struct CreateWorkoutView: View {
             }), content: {
                 actionSheet
             })
-            .navigationTitle("Create a Workout")
+            .navigationBarTitle("Create a Workout")
             .navigationBarBackButtonHidden(true)
             .padding(.bottom, 20)
         }
