@@ -6,12 +6,23 @@
 //
 
 import SwiftUI
-
+import Firebase
 @main
 struct BeastModeFitnessApp: App {
+    
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    
     var body: some Scene {
         WindowGroup {
             LandingPageView()
         }
+    }
+}
+
+class AppDelegate: NSObject, UIApplicationDelegate {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        print("Setting Up firebase")
+        FirebaseApp.configure()
+        return true
     }
 }
