@@ -16,7 +16,6 @@ struct DropdownView<T: DropdownItemProtocol>: View {
         Section {
             VStack {
                 HStack {
-//                    Text("Exercise")
                     Text(viewModel.headerTitle)
                         .font(.system(size: 22, weight: .semibold, design: .rounded))
                     Spacer()
@@ -28,7 +27,6 @@ struct DropdownView<T: DropdownItemProtocol>: View {
                     viewModel.isSelected = true
                 }, label: {
                     HStack {
-//                        Text("Pullups")
                         Text(viewModel.dropdownTitle)
                             .font(.system(size: 28, weight: .semibold, design: .rounded))
                         Spacer()
