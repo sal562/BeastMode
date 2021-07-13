@@ -24,6 +24,7 @@
 		36B96550269D67980058A8A3 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 36B9654F269D67980058A8A3 /* FirebaseCrashlytics */; };
 		36B96552269D67980058A8A3 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 36B96551269D67980058A8A3 /* FirebaseAuth */; };
 		36B96554269D67980058A8A3 /* FirebaseDatabaseSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 36B96553269D67980058A8A3 /* FirebaseDatabaseSwift-Beta */; };
+		36B96557269D71610058A8A3 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B96556269D71610058A8A3 /* UserService.swift */; };
 		36DA7EB626958C2900726698 /* BeastModeFitnessApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DA7EB526958C2900726698 /* BeastModeFitnessApp.swift */; };
 		36DA7EB826958C2900726698 /* LandingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DA7EB726958C2900726698 /* LandingPageView.swift */; };
 		36DA7EBA26958C2C00726698 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36DA7EB926958C2C00726698 /* Assets.xcassets */; };
@@ -40,6 +41,7 @@
 		36B9652F26986B030058A8A3 /* DropdownItemProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownItemProtocol.swift; sourceTree = "<group>"; };
 		36B9653F269D5F830058A8A3 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		36B96540269D66BC0058A8A3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		36B96556269D71610058A8A3 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		36DA7EB226958C2900726698 /* BeastModeFitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeastModeFitness.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36DA7EB526958C2900726698 /* BeastModeFitnessApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeastModeFitnessApp.swift; sourceTree = "<group>"; };
 		36DA7EB726958C2900726698 /* LandingPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPageView.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 		36B96555269D71330058A8A3 /* NetworkServices */ = {
 			isa = PBXGroup;
 			children = (
+				36B96556269D71610058A8A3 /* UserService.swift */,
 			);
 			path = NetworkServices;
 			sourceTree = "<group>";
@@ -228,6 +231,7 @@
 				36B9652E26986A030058A8A3 /* CreateChallengeViewModel.swift in Sources */,
 				3672B6BD2698470A00026B89 /* Color+Extension.swift in Sources */,
 				3672B6C2269850C400026B89 /* ReminderView.swift in Sources */,
+				36B96557269D71610058A8A3 /* UserService.swift in Sources */,
 				3672B6B9269804DF00026B89 /* DropdownView.swift in Sources */,
 				36DA7EB626958C2900726698 /* BeastModeFitnessApp.swift in Sources */,
 				3672B6BB2698452E00026B89 /* MainButton.swift in Sources */,
