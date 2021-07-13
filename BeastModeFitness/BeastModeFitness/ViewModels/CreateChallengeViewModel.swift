@@ -9,7 +9,7 @@
 import SwiftUI
 import Combine
 
-typealias UserID = String
+typealias UserId = String
 
 class CreateChallengeViewModel: ObservableObject {
     
@@ -21,6 +21,8 @@ class CreateChallengeViewModel: ObservableObject {
         .init(type: .increase),
         .init(type: .length)
     ]
+    
+    private let userService: UserServiceProtocol
     
     ///after selecting a dopdown item
     var hasSelectedDropdown: Bool {
@@ -45,6 +47,11 @@ class CreateChallengeViewModel: ObservableObject {
         case createChallenge
     }
     
+    ///init userService
+    init(userService: UserServiceProtocol = UserService()) {
+        self.userService = userService
+    }
+    
     ///send selection as dropdown index
     func send(action: Action) {
         switch action {
@@ -60,8 +67,19 @@ class CreateChallengeViewModel: ObservableObject {
     }
     
     //get currrent userID
-    func currentUserId() -> AnyPublisher<UserID, Error> {
-        return Just("").setFailureType(to: Error.self).eraseToAnyPublisher()
+    func currentUserId() -> AnyPublisher<UserId, Error> {
+        return userService.currentUser().flatMap { user -> AnyPublisher<UserId, Error> in
+            if let userId = user?.uid {
+                return Just(userId)
+                    .setFailureType(to: Error.self)
+                    .eraseToAnyPublisher()
+            } else {
+                return self.userService
+                    .signInAnonymously()
+                    .map({ $0.uid })
+                    .eraseToAnyPublisher()
+            }
+        }.eraseToAnyPublisher()
     }
     
     ///reset all the options
