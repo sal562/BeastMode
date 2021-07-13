@@ -27,7 +27,7 @@ struct LandingPageView: View {
         GeometryReader { geometry in
             NavigationView {
                 VStack {
-                    Spacer().frame(height: geometry.size.height * 0.10)
+                    Spacer().frame(height: geometry.size.height * 0.09)
                     Text("BEAST MODE")
                         .font(.system(size: 48, weight: .heavy, design: .rounded))
                         .foregroundColor(.white)
