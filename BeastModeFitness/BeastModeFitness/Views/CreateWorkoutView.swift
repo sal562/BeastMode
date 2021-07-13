@@ -10,7 +10,7 @@ import SwiftUI
 
 struct CreateWorkoutView: View {
     //MARK: - Properties
-    @State private var isActive = false
+//    @State private var isActive = false
     @StateObject var viewModel = CreateChallengeViewModel()
     
     ///computed property for dropdownList
@@ -36,20 +36,14 @@ struct CreateWorkoutView: View {
                 ///instanciate dropdownlist
                 dropdownList
                 Spacer()
-                ///create navLink using nextButton
-                NavigationLink(
-                    destination: ReminderView(),
-                    isActive: $isActive) {
+                ///create navLink using nextButton - REMOVE NAVLINK FOR TESTING
                     Button(action: {
-                        ///Next Page
-                        isActive.toggle()
+                        ///Next Page - Creae Challenge
+                        viewModel.send(action: .createChallenge)
                     }, label: {
-                        Text("Next")
+                        Text("Create")
                             .font(.system(size: 24, weight: .semibold, design: .rounded))
                     })
-                    .buttonStyle(MainButtonCustomStyle())
-                    .padding(.horizontal, 20)
-                }
             }
             ///add action sheet for selections
             .actionSheet(isPresented: Binding<Bool>(get: {

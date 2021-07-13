@@ -38,6 +38,8 @@ class CreateChallengeViewModel: ObservableObject {
     ///Action enum to select options
     enum Action {
         case selectOption(index: Int)
+        
+        case createChallenge
     }
     
     ///send selection as dropdown index
@@ -48,7 +50,15 @@ class CreateChallengeViewModel: ObservableObject {
             clearAllSelectedOption()
             dropdowns[selectedDropdownIndex].options[index].isSelected = true
             clearAllDropdownOption()
+            
+        case .createChallenge:
+            print("Challenge Created")
         }
+    }
+    
+    //get currrent userID
+    func currentUserId() -> AnyPublisher<String, Error> {
+        
     }
     
     ///reset all the options
