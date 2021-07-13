@@ -1,0 +1,12 @@
+//
+//  Config.xcconfig
+//  BeastModeFitness
+//
+//  Created by sal562 on 7/13/21.
+//  Copyright © 2021 Sal B. Amer. All rights reserved.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+API_KEY = 121322121212121
