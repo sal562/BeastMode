@@ -88,6 +88,13 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		36B96555269D71330058A8A3 /* NetworkServices */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NetworkServices;
+			sourceTree = "<group>";
+		};
 		36DA7EA926958C2900726698 = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +114,7 @@
 		36DA7EB426958C2900726698 /* BeastModeFitness */ = {
 			isa = PBXGroup;
 			children = (
+				36B96555269D71330058A8A3 /* NetworkServices */,
 				36B9652C269869C40058A8A3 /* ViewModels */,
 				36DA7EB526958C2900726698 /* BeastModeFitnessApp.swift */,
 				36DA7EB926958C2C00726698 /* Assets.xcassets */,

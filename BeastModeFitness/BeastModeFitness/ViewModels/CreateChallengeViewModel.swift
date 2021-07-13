@@ -7,6 +7,9 @@
 //
 
 import SwiftUI
+import Combine
+
+typealias UserID = String
 
 class CreateChallengeViewModel: ObservableObject {
     
@@ -57,8 +60,8 @@ class CreateChallengeViewModel: ObservableObject {
     }
     
     //get currrent userID
-    func currentUserId() -> AnyPublisher<String, Error> {
-        
+    func currentUserId() -> AnyPublisher<UserID, Error> {
+        return Just("").setFailureType(to: Error.self).eraseToAnyPublisher()
     }
     
     ///reset all the options
