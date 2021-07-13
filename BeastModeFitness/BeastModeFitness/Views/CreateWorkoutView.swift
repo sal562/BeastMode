@@ -20,12 +20,12 @@ struct CreateWorkoutView: View {
         }
     }
     
-    ///create actionSheet
+    ///create actionSheets for each option type
     var actionSheet: ActionSheet {
         ActionSheet(title: Text("Select"), buttons: viewModel.displayedOptions.indices.map { index in
             let option = viewModel.displayedOptions[index]
             return .default(Text(option.formatted)) {
-                viewModel.send(.selectOption(index: index))
+                viewModel.send(action: .selectOption(index: index))
             }
         })
     }
@@ -58,7 +58,7 @@ struct CreateWorkoutView: View {
             }), content: {
                 actionSheet
             })
-            .navigationBarTitle("Create a Workout")
+            .navigationTitle("Create a Workout")
             .navigationBarBackButtonHidden(true)
             .padding(.bottom, 20)
         }
