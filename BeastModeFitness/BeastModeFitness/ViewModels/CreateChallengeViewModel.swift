@@ -19,23 +19,28 @@ class CreateChallengeViewModel: ObservableObject {
         .init(type: .length)
     ]
     
-    enum Action {
-        case selectOption(index: Int)
-    }
     ///after selecting a dopdown item
     var hasSelectedDropdown: Bool {
-        dropdowns.first(where: { $0.isSelected }) != nil
+//        dropdowns.first(where: { $0.isSelected }) != nil
+        selectedDropdownIndex != nil
     }
     ///index of selected dropdown - get offset
     var selectedDropdownIndex: Int? {
         dropdowns.enumerated().first(where: { $0.element.isSelected })?.offset
     }
     
+    ///display available Options
     var displayedOptions: [DropdownOption] {
-        guard let selectDropdownIndex = selectedDropdownIndex else { return [] }
-        return dropdowns[selectDropdownIndex].options
+        guard let selectedDropdownIndex = selectedDropdownIndex else { return [] }
+        return dropdowns[selectedDropdownIndex].options
     }
     
+    ///Action enum to select options
+    enum Action {
+        case selectOption(index: Int)
+    }
+    
+    ///send selection as dropdown index
     func send(_ action: Action) {
         switch action {
         case let .selectOption(index):
