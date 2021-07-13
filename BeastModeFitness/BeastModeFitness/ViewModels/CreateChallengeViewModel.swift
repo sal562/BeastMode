@@ -23,6 +23,7 @@ class CreateChallengeViewModel: ObservableObject {
     ]
     
     private let userService: UserServiceProtocol
+    private var cancellables: [AnyCancellable] = []
     
     ///after selecting a dopdown item
     var hasSelectedDropdown: Bool {
@@ -63,17 +64,31 @@ class CreateChallengeViewModel: ObservableObject {
             
         case .createChallenge:
             print("Challenge Created")
+            currentUserId().sink { completion in
+                switch completion {
+                case let .failure(error):
+                    print(error.localizedDescription)
+                case .finished:
+                    print("Completed")
+                }
+            } receiveValue: { userId in
+                print("USERID: \(userId)")
+            }.store(in: &cancellables)
+
         }
     }
     
     //get currrent userID
     func currentUserId() -> AnyPublisher<UserId, Error> {
+        print("Getting user id...")
         return userService.currentUser().flatMap { user -> AnyPublisher<UserId, Error> in
             if let userId = user?.uid {
+                print("User is logged in")
                 return Just(userId)
                     .setFailureType(to: Error.self)
                     .eraseToAnyPublisher()
             } else {
+                print("User is being loggedd in anonymously")
                 return self.userService
                     .signInAnonymously()
                     .map({ $0.uid })
