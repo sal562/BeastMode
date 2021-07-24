@@ -26,25 +26,24 @@ class CreateChallengeViewModel: ObservableObject {
     private var cancellables: [AnyCancellable] = []
     
     ///after selecting a dopdown item
-    var hasSelectedDropdown: Bool {
-//        dropdowns.first(where: { $0.isSelected }) != nil
-        selectedDropdownIndex != nil
-    }
-    ///index of selected dropdown - get offset
-    var selectedDropdownIndex: Int? {
-        dropdowns.enumerated().first(where: { $0.element.isSelected })?.offset
-    }
+//    var hasSelectedDropdown: Bool {
+////        dropdowns.first(where: { $0.isSelected }) != nil
+//        selectedDropdownIndex != nil
+//    }
+//    ///index of selected dropdown - get offset
+//    var selectedDropdownIndex: Int? {
+//        dropdowns.enumerated().first(where: { $0.element.isSelected })?.offset
+//    }
     
-    ///display available Options
-    var displayedOptions: [DropdownOption] {
-        guard let selectedDropdownIndex = selectedDropdownIndex else { return [] }
-        return dropdowns[selectedDropdownIndex].options
-    }
+    ///display available Options - REMOVED
+//    var displayedOptions: [DropdownOption] {
+//        guard let selectedDropdownIndex = selectedDropdownIndex else { return [] }
+//        return dropdowns[selectedDropdownIndex].options
+//    }
     
     ///Action enum to select options
     enum Action {
-        case selectOption(index: Int)
-        
+//        case selectOption(index: Int)
         case createChallenge
     }
     
@@ -56,11 +55,11 @@ class CreateChallengeViewModel: ObservableObject {
     ///send selection as dropdown index
     func send(action: Action) {
         switch action {
-        case let .selectOption(index):
-            guard let selectedDropdownIndex = selectedDropdownIndex else { return }
-            clearAllSelectedOption()
-            dropdowns[selectedDropdownIndex].options[index].isSelected = true
-            clearAllDropdownOption()
+//        case let .selectOption(index):
+//            guard let selectedDropdownIndex = selectedDropdownIndex else { return }
+//            clearAllSelectedOption()
+//            dropdowns[selectedDropdownIndex].options[index].isSelected = true
+//            clearAllDropdownOption()
             
         case .createChallenge:
             // TO-DO: - Remove print statements
@@ -99,30 +98,33 @@ class CreateChallengeViewModel: ObservableObject {
     }
     
     ///reset all the options
-    func clearAllSelectedOption() {
-        guard let selectedDropdownIndex = selectedDropdownIndex else { return }
-        dropdowns[selectedDropdownIndex].options.indices.forEach { index in
-            dropdowns[selectedDropdownIndex].options[index].isSelected = false
-        }
-    }
-    
-    ///reset all the dropdown selections - set to false
-    func clearAllDropdownOption() {
-        guard let selectedDropdownIndex = selectedDropdownIndex else { return }
-        dropdowns[selectedDropdownIndex].isSelected = false
-    }
+//    func clearAllSelectedOption() {
+//        guard let selectedDropdownIndex = selectedDropdownIndex else { return }
+//        dropdowns[selectedDropdownIndex].options.indices.forEach { index in
+//            dropdowns[selectedDropdownIndex].options[index].isSelected = false
+//        }
+//    }
+//
+//    ///reset all the dropdown selections - set to false
+//    func clearAllDropdownOption() {
+//        guard let selectedDropdownIndex = selectedDropdownIndex else { return }
+//        dropdowns[selectedDropdownIndex].isSelected = false
+//    }
 }
 
 extension CreateChallengeViewModel {
     
     ///Setup CreateChallengePartViewModel
     struct CreateChallengePartViewModel: DropdownItemProtocol {
+        var selectedOption: DropdownOption
+        
         var options: [DropdownOption]
         var headerTitle: String {
             type.rawValue
         }
         var dropdownTitle: String {
-            options.first(where: { $0.isSelected })?.formatted ?? ""
+//            options.first(where: { $0.isSelected })?.formatted ?? ""
+            selectedOption.formatted
         }
         var isSelected: Bool = false
         
@@ -141,6 +143,7 @@ extension CreateChallengeViewModel {
                 self.options = LengthOfChallenge.allCases.map { $0.toDropdownOption }
             }
             self.type = type
+            self.selectedOption = options.first!
         }
         
         ///determine type of challenge
@@ -166,8 +169,8 @@ extension CreateChallengeViewModel {
             ///First Exercise Option
             var toDropdownOption: DropdownOption {
                 .init(type: .text(rawValue),
-                      formatted: rawValue.capitalized,
-                      isSelected: self == .pushups)
+                      formatted: rawValue.capitalized
+                )
             }
         }
         
@@ -179,8 +182,8 @@ extension CreateChallengeViewModel {
             ///Second Exercise Option
             var toDropdownOption: DropdownOption {
                 .init(type: .number(rawValue),
-                      formatted: "\(rawValue)",
-                      isSelected: self == .one)
+                      formatted: "\(rawValue)"
+                )
             }
         }
         
@@ -192,8 +195,7 @@ extension CreateChallengeViewModel {
             ///Second Exercise Option
             var toDropdownOption: DropdownOption {
                 .init(type: .number(rawValue),
-                      formatted: "+\(rawValue)",
-                      isSelected: self == .one)
+                      formatted: "+\(rawValue)")
             }
         }
         
@@ -206,8 +208,7 @@ extension CreateChallengeViewModel {
             ///Second Exercise Option
             var toDropdownOption: DropdownOption {
                 .init(type: .number(rawValue),
-                      formatted: "\(rawValue) days",
-                      isSelected: self == .seven)
+                      formatted: "\(rawValue) days")
             }
         }
         

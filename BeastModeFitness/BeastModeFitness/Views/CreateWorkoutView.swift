@@ -21,14 +21,14 @@ struct CreateWorkoutView: View {
     }
     
     ///create actionSheets for each option type
-    var actionSheet: ActionSheet {
-        ActionSheet(title: Text("Select"), buttons: viewModel.displayedOptions.indices.map { index in
-            let option = viewModel.displayedOptions[index]
-            return .default(Text(option.formatted)) {
-                viewModel.send(action: .selectOption(index: index))
-            }
-        })
-    }
+//    var actionSheet: ActionSheet {
+//        ActionSheet(title: Text("Select"), buttons: viewModel.displayedOptions.indices.map { index in
+//            let option = viewModel.displayedOptions[index]
+//            return .default(Text(option.formatted)) {
+//                viewModel.send(action: .selectOption(index: index))
+//            }
+//        })
+//    }
     
     var body: some View {
         ScrollView {
@@ -46,12 +46,12 @@ struct CreateWorkoutView: View {
                     })
             }
             ///add action sheet for selections
-            .actionSheet(isPresented: Binding<Bool>(get: {
-                viewModel.hasSelectedDropdown
-            }, set: { _ in
-            }), content: {
-                actionSheet
-            })
+//            .actionSheet(isPresented: Binding<Bool>(get: {
+//                viewModel.hasSelectedDropdown
+//            }, set: { _ in
+//            }), content: {
+//                actionSheet
+//            })
             .navigationTitle("Create a Workout")
             .navigationBarBackButtonHidden(true)
             .padding(.bottom, 20)

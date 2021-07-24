@@ -12,6 +12,19 @@ struct DropdownView<T: DropdownItemProtocol>: View {
     //MARK: - Properties - DropdownView
     @Binding var viewModel: T
     
+    ///Move ActionSheet
+    ///create actionSheets for each option type
+    var actionSheet: ActionSheet {
+        ActionSheet(title: Text("Select"), buttons: viewModel.displayedOptions.map { option in
+//            let option = viewModel.displayedOptions[index]
+            
+            return .default(Text(option.formatted)) {
+//                viewModel.send(action: .selectOption(index: index))
+                viewModel.selectedOption = option
+            }
+        })
+    }
+    
     var body: some View {
         Section {
             VStack {
@@ -41,6 +54,10 @@ struct DropdownView<T: DropdownItemProtocol>: View {
             }//vStack
             .padding(10)
             .navigationBarTitle("Pick an Exercise")
+            /// actionSheet modifier add action sheet binded to if isSelected is true
+            .actionSheet(isPresented: $viewModel.isSelected) {
+                actionSheet
+            }
         }
     }
 }
