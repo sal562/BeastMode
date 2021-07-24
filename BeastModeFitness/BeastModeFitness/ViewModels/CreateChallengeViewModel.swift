@@ -63,6 +63,7 @@ class CreateChallengeViewModel: ObservableObject {
             clearAllDropdownOption()
             
         case .createChallenge:
+            // TO-DO: - Remove print statements
             print("Challenge Created")
             currentUserId().sink { completion in
                 switch completion {
