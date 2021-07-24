@@ -12,14 +12,12 @@ struct DropdownView<T: DropdownItemProtocol>: View {
     //MARK: - Properties - DropdownView
     @Binding var viewModel: T
     
-    ///Move ActionSheet
-    ///create actionSheets for each option type
+    ///Create ActionSheet for each option type
     var actionSheet: ActionSheet {
-        ActionSheet(title: Text("Select"), buttons: viewModel.displayedOptions.map { option in
-//            let option = viewModel.displayedOptions[index]
-            
+        ActionSheet(title: Text("Select"), buttons: viewModel.options.map { option in
+
             return .default(Text(option.formatted)) {
-//                viewModel.send(action: .selectOption(index: index))
+                ///update view based on selected option
                 viewModel.selectedOption = option
             }
         })

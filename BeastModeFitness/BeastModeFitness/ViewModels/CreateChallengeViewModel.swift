@@ -14,36 +14,25 @@ typealias UserId = String
 class CreateChallengeViewModel: ObservableObject {
     
     //MARK: - Properties
-    @Published var dropdowns: [CreateChallengePartViewModel] = [
-            ///init 4 dropdown optionns
-        .init(type: .exercise),
-        .init(type: .startAmount),
-        .init(type: .increase),
-        .init(type: .length)
-    ]
+//    @Published var dropdowns: [CreateChallengePartViewModel] = [
+//            ///init 4 dropdown optionns
+//        .init(type: .exercise),
+//        .init(type: .startAmount),
+//        .init(type: .increase),
+//        .init(type: .length)
+//    ]
+//
+    ///create individual drop downs to manage state & types better
+    @Published var exerciseDropdown = CreateChallengePartViewModel(type: .exercise)
+    @Published var startAmountDropdown = CreateChallengePartViewModel(type: .startAmount)
+    @Published var increaseDropdown = CreateChallengePartViewModel(type: .increase)
+    @Published var lengthDropdown = CreateChallengePartViewModel(type: .length)
     
     private let userService: UserServiceProtocol
     private var cancellables: [AnyCancellable] = []
     
-    ///after selecting a dopdown item
-//    var hasSelectedDropdown: Bool {
-////        dropdowns.first(where: { $0.isSelected }) != nil
-//        selectedDropdownIndex != nil
-//    }
-//    ///index of selected dropdown - get offset
-//    var selectedDropdownIndex: Int? {
-//        dropdowns.enumerated().first(where: { $0.element.isSelected })?.offset
-//    }
-    
-    ///display available Options - REMOVED
-//    var displayedOptions: [DropdownOption] {
-//        guard let selectedDropdownIndex = selectedDropdownIndex else { return [] }
-//        return dropdowns[selectedDropdownIndex].options
-//    }
-    
     ///Action enum to select options
     enum Action {
-//        case selectOption(index: Int)
         case createChallenge
     }
     
