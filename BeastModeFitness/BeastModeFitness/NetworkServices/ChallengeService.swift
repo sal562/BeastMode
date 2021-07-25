@@ -12,7 +12,7 @@ import Firebase
 import FirebaseFirestoreSwift
 
 protocol ChallengeServiceProtocol {
-    func create(_ challenge: Challenge) -> AnyPublisher<Void, Error> {
+    func create(_ challenge: Challenge) -> AnyPublisher<Void, Error>
             
     }
     
@@ -22,7 +22,12 @@ protocol ChallengeServiceProtocol {
         private let db = Firestore.firestore()
         
         func create(_ challenge: Challenge) -> AnyPublisher<Void, Error> {
-            
+            return Future<Void, Error> { promise in
+                do {
+                    
+                } catch {
+                    
+                }
+            }
         }
     }
-}
