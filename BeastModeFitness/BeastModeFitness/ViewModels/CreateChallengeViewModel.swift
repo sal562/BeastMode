@@ -31,6 +31,7 @@ class CreateChallengeViewModel: ObservableObject {
     
     private let userService: UserServiceProtocol
     private var cancellables: [AnyCancellable] = []
+    private let challengeService: ChallengeServiceProtocol
     
     ///Action enum to select options
     enum Action {
@@ -38,8 +39,10 @@ class CreateChallengeViewModel: ObservableObject {
     }
     
     ///init userService
-    init(userService: UserServiceProtocol = UserService()) {
+    init(userService: UserServiceProtocol = UserService(),
+         challengeService: ChallengeServiceProtocol = ChallengeService()) {
         self.userService = userService
+        self.challengeService = challengeService
     }
     
     ///send selection as dropdown index
@@ -84,6 +87,8 @@ class CreateChallengeViewModel: ObservableObject {
         }
         ///return challenge object
         let challenge = Challenge(userId: userId, startDate: Date(), exercise: exercise, startAmount: startAmount, increase: increase, length: length)
+        ///pass into challengeService
+        return challengeService.create(challenge).eraseToAnyPublisher()
     }
     
     //get currrent userID
