@@ -73,10 +73,10 @@ class CreateChallengeViewModel: ObservableObject {
         }
     }
     
-//    private func createChallenge(userId: UserId) -> AnyPublisher<Void, Error> {
-//        
-//    }
-//    
+    private func createChallenge(userId: UserId) -> AnyPublisher<Void, Error> {
+        
+    }
+    
     //get currrent userID
     func currentUserId() -> AnyPublisher<UserId, Error> {
         print("Getting user id...")
@@ -200,6 +200,24 @@ extension CreateChallengeViewModel {
         }
         
         
+    }
+    
+}
+
+///Create extensions for getting values from CreateChallengePartViewModel
+extension CreateChallengeViewModel.CreateChallengePartViewModel {
+    var text: String? {
+        if case let .text(text) = selectedOption.type {
+            return text
+        }
+        return nil
+    }
+    
+    var number: Int? {
+        if case let .number(number) = selectedOption.type {
+            return number
+        }
+        return nil
     }
     
 }
