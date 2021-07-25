@@ -10,7 +10,13 @@ import SwiftUI
 import Combine
 
 protocol ChallengeServiceProtocol {
-    func create(_ challenge) -> AnyPublisher<Void, Error> {
+    func create(_ challenge: Challenge) -> AnyPublisher<Void, Error> {
+            
+    }
     
+    final class ChallengeService: ChallengeServiceProtocol {
+        func create(_ challenge: Challenge) -> AnyPublisher<Void, Error> {
+            
+        }
     }
 }
