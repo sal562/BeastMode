@@ -29,6 +29,7 @@
 		36DA7EB826958C2900726698 /* LandingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DA7EB726958C2900726698 /* LandingPageView.swift */; };
 		36DA7EBA26958C2C00726698 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36DA7EB926958C2C00726698 /* Assets.xcassets */; };
 		36DA7EBD26958C2C00726698 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36DA7EBC26958C2C00726698 /* Preview Assets.xcassets */; };
+		36E5317126AD6F3A0096AE6C /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E5317026AD6F3A0096AE6C /* Challenge.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		36DA7EB926958C2C00726698 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		36DA7EBC26958C2C00726698 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		36DA7EBE26958C2C00726698 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		36E5317026AD6F3A0096AE6C /* Challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 		36DA7EB426958C2900726698 /* BeastModeFitness */ = {
 			isa = PBXGroup;
 			children = (
+				36E5316F26AD6F2B0096AE6C /* Model */,
 				36B96555269D71330058A8A3 /* NetworkServices */,
 				36B9652C269869C40058A8A3 /* ViewModels */,
 				36DA7EB526958C2900726698 /* BeastModeFitnessApp.swift */,
@@ -138,6 +141,14 @@
 				36DA7EBC26958C2C00726698 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		36E5316F26AD6F2B0096AE6C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				36E5317026AD6F3A0096AE6C /* Challenge.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,6 +240,7 @@
 				36B9653026986B030058A8A3 /* DropdownItemProtocol.swift in Sources */,
 				36DA7EB826958C2900726698 /* LandingPageView.swift in Sources */,
 				36B9652E26986A030058A8A3 /* CreateChallengeViewModel.swift in Sources */,
+				36E5317126AD6F3A0096AE6C /* Challenge.swift in Sources */,
 				3672B6BD2698470A00026B89 /* Color+Extension.swift in Sources */,
 				3672B6C2269850C400026B89 /* ReminderView.swift in Sources */,
 				36B96557269D71610058A8A3 /* UserService.swift in Sources */,
