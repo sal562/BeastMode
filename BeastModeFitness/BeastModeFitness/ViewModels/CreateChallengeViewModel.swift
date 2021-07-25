@@ -58,10 +58,10 @@ class CreateChallengeViewModel: ObservableObject {
                 case let .failure(error):
                     print(error.localizedDescription)
                 case .finished:
-                    print("Completed")
+                    print("Finished")
                 }
-            } receiveValue: { userId in
-                print("USERID: \(userId)")
+            } receiveValue: { _ in
+                print("Success")
             }.store(in: &cancellables)
         }
     }
