@@ -15,14 +15,14 @@ typealias UserId = String
 class CreateChallengeViewModel: ObservableObject {
     
     //MARK: - Properties
-//    @Published var dropdowns: [CreateChallengePartViewModel] = [
-//            ///init 4 dropdown optionns
-//        .init(type: .exercise),
-//        .init(type: .startAmount),
-//        .init(type: .increase),
-//        .init(type: .length)
-//    ]
-//
+    //    @Published var dropdowns: [CreateChallengePartViewModel] = [
+    //            ///init 4 dropdown optionns
+    //        .init(type: .exercise),
+    //        .init(type: .startAmount),
+    //        .init(type: .increase),
+    //        .init(type: .length)
+    //    ]
+    //
     ///create individual drop downs to manage state & types better
     @Published var exerciseDropdown = CreateChallengePartViewModel(type: .exercise)
     @Published var startAmountDropdown = CreateChallengePartViewModel(type: .startAmount)
@@ -48,31 +48,21 @@ class CreateChallengeViewModel: ObservableObject {
     ///send selection as dropdown index
     func send(action: Action) {
         switch action {
-        
-        
-//        case let .selectOption(index):
-//            guard let selectedDropdownIndex = selectedDropdownIndex else { return }
-//            clearAllSelectedOption()
-//            dropdowns[selectedDropdownIndex].options[index].isSelected = true
-//            clearAllDropdownOption()
-            
         case .createChallenge:
             // TO-DO: - Remove print statements
             print("Challenge Created")
-            currentUserId()
-                ///Add to Firebase
-            
-                
-//                .sink { completion in
-//                switch completion {
-//                case let .failure(error):
-//                    print(error.localizedDescription)
-//                case .finished:
-//                    print("Completed")
-//                }
-//            } receiveValue: { userId in
-//                print("USERID: \(userId)")
-//            }.store(in: &cancellables)
+            currentUserId().flatMap { userId -> AnyPublisher<Void, Error> in
+                return self.createChallenge(userId: userId)
+            }.sink { completion in
+                switch completion {
+                case let .failure(error):
+                    print(error.localizedDescription)
+                case .finished:
+                    print("Completed")
+                }
+            } receiveValue: { userId in
+                print("USERID: \(userId)")
+            }.store(in: &cancellables)
         }
     }
     
