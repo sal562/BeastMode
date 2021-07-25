@@ -8,6 +8,8 @@
 
 import SwiftUI
 import Combine
+import Firebase
+import FirebaseFirestoreSwift
 
 protocol ChallengeServiceProtocol {
     func create(_ challenge: Challenge) -> AnyPublisher<Void, Error> {
@@ -15,6 +17,10 @@ protocol ChallengeServiceProtocol {
     }
     
     final class ChallengeService: ChallengeServiceProtocol {
+        
+        //initialize firestore DB
+        private let db = Firestore.firestore()
+        
         func create(_ challenge: Challenge) -> AnyPublisher<Void, Error> {
             
         }
