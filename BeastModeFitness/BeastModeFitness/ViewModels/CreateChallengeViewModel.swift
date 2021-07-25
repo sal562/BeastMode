@@ -8,6 +8,7 @@
 
 import SwiftUI
 import Combine
+import Firebase
 
 typealias UserId = String
 
@@ -44,6 +45,8 @@ class CreateChallengeViewModel: ObservableObject {
     ///send selection as dropdown index
     func send(action: Action) {
         switch action {
+        
+        
 //        case let .selectOption(index):
 //            guard let selectedDropdownIndex = selectedDropdownIndex else { return }
 //            clearAllSelectedOption()
@@ -53,20 +56,27 @@ class CreateChallengeViewModel: ObservableObject {
         case .createChallenge:
             // TO-DO: - Remove print statements
             print("Challenge Created")
-            currentUserId().sink { completion in
-                switch completion {
-                case let .failure(error):
-                    print(error.localizedDescription)
-                case .finished:
-                    print("Completed")
-                }
-            } receiveValue: { userId in
-                print("USERID: \(userId)")
-            }.store(in: &cancellables)
-
+            currentUserId()
+                ///Add to Firebase
+            
+                
+//                .sink { completion in
+//                switch completion {
+//                case let .failure(error):
+//                    print(error.localizedDescription)
+//                case .finished:
+//                    print("Completed")
+//                }
+//            } receiveValue: { userId in
+//                print("USERID: \(userId)")
+//            }.store(in: &cancellables)
         }
     }
     
+//    private func createChallenge(userId: UserId) -> AnyPublisher<Void, Error> {
+//        
+//    }
+//    
     //get currrent userID
     func currentUserId() -> AnyPublisher<UserId, Error> {
         print("Getting user id...")
@@ -86,19 +96,7 @@ class CreateChallengeViewModel: ObservableObject {
         }.eraseToAnyPublisher()
     }
     
-    ///reset all the options
-//    func clearAllSelectedOption() {
-//        guard let selectedDropdownIndex = selectedDropdownIndex else { return }
-//        dropdowns[selectedDropdownIndex].options.indices.forEach { index in
-//            dropdowns[selectedDropdownIndex].options[index].isSelected = false
-//        }
-//    }
-//
-//    ///reset all the dropdown selections - set to false
-//    func clearAllDropdownOption() {
-//        guard let selectedDropdownIndex = selectedDropdownIndex else { return }
-//        dropdowns[selectedDropdownIndex].isSelected = false
-//    }
+
 }
 
 extension CreateChallengeViewModel {

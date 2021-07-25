@@ -30,6 +30,7 @@
 		36DA7EBA26958C2C00726698 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36DA7EB926958C2C00726698 /* Assets.xcassets */; };
 		36DA7EBD26958C2C00726698 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36DA7EBC26958C2C00726698 /* Preview Assets.xcassets */; };
 		36E5317126AD6F3A0096AE6C /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E5317026AD6F3A0096AE6C /* Challenge.swift */; };
+		36E5317326AD70FE0096AE6C /* ChallengeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E5317226AD70FE0096AE6C /* ChallengeService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		36DA7EBC26958C2C00726698 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		36DA7EBE26958C2C00726698 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		36E5317026AD6F3A0096AE6C /* Challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
+		36E5317226AD70FE0096AE6C /* ChallengeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				36B96556269D71610058A8A3 /* UserService.swift */,
+				36E5317226AD70FE0096AE6C /* ChallengeService.swift */,
 			);
 			path = NetworkServices;
 			sourceTree = "<group>";
@@ -245,6 +248,7 @@
 				3672B6C2269850C400026B89 /* ReminderView.swift in Sources */,
 				36B96557269D71610058A8A3 /* UserService.swift in Sources */,
 				3672B6B9269804DF00026B89 /* DropdownView.swift in Sources */,
+				36E5317326AD70FE0096AE6C /* ChallengeService.swift in Sources */,
 				36DA7EB626958C2900726698 /* BeastModeFitnessApp.swift in Sources */,
 				3672B6BB2698452E00026B89 /* MainButton.swift in Sources */,
 			);
