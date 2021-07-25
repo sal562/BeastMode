@@ -75,6 +75,15 @@ class CreateChallengeViewModel: ObservableObject {
     
     private func createChallenge(userId: UserId) -> AnyPublisher<Void, Error> {
         
+        ///create exercise
+        guard let exercise = exerciseDropdown.text,
+              let startAmount = startAmountDropdown.number,
+              let increase = increaseDropdown.number,
+              let length = lengthDropdown.number else {
+            return Fail(error: NSError()).eraseToAnyPublisher()
+        }
+        ///return challenge object
+        let challenge = Challenge(userId: userId, startDate: Date(), exercise: exercise, startAmount: startAmount, increase: increase, length: length)
     }
     
     //get currrent userID
