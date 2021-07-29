@@ -25,8 +25,14 @@ protocol ChallengeServiceProtocol {
         func create(_ challenge: Challenge) -> AnyPublisher<Void, Error> {
             return Future<Void, Error> { promise in
                 do {
-                    _ = try self.db.collection("challenges").addDocument(from: challenge)
-                    promise(.success(()))
+                    _ = try self.db.collection("challenges").addDocument(from: challenge) { error in
+                        ///manage the error
+                        if let error = error {
+                            promise(.failure(error))
+                        } else {
+                            promise(.success(()))
+                        }
+                    }
                 } catch {
                     promise(.failure(error))
                 }
