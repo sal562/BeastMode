@@ -24,7 +24,8 @@ struct CreateWorkoutView: View {
         }
     }
     
-    var body: some View {
+    ///Main Content
+    var mainContentView: some View {
         ScrollView {
             VStack {
                 ///instanciate dropdownlist
@@ -39,10 +40,29 @@ struct CreateWorkoutView: View {
                             .font(.system(size: 24, weight: .semibold, design: .rounded))
                     })
             }
-            .navigationTitle("Create a Workout")
-            .navigationBarBackButtonHidden(true)
-            .padding(.bottom, 20)
         }
+    }
+    
+    var body: some View {
+        ZStack {
+            if viewModel.isLoading {
+                ProgressView()
+            } else {
+                mainContentView
+            }
+        }
+        ///create alert incase of errror
+        .alert(isPresented: Binding<Bool>.constant($viewModel.error.wrappedValue != nil), content: {
+            Alert(title: Text("Error!"),
+                  message: Text($viewModel.error.wrappedValue?.localizedDescription ?? ""),
+                  dismissButton: .default(Text("Ok"),
+                  action: {
+                    viewModel.error = nil
+        }))
+        })
+        .navigationTitle("Create a Workout")
+        .navigationBarBackButtonHidden(true)
+        .padding(.bottom, 20)
     }
 }
 
