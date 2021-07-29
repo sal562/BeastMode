@@ -12,4 +12,14 @@ enum IncrementingErrors: LocalizedError {
     case auth(description: String)
     case `default`(description: String? = nil)
     
+    ///error description
+    var errorDescription: String? {
+        switch self {
+        case let .auth(description):
+            return description
+        case let .default(description):
+            return description ?? "Something went wrong.."
+        }
+    }
+    
 }
