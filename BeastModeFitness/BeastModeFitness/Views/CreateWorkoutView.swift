@@ -53,6 +53,7 @@ struct CreateWorkoutView: View {
         }
         ///create alert incase of errror
         .alert(isPresented: Binding<Bool>.constant($viewModel.error.wrappedValue != nil), content: {
+            ///to test error set permissions in Firestore to read only - allow read: if request.auth != null;
             Alert(title: Text("Error!"),
                   message: Text($viewModel.error.wrappedValue?.localizedDescription ?? ""),
                   dismissButton: .default(Text("Ok"),
