@@ -93,19 +93,19 @@ class CreateChallengeViewModel: ObservableObject {
         print("Getting user id...")
         return userService.currentUser().flatMap { user -> AnyPublisher<UserId, IncrementingErrors> in
             ///FOR TESTING FAILURE ALERT ONLY - DISABLE
-            return Fail(error: .default(description: "Some firebase autg errir ")).eraseToAnyPublisher()
-//            if let userId = user?.uid {
-//                print("User is logged in")
-//                return Just(userId)
-//                    .setFailureType(to: IncrementingErrors.self)
-//                    .eraseToAnyPublisher()
-//            } else {
-//                print("User is being loggedd in anonymously")
-//                return self.userService
-//                    .signInAnonymously()
-//                    .map({ $0.uid })
-//                    .eraseToAnyPublisher()
-//            }
+//            return Fail(error: .default(description: "Some firebase autg errir ")).eraseToAnyPublisher()
+            if let userId = user?.uid {
+                print("User is logged in")
+                return Just(userId)
+                    .setFailureType(to: IncrementingErrors.self)
+                    .eraseToAnyPublisher()
+            } else {
+                print("User is being loggedd in anonymously")
+                return self.userService
+                    .signInAnonymously()
+                    .map({ $0.uid })
+                    .eraseToAnyPublisher()
+            }
         }.eraseToAnyPublisher()
     }
     
