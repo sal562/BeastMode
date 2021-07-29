@@ -12,7 +12,7 @@ import Firebase
 import FirebaseFirestoreSwift
 
 protocol ChallengeServiceProtocol {
-    func create(_ challenge: Challenge) -> AnyPublisher<Void, Error>
+    func create(_ challenge: Challenge) -> AnyPublisher<Void, IncrementingErrors>
             
     }
     
@@ -22,19 +22,20 @@ protocol ChallengeServiceProtocol {
         private let db = Firestore.firestore()
         
         ///create challenge in FB DB
-        func create(_ challenge: Challenge) -> AnyPublisher<Void, Error> {
-            return Future<Void, Error> { promise in
+        func create(_ challenge: Challenge) -> AnyPublisher<Void, IncrementingErrors> {
+            return Future<Void, IncrementingErrors> { promise in
                 do {
                     _ = try self.db.collection("challenges").addDocument(from: challenge) { error in
                         ///manage the error
                         if let error = error {
-                            promise(.failure(error))
+                            ///descripion of error from Firebase using IncrementingErrors enum
+                            promise(.failure(.default(description: error.localizedDescription)))
                         } else {
                             promise(.success(()))
                         }
                     }
                 } catch {
-                    promise(.failure(error))
+                    promise(.failure(.default(description: error.localizedDescription)))
                 }
             }.eraseToAnyPublisher()
         }
