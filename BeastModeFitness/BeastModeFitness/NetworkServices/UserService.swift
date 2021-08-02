@@ -35,7 +35,7 @@ class UserService: UserServiceProtocol {
     }
     
     ///Observe Auth Changes
-    func observeAuthChanges() {
-        
+    func observeAuthChanges() -> AnyPublisher<User?, Never> {
+        Publishers.AuthPublisher().eraseToAnyPublisher()
     }
 }
