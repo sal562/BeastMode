@@ -16,9 +16,12 @@ extension Publishers {
         typealias Output = User?
         typealias Failure = Never
         
-        ///recieve method -TODO
+        ///recieve method -
         func receive<S>(subscriber: S) where S : Subscriber, Never == S.Failure, User? == S.Input {
-            ///todo
+            ///create auth
+            let authSubscription = AuthSubscription(subscriber: subscriber)
+            ///create Subscription
+            subscriber.receive(subscription: authSubscription)
         }
     }
     
