@@ -27,13 +27,10 @@ struct LandingPageView: View {
         GeometryReader { geometry in
             NavigationView {
                 VStack {
-                    
-                    
-                    let api_Key = Bundle.main.infoDictionary?["API_KEY"] as! String
-                    Text(api_Key).foregroundColor(.white)
+                    ///Disabled for testing only
+//                    let api_Key = Bundle.main.infoDictionary?["API_KEY"] as! String
+//                    Text(api_Key).foregroundColor(.white)
         
-
-                    
                     Spacer().frame(height: geometry.size.height * 0.09)
                     Text("BEAST MODE")
                         .font(.system(size: 48, weight: .heavy, design: .rounded))

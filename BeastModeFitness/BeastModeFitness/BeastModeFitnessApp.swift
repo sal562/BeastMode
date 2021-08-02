@@ -15,6 +15,7 @@ struct BeastModeFitnessApp: App {
     
     var body: some Scene {
         WindowGroup {
+            //check firebase auth state to determine view - tabBar (logged in) vs create but not save?
             LandingPageView()
         }
     }
