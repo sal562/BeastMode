@@ -44,7 +44,7 @@ class AppState: ObservableObject {
     ///create userServiceProtocol
     private let userService: UserServiceProtocol
 
-    ///create init
+    ///create init & set userService
     init(userService: UserServiceProtocol = UserService()) {
         self.userService = userService
         
@@ -52,9 +52,10 @@ class AppState: ObservableObject {
 //        try? Auth.auth().signOut()
         
         ///start observing publisher
-        userService.observeAuthChanges()
+        userService.observeAuthChanges() ///gives us option user
             ///Map to allow user asLong as its not nil
             .map { $0 != nil }
+            ///map will pass true or false value for $isLoggedIn to determine user login state
             .assign(to: &$isLoggedIn)
     }
     
