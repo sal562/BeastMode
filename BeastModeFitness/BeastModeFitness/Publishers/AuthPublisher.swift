@@ -18,7 +18,23 @@ extension Publishers {
         
         ///recieve method -TODO
         func receive<S>(subscriber: S) where S : Subscriber, Never == S.Failure, User? == S.Input {
-            <#code#>
+            ///todo
         }
+    }
+    
+    class AuthSubscription<S: Subscriber>: Subscription where S.Input == User?, S.Failure == Never {
+        
+        private var subscriber: S?
+        private var handler: AuthStateDidChangeListenerHandle?
+        
+        init(subscriber: S) {
+            self.subscriber = subscriber
+            
+        }
+        
+        ///create request & cancel functions
+        func request(_ demand: Subscribers.Demand) {}
+        func cancel() {}
+        
     }
 }
