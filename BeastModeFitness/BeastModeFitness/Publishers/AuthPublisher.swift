@@ -20,9 +20,9 @@ extension Publishers {
         
         ///recieve method -
         func receive<S>(subscriber: S) where S : Subscriber, Never == S.Failure, User? == S.Input {
-            ///create auth
+            ///create authSubscription
             let authSubscription = AuthSubscription(subscriber: subscriber)
-            ///create Subscription
+            ///let subscriber recieve Subscription
             subscriber.receive(subscription: authSubscription)
         }
     }
