@@ -15,6 +15,7 @@ struct BeastModeFitnessApp: App {
     
     var body: some Scene {
         WindowGroup {
+            
             //check firebase auth state to determine view - tabBar (logged in) vs create but not save?
             LandingPageView()
         }
@@ -41,7 +42,7 @@ class AppState: ObservableObject {
         self.userService = userService
         ///start observing publisher
         userService.observeAuthChanges()
-            ///Map to allow user asLong as its not nil
+            ///Map to allow user asLong as its not nil - nil = not logged in
             .map { $0 != nil }
             .assign(to: &$isLoggedIn)
     }
