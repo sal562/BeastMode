@@ -11,10 +11,10 @@ import Combine
 import FirebaseAuth
 
 ///create extension to publishers for checking login state
-
 extension Publishers {
    
     struct AuthPublisher: Publisher {
+        ///Output types
         typealias Output = User?
         typealias Failure = Never
         
@@ -26,7 +26,7 @@ extension Publishers {
             subscriber.receive(subscription: authSubscription)
         }
     }
-    
+    /// AuthSubscription is User or Nil
     class AuthSubscription<S: Subscriber>: Subscription where S.Input == User?, S.Failure == Never {
         
         private var subscriber: S?
@@ -42,7 +42,10 @@ extension Publishers {
         
         ///create request & cancel functions
         func request(_ demand: Subscribers.Demand) {}
-        func cancel() {}
+        func cancel() {
+            subscriber = nil
+            handler = nil
+        }
         
     }
 }
