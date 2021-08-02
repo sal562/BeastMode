@@ -16,7 +16,6 @@ struct BeastModeFitnessApp: App {
     
     var body: some Scene {
         WindowGroup {
-            
             ///Check to see if logged in or not - Choose landing page or TabBarview
             if appState.isLoggedIn {
                 TabView {
@@ -26,9 +25,6 @@ struct BeastModeFitnessApp: App {
             } else {
                 LandingPageView()
             }
-            
-//            //check firebase auth state to determine view - tabBar (logged in) vs create but not save?
-//            LandingPageView()
         }
     }
 }
