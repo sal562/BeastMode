@@ -17,8 +17,18 @@ struct BeastModeFitnessApp: App {
     var body: some Scene {
         WindowGroup {
             
-            //check firebase auth state to determine view - tabBar (logged in) vs create but not save?
-            LandingPageView()
+            ///Check to see if logged in or not - Choose landing page or TabBarview
+            if appState.isLoggedIn {
+                TabView {
+                    Text("Logged IN")
+                        .tabItem { Image(systemName: "book") }
+                }.accentColor(.red)
+            } else {
+                LandingPageView()
+            }
+            
+//            //check firebase auth state to determine view - tabBar (logged in) vs create but not save?
+//            LandingPageView()
         }
     }
 }
