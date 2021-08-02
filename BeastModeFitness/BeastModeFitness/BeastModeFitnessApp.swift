@@ -12,6 +12,7 @@ import Firebase
 struct BeastModeFitnessApp: App {
     
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    @StateObject private var appState = AppState()
     
     var body: some Scene {
         WindowGroup {
@@ -42,7 +43,7 @@ class AppState: ObservableObject {
         self.userService = userService
         ///start observing publisher
         userService.observeAuthChanges()
-            ///Map to allow user asLong as its not nil - nil = not logged in
+            ///Map to allow user asLong as its not nil
             .map { $0 != nil }
             .assign(to: &$isLoggedIn)
     }
