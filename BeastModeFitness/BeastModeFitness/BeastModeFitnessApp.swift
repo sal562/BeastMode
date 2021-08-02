@@ -32,19 +32,18 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 
 ///Create App State
 class AppState: ObservableObject {
-    
     @Published private(set) var isLoggedIn = false
-    
     ///create userServiceProtocol
     private let userService: UserServiceProtocol
-    
 
-    
     ///create init
     init(userService: UserServiceProtocol = UserService()) {
         self.userService = userService
-        
         ///start observing publisher
+        userService.observeAuthChanges()
+            ///Map to allow user asLong as its not nil
+            .map { $0 != nil }
+            .assign(to: &$isLoggedIn)
     }
     
 }
