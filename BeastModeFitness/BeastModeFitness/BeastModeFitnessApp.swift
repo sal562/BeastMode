@@ -47,6 +47,10 @@ class AppState: ObservableObject {
     ///create init
     init(userService: UserServiceProtocol = UserService()) {
         self.userService = userService
+        
+        ///To logout manually from FB - For Testing Only
+        try? Auth.auth().signOut()
+        
         ///start observing publisher
         userService.observeAuthChanges()
             ///Map to allow user asLong as its not nil
