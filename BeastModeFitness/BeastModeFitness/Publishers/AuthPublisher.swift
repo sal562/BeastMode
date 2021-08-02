@@ -29,7 +29,10 @@ extension Publishers {
         
         init(subscriber: S) {
             self.subscriber = subscriber
-            
+            handler = Auth.auth().addStateDidChangeListener({ auth, user in
+                ///notify subsciber
+              _ = subscriber.receive(user)
+            })
         }
         
         ///create request & cancel functions
