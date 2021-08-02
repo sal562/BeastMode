@@ -28,3 +28,23 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         return true
     }
 }
+
+
+///Create App State
+class AppState: ObservableObject {
+    
+    @Published private(set) var isLoggedIn = false
+    
+    ///create userServiceProtocol
+    private let userService: UserServiceProtocol
+    
+
+    
+    ///create init
+    init(userService: UserServiceProtocol = UserService()) {
+        self.userService = userService
+        
+        ///start observing publisher
+    }
+    
+}

@@ -10,8 +10,10 @@ import Foundation
 import Combine
 import FirebaseAuth
 
+///create extension to publishers for checking login state
+
 extension Publishers {
-    ///create extension to publishers for checking login state
+   
     struct AuthPublisher: Publisher {
         typealias Output = User?
         typealias Failure = Never
