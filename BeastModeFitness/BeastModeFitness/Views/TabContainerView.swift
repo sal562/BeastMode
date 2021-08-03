@@ -9,10 +9,27 @@
 import SwiftUI
 
 struct TabContainerView: View {
+    
+    @State private var tabContainerVM = TabContainerViewModel()
+    
     var body: some View {
         TabView {
-           
+            ForEach(tabContainerVM.tabItemViewModels, id:\.self) { viewModel in
+                ///create view for each
+            }
         }.accentColor(.primary)
+    }
+    ///dont need to return anything with ViewBuilder
+    @ViewBuilder
+    func tabView(for tabItemType: TabItemViewModel.TabItemType) -> some View {
+        switch tabItemType {
+        case .log:
+            Text("Log")
+        case .challengeList:
+            Text("Challenge List")
+        case .settings:
+            Text("Settings")
+        }
     }
 }
 //DISABLED PREVIEW
@@ -26,7 +43,6 @@ final class TabContainerViewModel: ObservableObject {
     
     ///Create variable to show selectedTab
     @Published var selectedTab: TabItemViewModel.TabItemType = .challengeList
-    
     
     let tabItemViewModels = [
         TabItemViewModel(imageName: "note.text", title: "Log", type: .log),
