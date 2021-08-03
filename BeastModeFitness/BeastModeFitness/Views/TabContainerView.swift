@@ -15,7 +15,7 @@ struct TabContainerView: View {
         }.accentColor(.primary)
     }
 }
-//
+//DISABLED PREVIEW
 //struct TabContainerView_Previews: PreviewProvider {
 //    static var previews: some View {
 //        TabContainerView()
@@ -23,6 +23,11 @@ struct TabContainerView: View {
 //}
 
 final class TabContainerViewModel: ObservableObject {
+    
+    ///Create variable to show selectedTab
+    @Published var selectedTab: TabItemViewModel.TabItemType = .challengeList
+    
+    
     let tabItemViewModels = [
         TabItemViewModel(imageName: "note.text", title: "Log", type: .log),
         .init(imageName: "clock.arrow.2.circlepath", title: "Challenges", type: .challengeList),
