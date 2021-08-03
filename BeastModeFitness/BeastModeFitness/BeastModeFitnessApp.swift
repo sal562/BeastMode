@@ -18,13 +18,8 @@ struct BeastModeFitnessApp: App {
         WindowGroup {
             ///Check to see if logged in or not - Choose landing page or TabBarview
             if appState.isLoggedIn {
-                TabView {
-                    Text("Logged IN")
-                        .tabItem { Image(systemName: "book") }
-                    
-                    
-                    
-                }.accentColor(.primary)
+                TabContainerView()
+                }
             } else {
                 LandingPageView()
             }

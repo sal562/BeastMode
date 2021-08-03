@@ -20,9 +20,28 @@ struct TabContainerView: View {
         }.accentColor(.primary)
     }
 }
+//
+//struct TabContainerView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        TabContainerView()
+//    }
+//}
 
-struct TabContainerView_Previews: PreviewProvider {
-    static var previews: some View {
-        TabContainerView()
+final class TabContainerViewModel: ObservableObject {
+    
+}
+
+
+///
+struct TabItemViewModel {
+    let imageName: String
+    let title: String
+    let type: TabItemType
+    
+    ///Create enum for each Tab
+    enum TabItemType {
+        case log
+        case challengeList
+        case settings
     }
 }
