@@ -21,7 +21,10 @@ struct BeastModeFitnessApp: App {
                 TabView {
                     Text("Logged IN")
                         .tabItem { Image(systemName: "book") }
-                }.accentColor(.red)
+                    
+                    
+                    
+                }.accentColor(.primary)
             } else {
                 LandingPageView()
             }
