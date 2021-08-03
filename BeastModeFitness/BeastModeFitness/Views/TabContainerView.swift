@@ -20,8 +20,7 @@ struct TabContainerView: View {
                     .tabItem {
                         Label(
                             title: { Text(viewModel.title) },
-                            icon: { Image(systemName: viewModel.imageName) }
-)
+                            icon: { Image(systemName: viewModel.imageName) })
                     }
             }
         }
