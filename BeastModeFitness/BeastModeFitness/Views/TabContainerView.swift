@@ -11,12 +11,7 @@ import SwiftUI
 struct TabContainerView: View {
     var body: some View {
         TabView {
-            Text("Tab 1")
-                .tabItem { Image(systemName: "note.text") }
-            Text("Challenges")
-                .tabItem { Image(systemName: "clock.arrow.2.circlepath") }
-            Text("Settings")
-                .tabItem { Image(systemName: "gear") }
+           
         }.accentColor(.primary)
     }
 }
@@ -28,11 +23,16 @@ struct TabContainerView: View {
 //}
 
 final class TabContainerViewModel: ObservableObject {
-    
+    let tabItemViewModels = [
+        TabItemViewModel(imageName: "note.text", title: "Log", type: .log),
+        .init(imageName: "clock.arrow.2.circlepath", title: "Challenges", type: .challengeList),
+        .init(imageName: "gear", title: "Settings", type: .settings)
+        
+    ]
 }
 
 
-///
+///Create struct for TabItemViewModel
 struct TabItemViewModel {
     let imageName: String
     let title: String
