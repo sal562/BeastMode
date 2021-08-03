@@ -17,8 +17,14 @@ struct TabContainerView: View {
             ForEach(tabContainerVM.tabItemViewModels, id:\.self) { viewModel in
                 ///create view for each
                 tabView(for: viewModel.type)
+                    .tabItem {
+                        Label(
+                            title: { Text(viewModel.title) },
+                            icon: { Image(systemName: viewModel.imageName) }
+)
+                    }
             }
-        }.accentColor(.primary)
+        }
     }
     ///dont need to return anything with ViewBuilder
     @ViewBuilder
