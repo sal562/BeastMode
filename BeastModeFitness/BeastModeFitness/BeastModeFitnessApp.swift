@@ -19,13 +19,12 @@ struct BeastModeFitnessApp: App {
             ///Check to see if logged in or not - Choose landing page or TabBarview
             if appState.isLoggedIn {
                 TabContainerView()
+                } else {
+                    LandingPageView()
                 }
-            } else {
-                LandingPageView()
             }
         }
     }
-}
 
 class AppDelegate: NSObject, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {

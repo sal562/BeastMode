@@ -16,6 +16,7 @@ struct TabContainerView: View {
         TabView {
             ForEach(tabContainerVM.tabItemViewModels, id:\.self) { viewModel in
                 ///create view for each
+                tabView(for: viewModel.type)
             }
         }.accentColor(.primary)
     }
@@ -54,7 +55,7 @@ final class TabContainerViewModel: ObservableObject {
 
 
 ///Create struct for TabItemViewModel
-struct TabItemViewModel {
+struct TabItemViewModel: Hashable {
     let imageName: String
     let title: String
     let type: TabItemType
