@@ -12,8 +12,12 @@ struct TabContainerView: View {
     var body: some View {
         TabView {
             Text("Tab 1")
-                .tabItem { Image(systemName: "") }
-        }
+                .tabItem { Image(systemName: "note.text") }
+            Text("Challenges")
+                .tabItem { Image(systemName: "clock.arrow.2.circlepath") }
+            Text("Settings")
+                .tabItem { Image(systemName: "gear") }
+        }.accentColor(.primary)
     }
 }
 
