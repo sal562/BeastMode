@@ -13,7 +13,7 @@ struct TabContainerView: View {
     @State private var tabContainerVM = TabContainerViewModel()
     
     var body: some View {
-        TabView {
+        TabView(selection: $tabContainerVM.selectedTab) {
             ForEach(tabContainerVM.tabItemViewModels, id:\.self) { viewModel in
                 ///create view for each
                 tabView(for: viewModel.type)
@@ -23,7 +23,8 @@ struct TabContainerView: View {
                             icon: { Image(systemName: viewModel.imageName) })
                     }
             }
-        }
+        }///end of tabView
+        .accentColor(.primary)
     }
     ///dont need to return anything with ViewBuilder
     @ViewBuilder
