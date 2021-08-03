@@ -14,14 +14,14 @@ struct TabContainerView: View {
     
     var body: some View {
         TabView(selection: $tabContainerVM.selectedTab) {
-            ForEach(tabContainerVM.tabItemViewModels, id:\.self) { viewModel in
+            ForEach(tabContainerVM.tabItemViewModels, id:\.self) { vmTabSelected in
                 ///create view for each
-                tabView(for: viewModel.type)
+                tabView(for: vmTabSelected.type)
                     .tabItem {
                         Label(
-                            title: { Text(viewModel.title) },
-                            icon: { Image(systemName: viewModel.imageName) })
-                    }
+                            title: { Text(vmTabSelected.title) },
+                            icon: { Image(systemName: vmTabSelected.imageName) })
+                    }.tag(vmTabSelected.type) ///Necessary to function propertly and show default tab
             }
         }///end of tabView
         .accentColor(.primary)
