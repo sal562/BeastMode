@@ -21,7 +21,8 @@ struct TabContainerView: View {
                         Label(
                             title: { Text(vmTabSelected.title) },
                             icon: { Image(systemName: vmTabSelected.imageName) })
-                    }.tag(vmTabSelected.type) ///Necessary to function propertly and show default tab
+                    } ///Necessary to add tag function propertly and show default tab
+                    .tag(vmTabSelected.type)
             }
         }///end of tabView
         .accentColor(.primary)
