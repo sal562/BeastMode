@@ -23,11 +23,20 @@ extension Publishers {
     }
     ///create QuerySnapshotSubscription class
     class QuerySnapshotSubscription<S: Subscriber>: Subscription where S.Input == QuerySnapshot, S.Failure == IncrementingErrors {
-        func request(_ demand: Subscribers.Demand) {
-            <#code#>
+        
+        private var subscriber: S?
+        private var listener: ListenerRegistration?
+        
+        init(subscriber: S, query: Query) {
+            listener = query.addSnapshotListener({ querySnapshot, error in
+                ///check for error and pass querySnapshot though completion handler
+                if let error = error {
+                    _ = subscriber.receive(completion: .failure(.default(description: error.localizedDescription)))
+                }
+            })
         }
-        func cancel() {
-            <#code#>
-        }
+        
+        func request(_ demand: Subscribers.Demand) { }
+        func cancel() {}
     }
 }
