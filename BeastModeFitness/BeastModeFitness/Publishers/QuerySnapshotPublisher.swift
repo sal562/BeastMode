@@ -17,8 +17,16 @@ extension Publishers {
         typealias Output = QuerySnapshot
         typealias Failure = IncrementingErrors
         
+        //MARK: - Properties
+        let query: Query
+        ///init query
+        init(query: Query) {
+            self.query = query
+        }
+        
         func receive<S>(subscriber: S) where S : Subscriber, IncrementingErrors == S.Failure, QuerySnapshot == S.Input {
-            ///fill after sub
+            ///fill after sub with new subscribtion
+            let querySnapshotSubscribtion = QuerySnapshotSubscription(subscriber: subscriber, query: query)
         }
     }
     ///create QuerySnapshotSubscription class
@@ -42,6 +50,9 @@ extension Publishers {
         }
         
         func request(_ demand: Subscribers.Demand) { }
-        func cancel() {}
+        func cancel() {
+            ///make both sub and  nil
+            
+        }
     }
 }
