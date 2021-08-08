@@ -14,10 +14,11 @@ extension Publishers {
     
     struct QuerySnapshotPublisher: Publisher {
         
+        //MARK: - Properties
+        
         typealias Output = QuerySnapshot
         typealias Failure = IncrementingErrors
-        
-        //MARK: - Properties
+
         let query: Query
         ///init query
         init(query: Query) {
@@ -26,8 +27,8 @@ extension Publishers {
         
         func receive<S>(subscriber: S) where S : Subscriber, IncrementingErrors == S.Failure, QuerySnapshot == S.Input {
             ///fill after sub with new subscribtion
-            let querySnapshotSubscribtion = QuerySnapshotSubscription(subscriber: subscriber, query: query)
-            subscriber.receive(subscription: querySnapshotSubscribtion)
+            let querySnapshotSubscription = QuerySnapshotSubscription(subscriber: subscriber, query: query)
+            subscriber.receive(subscription: querySnapshotSubscription)
         }
     }
     ///create QuerySnapshotSubscription class
