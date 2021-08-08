@@ -27,11 +27,16 @@ extension Publishers {
         private var subscriber: S?
         private var listener: ListenerRegistration?
         
+        ///Init subscriber
         init(subscriber: S, query: Query) {
             listener = query.addSnapshotListener({ querySnapshot, error in
                 ///check for error and pass querySnapshot though completion handler
                 if let error = error {
-                    _ = subscriber.receive(completion: .failure(.default(description: error.localizedDescription)))
+                        subscriber.receive(completion: .failure(.default(description: error.localizedDescription)))
+                } else if let querySnapshot = querySnapshot {
+                    _ = subscriber.receive(querySnapshot)
+                } else {
+                    subscriber.receive(completion: .failure(.default()))
                 }
             })
         }
