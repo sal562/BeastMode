@@ -27,6 +27,7 @@ extension Publishers {
         func receive<S>(subscriber: S) where S : Subscriber, IncrementingErrors == S.Failure, QuerySnapshot == S.Input {
             ///fill after sub with new subscribtion
             let querySnapshotSubscribtion = QuerySnapshotSubscription(subscriber: subscriber, query: query)
+            subscriber.receive(subscription: querySnapshotSubscribtion)
         }
     }
     ///create QuerySnapshotSubscription class
