@@ -7,12 +7,27 @@
 //
 
 import Foundation
+import Firebase
+import Combine
 
 extension Publishers {
     
-    struct QuerySnapshotPublisher {
+    struct QuerySnapshotPublisher: Publisher {
         
+        typealias Output = QuerySnapshot
+        typealias Failure = IncrementingErrors
         
-        
+        func receive<S>(subscriber: S) where S : Subscriber, IncrementingErrors == S.Failure, QuerySnapshot == S.Input {
+            ///fill after sub
+        }
+    }
+    ///create QuerySnapshotSubscription class
+    class QuerySnapshotSubscription<S: Subscriber>: Subscription where S.Input == QuerySnapshot, S.Failure == IncrementingErrors {
+        func request(_ demand: Subscribers.Demand) {
+            <#code#>
+        }
+        func cancel() {
+            <#code#>
+        }
     }
 }
