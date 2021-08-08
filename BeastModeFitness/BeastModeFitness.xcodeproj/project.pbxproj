@@ -15,6 +15,7 @@
 		3672B6C2269850C400026B89 /* ReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3672B6C1269850C400026B89 /* ReminderView.swift */; };
 		3680404926B29D79007F4218 /* IncrementingErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3680404826B29D79007F4218 /* IncrementingErrors.swift */; };
 		368F139A26B7C68A00A68ADF /* AuthPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368F139926B7C68A00A68ADF /* AuthPublisher.swift */; };
+		36A1B32726C00411005BA563 /* ChallengeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A1B32626C00411005BA563 /* ChallengeListView.swift */; };
 		36B9652E26986A030058A8A3 /* CreateChallengeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B9652D26986A030058A8A3 /* CreateChallengeViewModel.swift */; };
 		36B9653026986B030058A8A3 /* DropdownItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B9652F26986B030058A8A3 /* DropdownItemProtocol.swift */; };
 		36B96541269D66BC0058A8A3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 36B96540269D66BC0058A8A3 /* GoogleService-Info.plist */; };
@@ -45,6 +46,7 @@
 		3672B6C1269850C400026B89 /* ReminderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderView.swift; sourceTree = "<group>"; };
 		3680404826B29D79007F4218 /* IncrementingErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncrementingErrors.swift; sourceTree = "<group>"; };
 		368F139926B7C68A00A68ADF /* AuthPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPublisher.swift; sourceTree = "<group>"; };
+		36A1B32626C00411005BA563 /* ChallengeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeListView.swift; sourceTree = "<group>"; };
 		36B9652D26986A030058A8A3 /* CreateChallengeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateChallengeViewModel.swift; sourceTree = "<group>"; };
 		36B9652F26986B030058A8A3 /* DropdownItemProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownItemProtocol.swift; sourceTree = "<group>"; };
 		36B9653F269D5F830058A8A3 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 				3672B6BF26984E8600026B89 /* CreateWorkoutView.swift */,
 				3672B6C1269850C400026B89 /* ReminderView.swift */,
 				36294D6726B93F2D00A69060 /* TabContainerView.swift */,
+				36A1B32626C00411005BA563 /* ChallengeListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 				36294D6826B93F2D00A69060 /* TabContainerView.swift in Sources */,
 				3672B6B9269804DF00026B89 /* DropdownView.swift in Sources */,
 				36E5317326AD70FE0096AE6C /* ChallengeService.swift in Sources */,
+				36A1B32726C00411005BA563 /* ChallengeListView.swift in Sources */,
 				36DA7EB626958C2900726698 /* BeastModeFitnessApp.swift in Sources */,
 				3680404926B29D79007F4218 /* IncrementingErrors.swift in Sources */,
 				3672B6BB2698452E00026B89 /* MainButton.swift in Sources */,
