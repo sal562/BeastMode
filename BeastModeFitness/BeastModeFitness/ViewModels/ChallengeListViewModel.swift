@@ -22,6 +22,7 @@ final class ChallengeListViewModel: ObservableObject {
     ) {
         self.userService = userService
         self.challengeService = challengeService
+        observeChallenges()
     }
     
     ///Observe & store challenges
