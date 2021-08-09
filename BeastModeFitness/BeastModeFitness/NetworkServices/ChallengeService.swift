@@ -8,7 +8,7 @@
 
 import SwiftUI
 import Combine
-import Firebase
+import FirebaseFirestore
 import FirebaseFirestoreSwift
 
 protocol ChallengeServiceProtocol {
@@ -40,5 +40,25 @@ protocol ChallengeServiceProtocol {
                     promise(.failure(.default(description: error.localizedDescription)))
                 }
             }.eraseToAnyPublisher()
+        }
+        
+        ///call observeChallenge
+        func observeChallenge(userId: UserId) -> AnyPublisher<[Challenge], IncrementingErrors> {
+            let query = db.collection("challenges").whereField("userId", isEqualTo: userId)
+            return Publishers.QuerySnapshotPublisher(query: query)
+                .flatMap { snapshot -> AnyPublisher<[Challenge], IncrementingErrors> in
+                    do {
+                        ///use compactMap instead of map for non optional types
+                        let challenges = try snapshot.documents.compactMap {
+                            try $0.data(as: Challenge.self)
+                        }
+                        return Just(challenges)
+                            .setFailureType(to: IncrementingErrors.self)
+                            .eraseToAnyPublisher()
+                    } catch {
+                        return Fail(error: .default(description: "Parsing Error"))
+                            .eraseToAnyPublisher()
+                    }
+                }.eraseToAnyPublisher()
         }
     }
