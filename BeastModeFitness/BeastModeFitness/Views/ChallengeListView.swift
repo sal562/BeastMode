@@ -9,6 +9,9 @@
 import SwiftUI
 
 struct ChallengeListView: View {
+    //MARK: - Properties
+    @StateObject private var challengeListViewModel = ChallengeListViewModel()
+    
     var body: some View {
         Text("Challenge List")
     }
