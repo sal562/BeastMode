@@ -15,7 +15,10 @@ final class ChallengeListViewModel: ObservableObject {
     private let challengeService: ChallengeServiceProtocol
     
     ///init challenge Service and userService
-    init(userService: UserServiceProtocol = UserService(), challengeService: ChallengeService()) {
+    init(
+        userService: UserServiceProtocol = UserService(),
+        challengeService: ChallengeServiceProtocol = ChallengeService()
+    ) {
         self.userService = userService
         self.challengeService = challengeService
     }
