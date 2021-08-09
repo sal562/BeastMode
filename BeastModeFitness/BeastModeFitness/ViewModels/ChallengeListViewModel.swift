@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import Combine
 
 final class ChallengeListViewModel: ObservableObject {
     
@@ -21,5 +21,25 @@ final class ChallengeListViewModel: ObservableObject {
     ) {
         self.userService = userService
         self.challengeService = challengeService
+    }
+    
+    ///Observe challenges
+    private func observeChallenges() {
+        userService.currentUser().compactMap { $0?.uid }
+            .flatMap { userId -> AnyPublisher<[Challenge], IncrementingErrors> in
+                return self.challengeService.observeChallenge(userId: userId)
+            }
+            ///subscribe to userChanllenges
+            .sink { completion in
+                switch completion {
+                case let .failure(error):
+                    print(error.localizedDescription)
+                case .finished:
+                    print("finished")
+                }
+            } receiveValue: { challenges in
+                print(challenges)
+            }
+
     }
 }
