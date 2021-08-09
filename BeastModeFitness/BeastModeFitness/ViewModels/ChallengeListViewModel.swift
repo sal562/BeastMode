@@ -13,6 +13,7 @@ final class ChallengeListViewModel: ObservableObject {
     
     private let userService: UserServiceProtocol
     private let challengeService: ChallengeServiceProtocol
+    private var cancellables: [AnyCancellable] = []
     
     ///init challenge Service and userService
     init(
