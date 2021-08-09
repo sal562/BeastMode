@@ -13,6 +13,8 @@ import FirebaseFirestoreSwift
 
 protocol ChallengeServiceProtocol {
     func create(_ challenge: Challenge) -> AnyPublisher<Void, IncrementingErrors>
+    ///observe changes
+    func observeChallenge(userId: UserId) -> AnyPublisher<[Challenge], IncrementingErrors>
             
     }
     
