@@ -24,7 +24,7 @@ final class ChallengeListViewModel: ObservableObject {
         self.challengeService = challengeService
     }
     
-    ///Observe challenges
+    ///Observe & store challenges
     private func observeChallenges() {
         userService.currentUser().compactMap { $0?.uid }
             .flatMap { userId -> AnyPublisher<[Challenge], IncrementingErrors> in
@@ -40,7 +40,7 @@ final class ChallengeListViewModel: ObservableObject {
                 }
             } receiveValue: { challenges in
                 print(challenges)
-            }
+            } .store(in: &cancellables)
 
     }
 }
