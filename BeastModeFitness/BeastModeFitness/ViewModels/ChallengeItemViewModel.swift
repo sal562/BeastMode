@@ -7,3 +7,18 @@
 //
 
 import Foundation
+
+
+struct  ChallengeItemViewModel {
+    private let challenge: Challenge
+    
+    var title: String {
+        challenge.exercise.capitalized
+    }
+    
+    ///computed property to figure our home many days from start
+    var daysFromStart: Int {
+        guard let daysFromStart = Calendar.current.dateComponents([.day], from: challenge.startDate, to: Date()).day else {  return 0 }
+        return abs(daysFromStart)
+    }
+}
