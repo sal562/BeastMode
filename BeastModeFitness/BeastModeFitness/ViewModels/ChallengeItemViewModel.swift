@@ -21,4 +21,14 @@ struct  ChallengeItemViewModel {
         guard let daysFromStart = Calendar.current.dateComponents([.day], from: challenge.startDate, to: Date()).day else {  return 0 }
         return abs(daysFromStart)
     }
+    
+    ///create daily status
+    var statusText: String {
+        let dayNumber = daysFromStart + 1
+        return "Day \(dayNumber) of \(challenge.length)"
+    }
+    
+    var dailyIncreaseText: String {
+        
+    }
 }
