@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3600E45026C3F67E003402C0 /* ChallengeItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3600E44F26C3F67E003402C0 /* ChallengeItemViewModel.swift */; };
 		36294D6826B93F2D00A69060 /* TabContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36294D6726B93F2D00A69060 /* TabContainerView.swift */; };
 		3672B6B9269804DF00026B89 /* DropdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3672B6B8269804DF00026B89 /* DropdownView.swift */; };
 		3672B6BB2698452E00026B89 /* MainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3672B6BA2698452E00026B89 /* MainButton.swift */; };
@@ -40,6 +41,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3600E44F26C3F67E003402C0 /* ChallengeItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeItemViewModel.swift; sourceTree = "<group>"; };
 		36294D6726B93F2D00A69060 /* TabContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabContainerView.swift; sourceTree = "<group>"; };
 		3672B6B8269804DF00026B89 /* DropdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownView.swift; sourceTree = "<group>"; };
 		3672B6BA2698452E00026B89 /* MainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButton.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				36B9652D26986A030058A8A3 /* CreateChallengeViewModel.swift */,
 				36B9652F26986B030058A8A3 /* DropdownItemProtocol.swift */,
 				36A1B32826C00426005BA563 /* ChallengeListViewModel.swift */,
+				3600E44F26C3F67E003402C0 /* ChallengeItemViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 				36A1B32B26C004C7005BA563 /* QuerySnapshotPublisher.swift in Sources */,
 				3672B6B9269804DF00026B89 /* DropdownView.swift in Sources */,
 				36E5317326AD70FE0096AE6C /* ChallengeService.swift in Sources */,
+				3600E45026C3F67E003402C0 /* ChallengeItemViewModel.swift in Sources */,
 				36A1B32726C00411005BA563 /* ChallengeListView.swift in Sources */,
 				36DA7EB626958C2900726698 /* BeastModeFitnessApp.swift in Sources */,
 				3680404926B29D79007F4218 /* IncrementingErrors.swift in Sources */,
