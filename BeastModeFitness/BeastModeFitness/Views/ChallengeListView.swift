@@ -45,11 +45,20 @@ struct ChallengeItemView: View {
     
     var body: some View {
         
-        VStack {
-            Text(viewModel.title)
-                .font(.system(size: 24, weight: .bold, design: .rounded))
-            Text(viewModel.statusText)
-            Text(viewModel.dailyIncreaseText)
+        ///add Hstack to wrap inner vStack - hacky way to push view size to max screen allowance
+        HStack {
+            Spacer()
+            VStack {
+                Text(viewModel.title)
+                    .font(.system(size: 24, weight: .bold, design: .rounded))
+                Text(viewModel.statusText)
+                Text(viewModel.dailyIncreaseText)
+            }///end of vstack
+            Spacer()
+            .padding()
+            .background(Rectangle()
+                            .fill(Color.darkPrimaryColor))
+            .padding()
         }
     }
 }
