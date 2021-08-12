@@ -29,6 +29,6 @@ struct  ChallengeItemViewModel {
     }
     
     var dailyIncreaseText: String {
-        
+        return "+ \(challenge.increase) daily"
     }
 }
