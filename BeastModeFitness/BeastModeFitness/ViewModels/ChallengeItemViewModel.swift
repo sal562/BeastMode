@@ -16,19 +16,19 @@ struct  ChallengeItemViewModel: Hashable {
     }
     
     ///computed property to figure our home many days from start
-    private var daysFromStart: Int {
+    var daysFromStart: Int {
         ///calculate days from start
         guard let daysFromStart = Calendar.current.dateComponents([.day], from: challenge.startDate, to: Date()).day else {  return 0 }
         return abs(daysFromStart)
     }
     
     ///create daily status
-    private var statusText: String {
+    var statusText: String {
         let dayNumber = daysFromStart + 1
         return "Day \(dayNumber) of \(challenge.length)"
     }
     
-    private var dailyIncreaseText: String {
+    var dailyIncreaseText: String {
         return "+ \(challenge.increase) daily"
     }
     
