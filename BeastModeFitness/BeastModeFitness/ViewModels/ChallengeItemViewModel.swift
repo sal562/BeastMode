@@ -31,4 +31,9 @@ struct  ChallengeItemViewModel {
     var dailyIncreaseText: String {
         return "+ \(challenge.increase) daily"
     }
+    
+    //init challenge
+    init(_ challenge: Challenge) {
+        self.challenge = challenge
+    }
 }

@@ -44,7 +44,9 @@ final class ChallengeListViewModel: ObservableObject {
                 }
             } receiveValue: { challenges in
                 print(challenges)
-                
+                self.itemsViewModels = challenges.map({ .init(challenges) in
+                    <#code#>
+                })
             } .store(in: &cancellables)
 
     }
