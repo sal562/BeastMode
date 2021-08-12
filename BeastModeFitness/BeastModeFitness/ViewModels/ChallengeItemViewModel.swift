@@ -29,6 +29,7 @@ struct  ChallengeItemViewModel: Hashable {
     
     ///create daily status
     var statusText: String {
+        guard !isComplete else { return "Done" }
         let dayNumber = daysFromStart + 1
         return "Day \(dayNumber) of \(challenge.length)"
     }

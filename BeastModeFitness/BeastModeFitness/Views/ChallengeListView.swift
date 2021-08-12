@@ -20,20 +20,31 @@ struct ChallengeListView: View {
             ///loop through view.itemViewModels
             ForEach(viewModel.itemViewModels, id:\.self) { viewModel in
                 
-                VStack {
-                    Text(viewModel.title)
-                        .font(.system(size: 24, weight: .bold, design: .rounded))
-                    Text(viewModel.statusText)
-                    Text(viewModel.dailyIncreaseText)
-                }
+
                 
             }
         })
     }
 }
 
-struct ChallengeListView_Previews: PreviewProvider {
-    static var previews: some View {
-        ChallengeListView()
+//struct ChallengeListView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ChallengeListView()
+//    }
+//}
+
+
+struct ChallengeItemView: View {
+    
+    let viewModel: ChallengeItemViewModel
+    
+    var body: some View {
+        
+        VStack {
+            Text(viewModel.title)
+                .font(.system(size: 24, weight: .bold, design: .rounded))
+            Text(viewModel.statusText)
+            Text(viewModel.dailyIncreaseText)
+        }
     }
 }
