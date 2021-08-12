@@ -14,14 +14,15 @@ struct ChallengeListView: View {
     
     var body: some View {
         
-        ///Create Grid to show challenges - 2 grid Items per
-        
+        ///Create Grid to show challenges - 2 grid Items per row
         LazyVGrid(columns: [.init(.flexible()),.init(.flexible())], content: {
+            
+            ///loop through view.itemViewModels
             ForEach(viewModel.itemViewModels, id:\.self) { viewModel in
                 
                 VStack {
                     Text(viewModel.title)
-                        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                        .font(.system(size: 24, weight: .bold, design: .rounded))
                     Text(viewModel.statusText)
                     Text(viewModel.dailyIncreaseText)
                 }

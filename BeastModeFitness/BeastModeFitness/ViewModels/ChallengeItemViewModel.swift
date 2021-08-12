@@ -32,7 +32,7 @@ struct  ChallengeItemViewModel: Hashable {
         return "+ \(challenge.increase) daily"
     }
     
-    //init challenge
+    //init challenge due to Private let
     init(_ challenge: Challenge) {
         self.challenge = challenge
     }

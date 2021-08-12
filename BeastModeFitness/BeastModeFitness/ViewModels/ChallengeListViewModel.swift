@@ -15,7 +15,7 @@ final class ChallengeListViewModel: ObservableObject {
     private let challengeService: ChallengeServiceProtocol
     private var cancellables: [AnyCancellable] = []
     
-    //set itemsViewModels to emppty Array
+    //instanciate itemsViewModels to emppty Array
     @Published private(set) var itemViewModels : [ChallengeItemViewModel] = []
     
     ///init challenge Service and userService
