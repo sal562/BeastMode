@@ -15,16 +15,20 @@ struct ChallengeListView: View {
     var body: some View {
         
         ///Create Grid to show challenges - 2 grid Items per row
-        LazyVGrid(columns: [.init(.flexible()),.init(.flexible())], content: {
-            
-            ///loop through view.itemViewModels
-            ForEach(viewModel.itemViewModels, id:\.self) { viewModel in
-                
-                //Call ChallengeItemView
-                ChallengeItemView(viewModel: viewModel)
-                
+        ScrollView {
+            VStack {
+                LazyVGrid(columns: [.init(.flexible()),.init(.flexible())]) {
+                    ///loop through view.itemViewModels
+                    ForEach(viewModel.itemViewModels, id:\.self) { viewModel in
+                        //Call ChallengeItemView
+                        ChallengeItemView(viewModel: viewModel)
+                    }
+                }
+                ///To push challenge onject view to the top
+                Spacer()
             }
-        })
+        }
+        .navigationTitle(viewModel.title)
     }
 }
 
@@ -44,21 +48,23 @@ struct ChallengeItemView: View {
     }
     
     var body: some View {
-        
-        ///add Hstack to wrap inner vStack - hacky way to push view size to max screen allowance
         HStack {
             Spacer()
-            VStack {
-                Text(viewModel.title)
-                    .font(.system(size: 24, weight: .bold, design: .rounded))
-                Text(viewModel.statusText)
-                Text(viewModel.dailyIncreaseText)
-            }///end of vstack
+        VStack {
+            Text(viewModel.title)
+                .font(.system(size: 24, weight: .bold, design: .rounded))
+            Text(viewModel.statusText)
+            Text(viewModel.dailyIncreaseText)
+        }///end of vstack
+        .padding()
             Spacer()
-            .padding()
-            .background(Rectangle()
-                            .fill(Color.darkPrimaryColor))
-            .padding()
-        }
+        }///end of Hstack
+
+        .background(Rectangle()
+                        .fill(Color.darkPrimaryColor)
+                        .cornerRadius(6))
+        
+        .padding()
+        
     }
 }
