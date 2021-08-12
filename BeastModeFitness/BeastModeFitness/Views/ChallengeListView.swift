@@ -20,7 +20,8 @@ struct ChallengeListView: View {
             ///loop through view.itemViewModels
             ForEach(viewModel.itemViewModels, id:\.self) { viewModel in
                 
-
+                //Call ChallengeItemView
+                ChallengeItemView(viewModel: viewModel)
                 
             }
         })
@@ -36,7 +37,11 @@ struct ChallengeListView: View {
 
 struct ChallengeItemView: View {
     
-    let viewModel: ChallengeItemViewModel
+    private let viewModel: ChallengeItemViewModel
+    ///Need to initialzie viewModel if using "Private"
+    init(viewModel: ChallengeItemViewModel) {
+        self.viewModel = viewModel
+    }
     
     var body: some View {
         
