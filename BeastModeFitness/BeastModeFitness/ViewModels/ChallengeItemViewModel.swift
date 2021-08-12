@@ -8,8 +8,7 @@
 
 import Foundation
 
-
-struct  ChallengeItemViewModel {
+struct  ChallengeItemViewModel: Hashable {
     private let challenge: Challenge
     
     var title: String {
@@ -17,18 +16,19 @@ struct  ChallengeItemViewModel {
     }
     
     ///computed property to figure our home many days from start
-    var daysFromStart: Int {
+    private var daysFromStart: Int {
+        ///calculate days from start
         guard let daysFromStart = Calendar.current.dateComponents([.day], from: challenge.startDate, to: Date()).day else {  return 0 }
         return abs(daysFromStart)
     }
     
     ///create daily status
-    var statusText: String {
+    private var statusText: String {
         let dayNumber = daysFromStart + 1
         return "Day \(dayNumber) of \(challenge.length)"
     }
     
-    var dailyIncreaseText: String {
+    private var dailyIncreaseText: String {
         return "+ \(challenge.increase) daily"
     }
     

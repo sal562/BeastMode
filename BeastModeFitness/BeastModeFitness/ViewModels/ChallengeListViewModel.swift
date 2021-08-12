@@ -16,7 +16,7 @@ final class ChallengeListViewModel: ObservableObject {
     private var cancellables: [AnyCancellable] = []
     
     //set itemsViewModels to emppty Array
-    @Published private(set) var itemsViewModels : [ChallengeListViewModel] = []
+    @Published private(set) var itemViewModels : [ChallengeListViewModel] = []
     
     ///init challenge Service and userService
     init(
@@ -30,7 +30,8 @@ final class ChallengeListViewModel: ObservableObject {
     
     ///Observe & store challenges
     private func observeChallenges() {
-        userService.currentUser().compactMap { $0?.uid }
+        userService.currentUser()
+            .compactMap { $0?.uid }
             .flatMap { userId -> AnyPublisher<[Challenge], IncrementingErrors> in
                 return self.challengeService.observeChallenge(userId: userId)
             }
@@ -43,10 +44,8 @@ final class ChallengeListViewModel: ObservableObject {
                     print("finished")
                 }
             } receiveValue: { challenges in
-                print(challenges)
-                self.itemsViewModels = challenges.map({ .init(challenges) in
-                    <#code#>
-                })
+//                print(challenges)
+                self.itemViewModels = challenges.map { .init($0) }
             } .store(in: &cancellables)
 
     }

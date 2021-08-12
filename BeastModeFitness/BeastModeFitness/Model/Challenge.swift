@@ -9,7 +9,7 @@
 import SwiftUI
 
 
-struct Challenge: Codable {
+struct Challenge: Codable, Hashable {
     let userId: String
     let startDate: Date
     let exercise: String
