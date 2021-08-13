@@ -61,7 +61,7 @@ struct ChallengeItemView: View {
         }///end of Hstack
 
         .background(Rectangle()
-                        .fill(Color.darkPrimaryColor)
+                        .fill(Color.primaryButton)
                         .cornerRadius(6))
         
         .padding()
