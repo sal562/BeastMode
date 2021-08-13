@@ -17,6 +17,10 @@ final class ChallengeListViewModel: ObservableObject {
     
     //instanciate itemsViewModels to emppty Array
     @Published private(set) var itemViewModels : [ChallengeItemViewModel] = []
+    @Published private(set) var error: IncrementingErrors?
+    @Published private(set) var isLoading = false
+    
+    
     let title = "Challenge Yourself"
     
     ///init challenge Service and userService
@@ -31,6 +35,8 @@ final class ChallengeListViewModel: ObservableObject {
     
     ///Observe & store challenges
     private func observeChallenges() {
+        ///set isLoading to true
+        isLoading = true
         userService.currentUser()
             .compactMap { $0?.uid }
             .flatMap { [weak self] userId -> AnyPublisher<[Challenge], IncrementingErrors> in

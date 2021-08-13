@@ -66,7 +66,7 @@ struct ChallengeItemView: View {
     }
     
     ///create seperate EndRow
-    var EndRow: some View {
+    var DailyIncreaseRow: some View {
         HStack(alignment: .center) {
             Text(viewModel.dailyIncreaseText)
                 .font(.system(size: 24, weight: .bold, design: .rounded)).allowsTightening(true)
@@ -85,7 +85,7 @@ struct ChallengeItemView: View {
                     .font(.system(size: 12, weight: .regular, design: .rounded)).allowsTightening(true)
             }
             Spacer()
-            EndRow
+            DailyIncreaseRow
         }///end of vstack
         .padding(.vertical, 10)
             Spacer()
