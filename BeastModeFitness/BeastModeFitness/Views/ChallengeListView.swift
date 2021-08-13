@@ -22,7 +22,8 @@ struct ChallengeListView: View {
                 VStack {
                     Text(error.localizedDescription)
                     Button(action: {
-                        ///send retry action here TODO
+                        ///send retry action in case of failure
+                        viewModel.send(action: .retry)
                     }, label: {
                         Text("Retry")
                     })
