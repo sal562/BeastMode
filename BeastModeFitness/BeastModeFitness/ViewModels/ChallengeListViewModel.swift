@@ -27,13 +27,6 @@ final class ChallengeListViewModel: ObservableObject {
         case retry
     }
     
-    ///func to create retry action
-    func send(action: Action) {
-        switch action {
-        case .retry:
-            observeChallenges()
-    }
-    
     ///init challenge Service and userService
     init(
         userService: UserServiceProtocol = UserService(),
@@ -44,8 +37,16 @@ final class ChallengeListViewModel: ObservableObject {
         observeChallenges()
     }
     
+    
+    func send(action: Action) {
+        switch action {
+        case .retry:
+            observeChallenges()
+    }
+    }
+    
     ///Observe & store challenges
-    private func observeChallenges() {
+     private func observeChallenges() {
         ///set isLoading to true
         isLoading = true
         userService.currentUser()
