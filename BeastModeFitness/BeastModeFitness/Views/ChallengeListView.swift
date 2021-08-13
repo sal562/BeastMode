@@ -14,15 +14,27 @@ struct ChallengeListView: View {
     
     var body: some View {
         
-        if viewModel.isLoading {
-            ProgressView()
-        } else if let error = viewModel.error {
-            Text(error.localizedDescription)
-            Button(action: {
-                ///send retry action here TODO
-            }, label: {
-                Text("Retry")
-            })
+        ZStack {
+            if viewModel.isLoading {
+                ProgressView()
+            } else if let error = viewModel.error {
+                
+                VStack {
+                    Text(error.localizedDescription)
+                    Button(action: {
+                        ///send retry action here TODO
+                    }, label: {
+                        Text("Retry")
+                    })
+                    .padding(10)
+                    .background(Rectangle().fill(Color.red)
+                    .frame(width: 150, height: 50)
+                    .cornerRadius(5)
+                    .shadow(radius: 5))
+                }
+            } else {
+                mainContentView
+            }
         }
     }
     
