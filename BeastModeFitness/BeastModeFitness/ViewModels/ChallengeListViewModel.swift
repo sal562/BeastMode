@@ -33,7 +33,9 @@ final class ChallengeListViewModel: ObservableObject {
     private func observeChallenges() {
         userService.currentUser()
             .compactMap { $0?.uid }
-            .flatMap { userId -> AnyPublisher<[Challenge], IncrementingErrors> in
+            .flatMap { [weak self] userId -> AnyPublisher<[Challenge], IncrementingErrors> in
+                ///Value of optional type 'ChallengeListViewModel?' must be unwrapped to refer to member 'challengeService' of wrapped base type 'ChallengeListViewModel'
+                guard let self = self else { return Fail(error: .default()).eraseToAnyPublisher()}
                 return self.challengeService.observeChallenge(userId: userId)
             }
             ///subscribe to userChanllenges
