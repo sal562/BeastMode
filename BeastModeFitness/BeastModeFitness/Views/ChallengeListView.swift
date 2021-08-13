@@ -65,6 +65,13 @@ struct ChallengeItemView: View {
         }
     }
     
+    ///create seperate EndRow
+    var EndRow: some View {
+        HStack(alignment: .center) {
+            Text(viewModel.dailyIncreaseText)
+                .font(.system(size: 24, weight: .bold, design: .rounded)).allowsTightening(true)
+        }
+    }
 
     
     var body: some View {
@@ -75,13 +82,10 @@ struct ChallengeItemView: View {
             Spacer()
             HStack(alignment: .center) {
                 Text(viewModel.statusText)
-                    .font(.system(size: 14, weight: .regular, design: .rounded)).allowsTightening(true)
+                    .font(.system(size: 12, weight: .regular, design: .rounded)).allowsTightening(true)
             }
             Spacer()
-            HStack(alignment: .center) {
-                Text(viewModel.dailyIncreaseText)
-                    .font(.system(size: 24, weight: .bold, design: .rounded)).allowsTightening(true)
-            }
+            EndRow
         }///end of vstack
         .padding(.vertical, 10)
             Spacer()
