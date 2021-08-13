@@ -45,10 +45,12 @@ final class ChallengeListViewModel: ObservableObject {
                 return self.challengeService.observeChallenge(userId: userId)
             }
             ///subscribe to userChanllenges
-            .sink { completion in
+            .sink { [weak self] completion in
+                guard let self = self else { return }
+                self.isLoading = false
                 switch completion {
                 case let .failure(error):
-                    print(error.localizedDescription)
+                    self.error = error
                 case .finished:
                     print("finished")
                 }
