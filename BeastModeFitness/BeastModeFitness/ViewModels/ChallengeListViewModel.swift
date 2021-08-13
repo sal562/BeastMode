@@ -17,7 +17,7 @@ final class ChallengeListViewModel: ObservableObject {
     
     //instanciate itemsViewModels to emppty Array
     @Published private(set) var itemViewModels : [ChallengeItemViewModel] = []
-    let title = "Challenges"
+    let title = "Challenge Yourself"
     
     ///init challenge Service and userService
     init(

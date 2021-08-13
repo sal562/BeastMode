@@ -17,7 +17,8 @@ struct ChallengeListView: View {
         ///Create Grid to show challenges - 2 grid Items per row
         ScrollView {
             VStack {
-                LazyVGrid(columns: [.init(.flexible()),.init(.flexible())]) {
+                ///spacing is for horizontal and vertical spacing between 2 gridItems (each row)
+                LazyVGrid(columns: [.init(.flexible(), spacing: 20),.init(.flexible(), spacing: 20)]) {
                     ///loop through view.itemViewModels
                     ForEach(viewModel.itemViewModels, id:\.self) { viewModel in
                         //Call ChallengeItemView
