@@ -28,6 +28,7 @@ struct ChallengeListView: View {
                 ///To push challenge onject view to the top
                 Spacer()
             }
+            .padding(10)
         }
         .navigationTitle(viewModel.title)
     }
@@ -52,10 +53,28 @@ struct ChallengeItemView: View {
         HStack {
             Spacer()
         VStack {
-            Text(viewModel.title)
-                .font(.system(size: 24, weight: .bold, design: .rounded))
-            Text(viewModel.statusText)
-            Text(viewModel.dailyIncreaseText)
+            HStack {
+                Text(viewModel.title)
+                    .font(.system(size: 24, weight: .bold, design: .rounded)).allowsTightening(true)
+                Spacer()
+                Button(action: {
+                    ///trash challenge
+                }, label: {
+                    Image(systemName: "trash")
+                        .resizable()
+                        .frame(width: 20, height: 20)
+                })
+            }
+            Spacer()
+            HStack(alignment: .center) {
+                Text(viewModel.statusText)
+                    .font(.system(size: 14, weight: .regular, design: .rounded)).allowsTightening(true)
+            }
+            Spacer()
+            HStack(alignment: .center) {
+                Text(viewModel.dailyIncreaseText)
+                    .font(.system(size: 24, weight: .bold, design: .rounded)).allowsTightening(true)
+            }
         }///end of vstack
         .padding()
             Spacer()
@@ -64,8 +83,5 @@ struct ChallengeItemView: View {
         .background(Rectangle()
                         .fill(Color.primaryButton)
                         .cornerRadius(6))
-        
-        .padding()
-        
     }
 }
