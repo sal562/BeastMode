@@ -19,9 +19,20 @@ final class ChallengeListViewModel: ObservableObject {
     @Published private(set) var itemViewModels : [ChallengeItemViewModel] = []
     @Published private(set) var error: IncrementingErrors?
     @Published private(set) var isLoading = false
-    
-    
+
     let title = "Challenge Yourself"
+
+    ///enum to deternine actions after error
+    enum Action {
+        case retry
+    }
+    
+    ///func to create retry action
+    func send(action: Action) {
+        switch action {
+        case .retry:
+            observeChallenges()
+    }
     
     ///init challenge Service and userService
     init(
