@@ -48,23 +48,30 @@ struct ChallengeItemView: View {
     init(viewModel: ChallengeItemViewModel) {
         self.viewModel = viewModel
     }
+
+    ///created TitleView as seperateView
+    var TitleRow: some View {
+        HStack {
+            Text(viewModel.title)
+                .font(.system(size: 24, weight: .bold, design: .rounded)).allowsTightening(true)
+            Spacer()
+            Button(action: {
+                ///trash challenge
+            }, label: {
+                Image(systemName: "trash")
+                    .resizable()
+                    .frame(width: 20, height: 20)
+            })
+        }
+    }
+    
+
     
     var body: some View {
         HStack {
             Spacer()
         VStack {
-            HStack {
-                Text(viewModel.title)
-                    .font(.system(size: 24, weight: .bold, design: .rounded)).allowsTightening(true)
-                Spacer()
-                Button(action: {
-                    ///trash challenge
-                }, label: {
-                    Image(systemName: "trash")
-                        .resizable()
-                        .frame(width: 20, height: 20)
-                })
-            }
+            TitleRow
             Spacer()
             HStack(alignment: .center) {
                 Text(viewModel.statusText)
@@ -76,7 +83,7 @@ struct ChallengeItemView: View {
                     .font(.system(size: 24, weight: .bold, design: .rounded)).allowsTightening(true)
             }
         }///end of vstack
-        .padding()
+        .padding(.vertical, 10)
             Spacer()
         }///end of Hstack
 
@@ -85,3 +92,4 @@ struct ChallengeItemView: View {
                         .cornerRadius(6))
     }
 }
+
