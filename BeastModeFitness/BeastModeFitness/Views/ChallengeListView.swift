@@ -14,6 +14,20 @@ struct ChallengeListView: View {
     
     var body: some View {
         
+        if viewModel.isLoading {
+            ProgressView()
+        } else if let error = viewModel.error {
+            Text(error.localizedDescription)
+            Button(action: {
+                ///send retry action here TODO
+            }, label: {
+                Text("Retry")
+            })
+        }
+    }
+    
+    var mainContentView: some View {
+        
         ///Create Grid to show challenges - 2 grid Items per row
         ScrollView {
             VStack {

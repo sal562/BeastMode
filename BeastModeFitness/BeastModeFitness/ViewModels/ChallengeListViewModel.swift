@@ -57,6 +57,8 @@ final class ChallengeListViewModel: ObservableObject {
             } receiveValue: { [weak self] challenges in
 //                print(challenges) ///use weakself to avoid retain cycle and force unwrap self
                 guard let self = self else { return }
+                self.isLoading = false
+                self.error = nil
                 self.itemViewModels = challenges.map { .init($0) }
             } .store(in: &cancellables)
 
