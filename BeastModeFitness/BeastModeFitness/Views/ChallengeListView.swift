@@ -59,7 +59,7 @@ struct ChallengeListView: View {
         }
         ///Present Sheet to Add New Challenge
         .sheet(isPresented: $viewModel.showingCreateModal, content: {
-            Text("Nice Job")
+            CreateWorkoutView()
         })
         
         .navigationTitle(viewModel.title)
@@ -69,7 +69,9 @@ struct ChallengeListView: View {
             viewModel.send(action: .create)
         }, label: {
             Image(systemName: "plus.app")
-                .imageScale(.large)
+//                .imageScale(.large)
+                .resizable()
+                .frame(width: 30, height: 30)
         }))
     }
 }
