@@ -25,6 +25,7 @@ final class ChallengeListViewModel: ObservableObject {
     ///enum to deternine actions after error
     enum Action {
         case retry
+        case create
     }
     
     ///init challenge Service and userService
@@ -42,7 +43,14 @@ final class ChallengeListViewModel: ObservableObject {
         switch action {
         case .retry:
             observeChallenges()
+        case .create:
+            createChallenges()
+        }
     }
+    
+    ///Create New Challeges
+    private func createChallenges() {
+        
     }
     
     ///Observe & store challenges
