@@ -19,6 +19,8 @@ final class ChallengeListViewModel: ObservableObject {
     @Published private(set) var itemViewModels : [ChallengeItemViewModel] = []
     @Published private(set) var error: IncrementingErrors?
     @Published private(set) var isLoading = false
+    
+    @Published var showingCreateModal = false
 
     let title = "Challenge Yourself"
 
@@ -50,7 +52,8 @@ final class ChallengeListViewModel: ObservableObject {
     
     ///Create New Challeges
     private func createChallenges() {
-        
+        showingCreateModal = true
+//        print("NICE GOING BUDDY")
     }
     
     ///Observe & store challenges

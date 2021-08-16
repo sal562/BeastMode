@@ -57,17 +57,19 @@ struct ChallengeListView: View {
             }
             .padding(10)
         }
+        ///Present Sheet to Add New Challenge
+        .sheet(isPresented: $viewModel.showingCreateModal, content: {
+            Text("Nice Job")
+        })
+        
         .navigationTitle(viewModel.title)
         ///add plus button
         .navigationBarItems(trailing: Button(action: {
             ///ADD NEW CHALLENGE
-//            viewModel.send(action: .create)
-            print("Add Button Title")
+            viewModel.send(action: .create)
         }, label: {
             Image(systemName: "plus.app")
                 .imageScale(.large)
-//                .resizable()
-//                .frame(width: 30, height: 30)
         }))
     }
 }
