@@ -59,7 +59,9 @@ struct ChallengeListView: View {
         }
         ///Present Sheet to Add New Challenge
         .sheet(isPresented: $viewModel.showingCreateModal, content: {
-            CreateWorkoutView()
+            NavigationView {
+                CreateWorkoutView()
+            }
         })
         
         .navigationTitle(viewModel.title)
