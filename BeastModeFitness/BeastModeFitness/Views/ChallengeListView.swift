@@ -58,6 +58,15 @@ struct ChallengeListView: View {
             .padding(10)
         }
         .navigationTitle(viewModel.title)
+        ///add plus button
+        .navigationBarItems(trailing: Button(action: {
+            ///ADD NEW CHALLENGE
+            print("Add Button Title")
+        }, label: {
+            Image(systemName: "plus.app")
+                .resizable()
+                .frame(width: 30, height: 30)
+        }))
     }
 }
 
