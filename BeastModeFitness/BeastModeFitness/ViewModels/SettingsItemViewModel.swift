@@ -18,7 +18,7 @@ extension SettingsViewModel {
     }
     
     enum SettingsItemType {
-        case count
+        case account
         case mode
         case privacy
     }

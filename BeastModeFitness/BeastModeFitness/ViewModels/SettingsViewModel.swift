@@ -12,7 +12,15 @@ import Combine
 
 final class SettingsViewModel : ObservableObject {
 
-    @Published private(set) var itemViewModel = []
+    @Published private(set) var itemViewModel: [SettingsItemViewModel] = []
+    
+    ///func to trigger onApper
+    func onAppear() {
+        itemViewModel = [
+        
+            .init(title: "Create Account", iconName: "person.circle", type: .account)
+        ]
+    }
     
     
 }
