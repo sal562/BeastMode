@@ -17,8 +17,10 @@ final class SettingsViewModel : ObservableObject {
     ///func to trigger onApper
     func onAppear() {
         itemViewModel = [
-        
-            .init(title: "Create Account", iconName: "person.circle", type: .account)
+            ///initialize the settings items
+            .init(title: "Create Account", iconName: "person.circle", type: .account),
+            .init(title: "Create Account", iconName: "switch.2", type: .mode),
+            .init(title: "Create Account", iconName: "lock.shield", type: .privacy)
         ]
     }
     
