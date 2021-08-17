@@ -10,6 +10,7 @@ import Foundation
 
 extension SettingsViewModel {
     
+    ///each settings item has a title and icon
     struct SettingsItemViewModel {
         let title: String
         let iconName: String
