@@ -14,13 +14,14 @@ struct SettingsView: View {
     
     var body: some View {
         
-        List(settingsVM.itemViewModels.indices, id:\.self) { item in
-            Text(settingsVM.itemViewModel[index].title)
-        }
-        
-            .onAppear(perform: {
-                settingsVM.onAppear()
-            })
+        List(settingsVM.itemViewModels.indices, id:\.self) { index in
+            HStack {
+                Image(systemName:settingsVM.itemViewModels[index].iconName)
+                Text(settingsVM.itemViewModels[index].title)
+            }
+        }.onAppear(perform: {
+            settingsVM.onAppear()
+        })
     }
 }
 

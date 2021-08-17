@@ -14,6 +14,11 @@ final class SettingsViewModel : ObservableObject {
 
     @Published private(set) var itemViewModels: [SettingsItemViewModel] = []
     
+    func item(at index: Int) -> SettingsItemViewModel {
+        ///grab index from itemViewModel
+        itemViewModels[index]
+    }
+    
     ///func to trigger onApper and init default settings
     func onAppear() {
         itemViewModels = [
