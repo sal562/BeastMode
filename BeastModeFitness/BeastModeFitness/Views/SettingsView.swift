@@ -6,4 +6,16 @@
 //  Copyright © 2021 Sal B. Amer. All rights reserved.
 //
 
-import Foundation
+import SwiftUI
+
+struct SettingsView: View {
+    var body: some View {
+        Text("Settings View")
+    }
+}
+
+struct SettingsView_Previews: PreviewProvider {
+    static var previews: some View {
+        SettingsView()
+    }
+}
