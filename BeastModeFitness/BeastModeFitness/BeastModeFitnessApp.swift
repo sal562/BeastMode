@@ -13,12 +13,16 @@ struct BeastModeFitnessApp: App {
     
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     @StateObject private var appState = AppState()
+    ///App Storage for settings
+    @AppStorage("isDarkMode") private var isDarkMode = false
     
     var body: some Scene {
         WindowGroup {
             ///Check to see if logged in or not - Choose landing page or TabBarview
             if appState.isLoggedIn {
                 TabContainerView()
+                    ///check user preferences and set to appropriate condition
+                    .preferredColorScheme(isDarkMode ? .dark : .light)
                 } else {
                     LandingPageView()
                 }

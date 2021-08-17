@@ -27,19 +27,25 @@ final class SettingsViewModel : ObservableObject {
         case .mode:
             ///change from light to dark
             isDarkMode = !isDarkMode
+            ///rebuilt setttings items
+            buildItems()
         default:
             break
         }
     }
     
-    ///func to trigger onApper and init default settings
-    func onAppear() {
+    private func buildItems() {
         itemViewModels = [
             ///initialize the settings items
             .init(title: "Create Account", iconName: "person.circle", type: .account),
-            .init(title: "Switch to Light Mode", iconName: "lightbulb", type: .mode),
+            .init(title: "Switch to \(isDarkMode ? "Light" : "Dark") Mode", iconName: "lightbulb", type: .mode),
             .init(title: "Privacy Policy", iconName: "lock.shield", type: .privacy)
         ]
+    }
+    
+    ///func to trigger onApper and init default settings
+    func onAppear() {
+        buildItems()
     }
     
     
