@@ -11,7 +11,7 @@ import SwiftUI
 struct CreateWorkoutView: View {
     //MARK: - Properties
     @StateObject var viewModel = CreateChallengeViewModel()
-    @Environment(\.presentationMode) var presentationMode 
+    
     
     ///computed property for dropdownList
     var dropdownList: some View {
@@ -36,8 +36,6 @@ struct CreateWorkoutView: View {
                     Button(action: {
                         ///Next Page - Creae Challenge
                         viewModel.send(action: .createChallenge)
-                        ///Dismiss View after creating challenge
-                        presentationMode.wrappedValue.dismiss()
                     }, label: {
                         Text("Create")
                             .font(.system(size: 24, weight: .semibold, design: .rounded))

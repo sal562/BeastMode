@@ -53,7 +53,6 @@ final class ChallengeListViewModel: ObservableObject {
     ///Create New Challeges
     private func createChallenges() {
         showingCreateModal = true
-//        print("NICE GOING BUDDY")
     }
     
     ///Observe & store challenges
@@ -82,6 +81,7 @@ final class ChallengeListViewModel: ObservableObject {
                 guard let self = self else { return }
                 self.isLoading = false
                 self.error = nil
+                self.showingCreateModal = false
                 self.itemViewModels = challenges.map { .init($0) }
             } .store(in: &cancellables)
 

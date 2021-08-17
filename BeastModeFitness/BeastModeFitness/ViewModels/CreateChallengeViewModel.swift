@@ -100,7 +100,9 @@ class CreateChallengeViewModel: ObservableObject {
                     .setFailureType(to: IncrementingErrors.self)
                     .eraseToAnyPublisher()
             } else {
-                print("User is being loggedd in anonymously")
+                
+                // TO-DO: - Setup check to see if user has account before allowing to save.
+//                print("User is being loggedd in anonymously")
                 return self.userService
                     .signInAnonymously()
                     .map({ $0.uid })
