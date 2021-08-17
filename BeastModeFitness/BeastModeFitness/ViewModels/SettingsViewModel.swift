@@ -12,15 +12,15 @@ import Combine
 
 final class SettingsViewModel : ObservableObject {
 
-    @Published private(set) var itemViewModel: [SettingsItemViewModel] = []
+    @Published private(set) var itemViewModels: [SettingsItemViewModel] = []
     
-    ///func to trigger onApper
+    ///func to trigger onApper and init default settings
     func onAppear() {
-        itemViewModel = [
+        itemViewModels = [
             ///initialize the settings items
             .init(title: "Create Account", iconName: "person.circle", type: .account),
-            .init(title: "Create Account", iconName: "switch.2", type: .mode),
-            .init(title: "Create Account", iconName: "lock.shield", type: .privacy)
+            .init(title: "Switch to Light Mode", iconName: "lightbulb", type: .mode),
+            .init(title: "Privacy Policy", iconName: "lock.shield", type: .privacy)
         ]
     }
     

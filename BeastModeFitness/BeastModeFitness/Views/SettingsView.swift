@@ -13,7 +13,14 @@ struct SettingsView: View {
     @StateObject var settingsVM = SettingsViewModel()
     
     var body: some View {
-        Text("Settings View")
+        
+        List(settingsVM.itemViewModels.indices, id:\.self) { item in
+            Text(settingsVM.itemViewModel[index].title)
+        }
+        
+            .onAppear(perform: {
+                settingsVM.onAppear()
+            })
     }
 }
 
