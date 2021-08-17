@@ -16,8 +16,11 @@ struct SettingsView: View {
         
         List(settingsVM.itemViewModels.indices, id:\.self) { index in
             HStack {
-                Image(systemName:settingsVM.itemViewModels[index].iconName)
-                Text(settingsVM.itemViewModels[index].title)
+//                Image(systemName:settingsVM.itemViewModels[index].iconName)
+//                Text(settingsVM.itemViewModels[index].title)
+                ///new way using item(at) function
+                Image(systemName:settingsVM.item(at: index).iconName)
+                Text(settingsVM.item(at: index).title)
             }
         }.onAppear(perform: {
             settingsVM.onAppear()
