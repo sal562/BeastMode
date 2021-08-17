@@ -18,7 +18,7 @@ struct SettingsView: View {
             
             ///Create Button to Detect if clicked
             Button(action: {
-                settingsVM.tapped
+                settingsVM.tappedItem(at: index)
             }, label: {
                 HStack {
     //                Image(systemName:settingsVM.itemViewModels[index].iconName)
@@ -31,6 +31,7 @@ struct SettingsView: View {
         }.onAppear(perform: {
             settingsVM.onAppear()
         })
+        .navigationTitle("Settings")
     }
 }
 

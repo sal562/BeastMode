@@ -11,6 +11,7 @@ import SwiftUI
 struct ChallengeListView: View {
     //MARK: - Properties
     @StateObject private var viewModel = ChallengeListViewModel()
+    @AppStorage("isDarkMode") private var isDarkMode = false
     
     var body: some View {
         
@@ -57,11 +58,12 @@ struct ChallengeListView: View {
             }
             .padding(10)
         }
-        ///Present Sheet to Add New Challenge
+        ///Present Sheet to Add New Challenge -
         .sheet(isPresented: $viewModel.showingCreateModal, content: {
             NavigationView {
                 CreateWorkoutView()
-            }
+                ///Must give colorSchime if using isPresented
+            }.preferredColorScheme(isDarkMode ? .dark : .light)
         })
         
         .navigationTitle(viewModel.title)

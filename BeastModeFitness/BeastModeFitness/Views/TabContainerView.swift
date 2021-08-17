@@ -39,7 +39,9 @@ struct TabContainerView: View {
                 ChallengeListView()
             }
         case .settings:
-            SettingsView()
+            NavigationView {
+                SettingsView()
+            }
         }
     }
 }
