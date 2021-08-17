@@ -7,11 +7,12 @@
 //
 
 import Foundation
+import Combine
 
- 
-class SettingsViewModel : ObservableObject {
 
-    
+final class SettingsViewModel : ObservableObject {
+
+    @Published private(set) var itemViewModel = []
     
     
 }
