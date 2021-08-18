@@ -63,12 +63,14 @@ struct LandingPageView: View {
                     Button(action: {
                         ///navLink to LoginView
                         print("loggin in")
+//                        NavigationLink("Login Page", destination: LoginpageView(email: <#String#>, password: <#String#>))
                     }, label: {
                         Text("I already have an account")
                             .foregroundColor(.white)
                             .font(.body)
                     })
                     .padding(.vertical, 7)
+                    .padding(.bottom, 15)
                     
                     
                 } /// Root VStack
