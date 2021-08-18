@@ -21,9 +21,9 @@ struct TextFieldCustomRoundedStyle: ViewModifier {
             .font(.system(size: 16, weight: .medium, design: .rounded))
             .foregroundColor(.primary)
             .padding()
-            .cornerRadius(16)
+            .cornerRadius(12)
             .overlay(
-                RoundedRectangle(cornerRadius: 16)
+                RoundedRectangle(cornerRadius: 12)
                     .stroke(Color.primary))
             .padding(.horizontal, 15)
     }

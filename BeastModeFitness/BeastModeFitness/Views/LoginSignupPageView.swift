@@ -32,8 +32,7 @@ struct LoginSignupPageView: View {
                         ///add custom modifier
                         .modifier(TextFieldCustomRoundedStyle())
                 }
-
-  
+                .padding(.top, 40)
                 ///Button
                 Button(action: {
                     //LOGIN
@@ -44,7 +43,7 @@ struct LoginSignupPageView: View {
                         Text(loginSignupVM.buttonText)
                             .font(.system(size: 28, weight: .bold, design: .rounded))
                     }//end of hstack
-                    .frame(width: 300, height: 60)
+                    .frame(width: 320, height: 60)
                     .foregroundColor(.white)
                     .background(Color.red)
                     .shadow(radius: 10)

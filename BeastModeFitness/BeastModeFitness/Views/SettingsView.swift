@@ -31,6 +31,18 @@ struct SettingsView: View {
         }.onAppear(perform: {
             settingsVM.onAppear()
         })
+        ///use background for NavLink to signup page
+        .background(
+        
+            NavigationLink(
+                destination: LoginSignupPageView(loginSignupVM: LoginSignupViewModel.init(mode: .signup)),
+                isActive: $settingsVM.loginSignupPush,
+                label: {
+                    Text("Navigate")
+                })
+        
+        )
+        
         ///set nav title
         .navigationTitle(settingsVM.title)
     }

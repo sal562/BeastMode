@@ -15,6 +15,9 @@ final class SettingsViewModel : ObservableObject {
     @Published private(set) var itemViewModels: [SettingsItemViewModel] = []
     ///shortcut for userDefault
     @AppStorage("isDarkMode") private var isDarkMode = false
+    
+    @Published var loginSignupPush = false
+    
     let title = "Settings"
     
     ///new way using item(at) function to pass position
@@ -25,6 +28,9 @@ final class SettingsViewModel : ObservableObject {
     ///new method of detecting tap
     func tappedItem(at index: Int)   {
         switch itemViewModels[index].type {
+        
+        case .account:
+            loginSignupPush = true
         case .mode:
             ///change from light to dark
             isDarkMode = !isDarkMode
