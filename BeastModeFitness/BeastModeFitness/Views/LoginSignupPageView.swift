@@ -10,6 +10,8 @@ import SwiftUI
 
 struct LoginSignupPageView: View {
     
+    @ObservedObject var loginSignupVM: LoginSignupViewModel
+    
     @State var email: String
     @State var password: String
     
@@ -65,7 +67,7 @@ struct LoginSignupPageView: View {
 struct LoginpageView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            LoginSignupPageView(email: "jow@joe.com", password: "adsasd22")
+            LoginSignupPageView(loginSignupVM: LoginSignupViewModel(mode: .login), email: "jow@joe.com", password: "adsasd22")
         }
     }
 }

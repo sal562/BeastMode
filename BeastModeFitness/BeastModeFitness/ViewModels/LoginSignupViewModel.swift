@@ -10,6 +10,12 @@ import Foundation
 
 final class LoginSignupViewModel: ObservableObject {
     
+    private let mode: Mode
+    
+    ///init custom enum for mode
+    init(mode: Mode) {
+        self.mode = mode
+    }
     
 }
 
