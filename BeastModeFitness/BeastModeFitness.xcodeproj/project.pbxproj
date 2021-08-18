@@ -12,6 +12,7 @@
 		365BBE7A26CBBC6400D3A74E /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365BBE7926CBBC6400D3A74E /* SettingsViewModel.swift */; };
 		365BBE7C26CBBC7B00D3A74E /* SettingsItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365BBE7B26CBBC7B00D3A74E /* SettingsItemViewModel.swift */; };
 		365BBE7E26CBBCAE00D3A74E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365BBE7D26CBBCAE00D3A74E /* SettingsView.swift */; };
+		365BBE9B26CCCFDE00D3A74E /* LoginpageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365BBE9A26CCCFDE00D3A74E /* LoginpageView.swift */; };
 		3672B6B9269804DF00026B89 /* DropdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3672B6B8269804DF00026B89 /* DropdownView.swift */; };
 		3672B6BB2698452E00026B89 /* MainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3672B6BA2698452E00026B89 /* MainButton.swift */; };
 		3672B6BD2698470A00026B89 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3672B6BC2698470A00026B89 /* Color+Extension.swift */; };
@@ -49,6 +50,7 @@
 		365BBE7926CBBC6400D3A74E /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		365BBE7B26CBBC7B00D3A74E /* SettingsItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsItemViewModel.swift; sourceTree = "<group>"; };
 		365BBE7D26CBBCAE00D3A74E /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		365BBE9A26CCCFDE00D3A74E /* LoginpageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginpageView.swift; sourceTree = "<group>"; };
 		3672B6B8269804DF00026B89 /* DropdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownView.swift; sourceTree = "<group>"; };
 		3672B6BA2698452E00026B89 /* MainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButton.swift; sourceTree = "<group>"; };
 		3672B6BC2698470A00026B89 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 				36294D6726B93F2D00A69060 /* TabContainerView.swift */,
 				36A1B32626C00411005BA563 /* ChallengeListView.swift */,
 				365BBE7D26CBBCAE00D3A74E /* SettingsView.swift */,
+				365BBE9A26CCCFDE00D3A74E /* LoginpageView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 				3600E45026C3F67E003402C0 /* ChallengeItemViewModel.swift in Sources */,
 				36A1B32726C00411005BA563 /* ChallengeListView.swift in Sources */,
 				36DA7EB626958C2900726698 /* BeastModeFitnessApp.swift in Sources */,
+				365BBE9B26CCCFDE00D3A74E /* LoginpageView.swift in Sources */,
 				3680404926B29D79007F4218 /* IncrementingErrors.swift in Sources */,
 				3672B6BB2698452E00026B89 /* MainButton.swift in Sources */,
 				365BBE7A26CBBC6400D3A74E /* SettingsViewModel.swift in Sources */,
