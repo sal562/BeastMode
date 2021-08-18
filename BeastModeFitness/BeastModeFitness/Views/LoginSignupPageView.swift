@@ -1,5 +1,5 @@
 //
-//  LoginpageView.swift
+//  LoginSignupPageView.swift
 //  BeastModeFitness
 //
 //  Created by sal562 on 8/18/21.
@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct LoginpageView: View {
+struct LoginSignupPageView: View {
     
     @State var email: String
     @State var password: String
@@ -65,7 +65,7 @@ struct LoginpageView: View {
 struct LoginpageView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            LoginpageView(email: "jow@joe.com", password: "adsasd22")
+            LoginSignupPageView(email: "jow@joe.com", password: "adsasd22")
         }
     }
 }

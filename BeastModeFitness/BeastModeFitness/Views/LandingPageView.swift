@@ -65,7 +65,7 @@ struct LandingPageView: View {
 
                     ///Login button for exisiting account
                     NavigationLink(
-                        destination: LoginpageView(email: "email", password: "password"),
+                        destination: LoginSignupPageView(email: "email", password: "password"),
                         isActive: $landingpageVM.loginSignupPagePushed,
                         label: {
                             Button(action: {
