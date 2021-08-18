@@ -12,27 +12,25 @@ struct LoginSignupPageView: View {
     
     @ObservedObject var loginSignupVM: LoginSignupViewModel
     
-    @State var email: String
-    @State var password: String
     
     var body: some View {
         VStack {
-            Text("Welcome, Back!")
+            Text(loginSignupVM.title)
                 .font(.title)
                 .fontWeight(.bold)
-            Text("Log in to your account")
+            Text(loginSignupVM.subTitle)
                 .font(.title2)
                 .foregroundColor(.secondary)
             
             Section {
                 VStack {
-                    TextField("Email", text: $email)
+                    TextField("Email", text: $loginSignupVM.emailText)
                         .padding()
                         .border(Color.secondary, width: 1)
                         .frame(width: 300, height: 60)
                         
                    
-                    SecureField("Password", text: $password)
+                    SecureField("Password", text: $loginSignupVM.passwordText)
                         .padding()
                         .frame(width: 300, height: 60)
                         .border(Color.secondary, width: 1)
@@ -67,7 +65,7 @@ struct LoginSignupPageView: View {
 struct LoginpageView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            LoginSignupPageView(loginSignupVM: LoginSignupViewModel(mode: .login), email: "jow@joe.com", password: "adsasd22")
+            LoginSignupPageView(loginSignupVM: .init(mode: .login))
         }
     }
 }
