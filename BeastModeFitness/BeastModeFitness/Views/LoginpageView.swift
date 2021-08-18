@@ -23,16 +23,49 @@ struct LoginpageView: View {
                 .foregroundColor(.secondary)
             
             Section {
-                TextField("Email", text: $email)
-                SecureField("Password", text: $password)
-                
+                VStack {
+                    TextField("Email", text: $email)
+                        .padding()
+                        .border(Color.secondary, width: 1)
+                        .frame(width: 300, height: 60)
+                        
+                   
+                    SecureField("Password", text: $password)
+                        .padding()
+                        .frame(width: 300, height: 60)
+                        .border(Color.secondary, width: 1)
+                }
+
+  
+                ///Button
+                Button(action: {
+                    //LOGIN
+                }, label: {
+                    HStack(alignment: .center,spacing: 8) {
+                        Image(systemName: "lock")
+                            .font(.system(size: 28, weight: .bold, design: .rounded))
+                        Text("Login")
+                            .font(.system(size: 28, weight: .bold, design: .rounded))
+                    }//end of hstack
+                    .frame(width: 300, height: 60)
+                    .foregroundColor(.white)
+                    .background(Color.red)
+                    .shadow(radius: 10)
+                })
+                ///end of button
+                .cornerRadius(12.0)
             }
+            .padding(.horizontal)
+            Spacer()
         }
+        .navigationTitle("")
     }
 }
 
 struct LoginpageView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginpageView()
+        NavigationView {
+            LoginpageView(email: "jow@joe.com", password: "adsasd22")
+        }
     }
 }
