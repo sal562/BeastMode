@@ -14,6 +14,7 @@
 		365BBE7E26CBBCAE00D3A74E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365BBE7D26CBBCAE00D3A74E /* SettingsView.swift */; };
 		365BBE9B26CCCFDE00D3A74E /* LoginSignupPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365BBE9A26CCCFDE00D3A74E /* LoginSignupPageView.swift */; };
 		365BBE9D26CCD4C800D3A74E /* LandingpageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365BBE9C26CCD4C800D3A74E /* LandingpageViewModel.swift */; };
+		365BBE9F26CCF6D200D3A74E /* LoginSignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365BBE9E26CCF6D200D3A74E /* LoginSignupViewModel.swift */; };
 		3672B6B9269804DF00026B89 /* DropdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3672B6B8269804DF00026B89 /* DropdownView.swift */; };
 		3672B6BB2698452E00026B89 /* MainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3672B6BA2698452E00026B89 /* MainButton.swift */; };
 		3672B6BD2698470A00026B89 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3672B6BC2698470A00026B89 /* Color+Extension.swift */; };
@@ -53,6 +54,7 @@
 		365BBE7D26CBBCAE00D3A74E /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		365BBE9A26CCCFDE00D3A74E /* LoginSignupPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSignupPageView.swift; sourceTree = "<group>"; };
 		365BBE9C26CCD4C800D3A74E /* LandingpageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingpageViewModel.swift; sourceTree = "<group>"; };
+		365BBE9E26CCF6D200D3A74E /* LoginSignupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSignupViewModel.swift; sourceTree = "<group>"; };
 		3672B6B8269804DF00026B89 /* DropdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownView.swift; sourceTree = "<group>"; };
 		3672B6BA2698452E00026B89 /* MainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButton.swift; sourceTree = "<group>"; };
 		3672B6BC2698470A00026B89 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				365BBE7926CBBC6400D3A74E /* SettingsViewModel.swift */,
 				365BBE7B26CBBC7B00D3A74E /* SettingsItemViewModel.swift */,
 				365BBE9C26CCD4C800D3A74E /* LandingpageViewModel.swift */,
+				365BBE9E26CCF6D200D3A74E /* LoginSignupViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 				36B9652E26986A030058A8A3 /* CreateChallengeViewModel.swift in Sources */,
 				365BBE7C26CBBC7B00D3A74E /* SettingsItemViewModel.swift in Sources */,
 				36E5317126AD6F3A0096AE6C /* Challenge.swift in Sources */,
+				365BBE9F26CCF6D200D3A74E /* LoginSignupViewModel.swift in Sources */,
 				3672B6BD2698470A00026B89 /* Color+Extension.swift in Sources */,
 				3672B6C2269850C400026B89 /* ReminderView.swift in Sources */,
 				36B96557269D71610058A8A3 /* UserService.swift in Sources */,
