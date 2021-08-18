@@ -15,6 +15,7 @@ final class SettingsViewModel : ObservableObject {
     @Published private(set) var itemViewModels: [SettingsItemViewModel] = []
     ///shortcut for userDefault
     @AppStorage("isDarkMode") private var isDarkMode = false
+    let title = "Settings"
     
     ///new way using item(at) function to pass position
     func item(at index: Int) -> SettingsItemViewModel {

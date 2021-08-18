@@ -31,7 +31,8 @@ struct SettingsView: View {
         }.onAppear(perform: {
             settingsVM.onAppear()
         })
-        .navigationTitle("Settings")
+        ///set nav title
+        .navigationTitle(settingsVM.title)
     }
 }
 

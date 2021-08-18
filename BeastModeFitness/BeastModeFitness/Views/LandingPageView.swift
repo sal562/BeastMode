@@ -59,6 +59,18 @@ struct LandingPageView: View {
                         ///end of button
                         .cornerRadius(12.0)
                     }
+                    ///Login button for exisiting account
+                    Button(action: {
+                        ///navLink to LoginView
+                        print("loggin in")
+                    }, label: {
+                        Text("I already have an account")
+                            .foregroundColor(.white)
+                            .font(.body)
+                    })
+                    .padding(.vertical, 7)
+                    
+                    
                 } /// Root VStack
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background(
