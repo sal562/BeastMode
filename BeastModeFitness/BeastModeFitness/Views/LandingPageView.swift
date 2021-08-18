@@ -91,6 +91,9 @@ struct LandingPageView: View {
                     Button(action: {
                         ///navLink to LoginView
                         print("loggin in")
+                        ///trigger create account page push
+                        landingpageVM.createAccountPagePushed = true
+                        
                         NavigationLink(
                             ///TODO UPDATE WITH EMAIL PASS
                             destination: LoginpageView(email: "test", password: "test"),
