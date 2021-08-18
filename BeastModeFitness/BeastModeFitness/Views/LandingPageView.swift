@@ -39,13 +39,12 @@ struct LandingPageView: View {
                         .foregroundColor(.white)
                     Spacer()
                     
+                    
                     NavigationLink(
                         destination: CreateWorkoutView(),
                         isActive: $landingpageVM.createAccountPagePushed,
                         label: {
                             Button(action: {
-                                ///start a workout
-//                                selection = 1 //DISABLE USING TAGS
                                 landingpageVM.createAccountPagePushed = true
                             }, label: {
                                 HStack(alignment: .center,spacing: 8) {
@@ -63,52 +62,21 @@ struct LandingPageView: View {
                             .cornerRadius(12.0)
                         })
                     
-                    ///DISABLE NAVLIINK USING TAGS
-//                    NavigationLink(
-//                        destination: CreateWorkoutView(),
-//                        tag: 1,
-//                        selection: $selection) {
-//                        Button(action: {
-//                            ///start a workout
-//                            selection = 1
-//                        }, label: {
-//                            HStack(alignment: .center,spacing: 8) {
-//                                Image(systemName: "plus.square")
-//                                    .font(.system(size: 28, weight: .bold, design: .rounded))
-//                                Text("Start A Workout")
-//                                    .font(.system(size: 28, weight: .bold, design: .rounded))
-//                            }//end of hstack
-//                            .frame(width: 300, height: 60)
-//                            .foregroundColor(.white)
-//                            .background(Color.red)
-//                            .shadow(radius: 10)
-//                        })
-//                        ///end of button
-//                        .cornerRadius(12.0)
-//                    }
-                    
+
                     ///Login button for exisiting account
-                    Button(action: {
-                        ///navLink to LoginView
-                        print("loggin in")
-                        ///trigger create account page push
-                        landingpageVM.createAccountPagePushed = true
-                        
-                        NavigationLink(
-                            ///TODO UPDATE WITH EMAIL PASS
-                            destination: LoginpageView(email: "test", password: "test"),
-                            isActive: $landingpageVM.loginSignupPagePushed,
-                            label: {
-                                Text("Login")
+                    NavigationLink(
+                        destination: LoginpageView(email: "email", password: "password"),
+                        isActive: $landingpageVM.loginSignupPagePushed,
+                        label: {
+                            Button(action: {
+                                landingpageVM.loginSignupPagePushed = true
+                            }, label: {
+                                Text("I already have an account")
+                                    .padding()
+                                    .foregroundColor(.white)
                             })
-                    }, label: {
-                        Text("I already have an account")
-                            .foregroundColor(.white)
-                            .font(.body)
-                    })
-                    .padding(.vertical, 7)
-                    .padding(.bottom, 15)
-                    
+                        })
+        
                     
                 } /// Root VStack
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
