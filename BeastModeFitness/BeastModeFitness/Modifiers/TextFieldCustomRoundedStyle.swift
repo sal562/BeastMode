@@ -8,6 +8,12 @@
 
 import SwiftUI
 
+/*
+ to call on view
+ ///add custom modifier
+ .modifier(TextFieldCustomRoundedStyle())
+ */
+
 struct TextFieldCustomRoundedStyle: ViewModifier {
     
     func body(content: Content) -> some View {

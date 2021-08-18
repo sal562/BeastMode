@@ -25,15 +25,12 @@ struct LoginSignupPageView: View {
             Section {
                 VStack {
                     TextField("Email", text: $loginSignupVM.emailText)
-//                        .padding()
-//                        .border(Color.secondary, width: 1)
-//                        .foregroundColor(.primary)
-//                        .frame(width: 300, height: 60)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        ///add custom modifier
+                        .modifier(TextFieldCustomRoundedStyle())
                         
-                   
                     SecureField("Password", text: $loginSignupVM.passwordText)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        ///add custom modifier
+                        .modifier(TextFieldCustomRoundedStyle())
                 }
 
   
