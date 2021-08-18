@@ -27,6 +27,7 @@ struct LoginSignupPageView: View {
                     TextField("Email", text: $loginSignupVM.emailText)
                         .padding()
                         .border(Color.secondary, width: 1)
+                        .foregroundColor(.primary)
                         .frame(width: 300, height: 60)
                         
                    
@@ -34,6 +35,7 @@ struct LoginSignupPageView: View {
                         .padding()
                         .frame(width: 300, height: 60)
                         .border(Color.secondary, width: 1)
+                        .foregroundColor(.primary)
                 }
 
   
@@ -42,9 +44,9 @@ struct LoginSignupPageView: View {
                     //LOGIN
                 }, label: {
                     HStack(alignment: .center,spacing: 8) {
-                        Image(systemName: "lock")
+                        Image(systemName: loginSignupVM.iconImage)
                             .font(.system(size: 28, weight: .bold, design: .rounded))
-                        Text("Login")
+                        Text(loginSignupVM.buttonText)
                             .font(.system(size: 28, weight: .bold, design: .rounded))
                     }//end of hstack
                     .frame(width: 300, height: 60)

@@ -15,6 +15,7 @@
 		365BBE9B26CCCFDE00D3A74E /* LoginSignupPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365BBE9A26CCCFDE00D3A74E /* LoginSignupPageView.swift */; };
 		365BBE9D26CCD4C800D3A74E /* LandingpageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365BBE9C26CCD4C800D3A74E /* LandingpageViewModel.swift */; };
 		365BBE9F26CCF6D200D3A74E /* LoginSignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365BBE9E26CCF6D200D3A74E /* LoginSignupViewModel.swift */; };
+		365BBEA226CD0C6C00D3A74E /* TextFieldCustomRoundedStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365BBEA126CD0C6C00D3A74E /* TextFieldCustomRoundedStyle.swift */; };
 		3672B6B9269804DF00026B89 /* DropdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3672B6B8269804DF00026B89 /* DropdownView.swift */; };
 		3672B6BB2698452E00026B89 /* MainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3672B6BA2698452E00026B89 /* MainButton.swift */; };
 		3672B6BD2698470A00026B89 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3672B6BC2698470A00026B89 /* Color+Extension.swift */; };
@@ -55,6 +56,7 @@
 		365BBE9A26CCCFDE00D3A74E /* LoginSignupPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSignupPageView.swift; sourceTree = "<group>"; };
 		365BBE9C26CCD4C800D3A74E /* LandingpageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingpageViewModel.swift; sourceTree = "<group>"; };
 		365BBE9E26CCF6D200D3A74E /* LoginSignupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSignupViewModel.swift; sourceTree = "<group>"; };
+		365BBEA126CD0C6C00D3A74E /* TextFieldCustomRoundedStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldCustomRoundedStyle.swift; sourceTree = "<group>"; };
 		3672B6B8269804DF00026B89 /* DropdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownView.swift; sourceTree = "<group>"; };
 		3672B6BA2698452E00026B89 /* MainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButton.swift; sourceTree = "<group>"; };
 		3672B6BC2698470A00026B89 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
@@ -100,6 +102,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		365BBEA026CD0C4700D3A74E /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				3672B6BA2698452E00026B89 /* MainButton.swift */,
+				365BBEA126CD0C6C00D3A74E /* TextFieldCustomRoundedStyle.swift */,
+			);
+			path = Modifiers;
+			sourceTree = "<group>";
+		};
 		3672B6BE26984E5100026B89 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -168,6 +179,7 @@
 		36DA7EB426958C2900726698 /* BeastModeFitness */ = {
 			isa = PBXGroup;
 			children = (
+				365BBEA026CD0C4700D3A74E /* Modifiers */,
 				368F139826B7C67100A68ADF /* Publishers */,
 				36E5316F26AD6F2B0096AE6C /* Model */,
 				36B96555269D71330058A8A3 /* NetworkServices */,
@@ -177,7 +189,6 @@
 				36DA7EBE26958C2C00726698 /* Info.plist */,
 				36DA7EBB26958C2C00726698 /* Preview Content */,
 				3672B6BE26984E5100026B89 /* Views */,
-				3672B6BA2698452E00026B89 /* MainButton.swift */,
 				3672B6BC2698470A00026B89 /* Color+Extension.swift */,
 				36B96540269D66BC0058A8A3 /* GoogleService-Info.plist */,
 				36B9653F269D5F830058A8A3 /* Config.xcconfig */,
@@ -308,6 +319,7 @@
 				365BBE9B26CCCFDE00D3A74E /* LoginSignupPageView.swift in Sources */,
 				365BBE9D26CCD4C800D3A74E /* LandingpageViewModel.swift in Sources */,
 				3680404926B29D79007F4218 /* IncrementingErrors.swift in Sources */,
+				365BBEA226CD0C6C00D3A74E /* TextFieldCustomRoundedStyle.swift in Sources */,
 				3672B6BB2698452E00026B89 /* MainButton.swift in Sources */,
 				365BBE7A26CBBC6400D3A74E /* SettingsViewModel.swift in Sources */,
 				365BBE7E26CBBCAE00D3A74E /* SettingsView.swift in Sources */,

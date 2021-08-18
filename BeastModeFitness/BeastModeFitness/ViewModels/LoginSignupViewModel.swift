@@ -8,13 +8,13 @@
 
 import Foundation
 
-final class LoginSignupViewModel: ObservableObject {
+class LoginSignupViewModel: ObservableObject {
     
     @Published var emailText =  ""
     @Published var passwordText = ""
     @Published var isValid = false
     
-    private let mode: Mode
+    let mode: Mode
     
     ///init custom enum for mode
     init(mode: Mode) {
