@@ -20,7 +20,7 @@ struct LandingPageView: View {
     @State private var titleIsAnimating = false
     @State private var scaledAmount = false
     
-    @State private var selection: Int? = nil
+//    @State private var selection: Int? = nil
     
     @StateObject var landingpageVM = LandingpageViewModel()
     
@@ -45,7 +45,8 @@ struct LandingPageView: View {
                         label: {
                             Button(action: {
                                 ///start a workout
-                                selection = 1
+//                                selection = 1 //DISABLE USING TAGS
+                                landingpageVM.createAccountPagePushed = true
                             }, label: {
                                 HStack(alignment: .center,spacing: 8) {
                                     Image(systemName: "plus.square")
