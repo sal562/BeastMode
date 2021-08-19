@@ -14,11 +14,19 @@ class LoginSignupViewModel: ObservableObject {
     @Published var passwordText = ""
     @Published var isValid = false
     
+    ///user service
+    private let userService: UserServiceProtocol
+
+    
+    
     let mode: Mode
     
     ///init custom enum for mode
-    init(mode: Mode) {
+    init(mode: Mode,userService: UserServiceProtocol = UserService())
+    {
         self.mode = mode
+        ///inject userservice
+        self.userService = userService
     }
     
     var title: String {
