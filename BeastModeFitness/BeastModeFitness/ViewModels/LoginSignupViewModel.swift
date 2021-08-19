@@ -75,6 +75,7 @@ class LoginSignupViewModel: ObservableObject {
             
         case .signup:
             ///userService.linkAcoount(email,pass)
+            print("Signup ")
         }
     }
     
