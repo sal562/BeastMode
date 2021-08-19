@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Combine
 
 class LoginSignupViewModel: ObservableObject {
     
@@ -17,7 +18,8 @@ class LoginSignupViewModel: ObservableObject {
     ///user service
     private let userService: UserServiceProtocol
 
-    
+    ///cancellables
+    private var cancellables: [AnyCancellable] = []
     
     let mode: Mode
     
@@ -75,6 +77,16 @@ class LoginSignupViewModel: ObservableObject {
             
         case .signup:
             ///userService.linkAcoount(email,pass)
+            userService.linkAccount(email: emailText, password: passwordText).sink { completion in
+                switch completion {
+                case let .failure(error):
+                    print(error.localizedDescription)
+                case let .finished:
+                    print("Finished")
+                }
+            } receiveValue: { _ in
+            }
+
             print("Signup ")
         }
     }
