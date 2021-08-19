@@ -40,9 +40,8 @@ class UserService: UserServiceProtocol {
         Publishers.AuthPublisher().eraseToAnyPublisher()
     }
     
-    ///link anon account to userAccount
+    ///link anon account on device to userAccount in Firebase
     func linkAccount(email: String, password: String) -> AnyPublisher<Void, IncrementingErrors> {
-        
         ///create email credentials
         let emailCredential = EmailAuthProvider.credential(withEmail: email, password: password)
         
@@ -53,8 +52,15 @@ class UserService: UserServiceProtocol {
                 if let error = error {
                     ///report errors from firebase
                     return promise(.failure(.default(description: error.localizedDescription)))
-                } else {
-                    
+                } else if let user = result?.user {
+                    ///update current user
+                    Auth.auth().updateCurrentUser(user) { error in
+                        if let error = error {
+                            return promise(.failure(.default(description: error.localizedDescription)))
+                        } else {
+                            return promise(.success(()))
+                        }
+                    }
                 }
             })
         }.eraseToAnyPublisher()
