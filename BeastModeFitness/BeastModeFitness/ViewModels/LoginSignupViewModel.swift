@@ -55,8 +55,13 @@ class LoginSignupViewModel: ObservableObject {
         case .login:
             return "Login"
         case .signup:
-            return "Signup"
+            return "Sign up"
         }
+    }
+    
+    ///Link anonynouys account with newly created info
+    func tappedSigninActionButton() {
+        
     }
     
 }

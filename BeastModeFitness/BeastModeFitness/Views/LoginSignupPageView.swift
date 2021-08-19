@@ -36,6 +36,7 @@ struct LoginSignupPageView: View {
                 ///Button
                 Button(action: {
                     //LOGIN
+                    loginSignupVM.tappedSigninActionButton()
                 }, label: {
                     HStack(alignment: .center,spacing: 8) {
                         Image(systemName: loginSignupVM.iconImage)
