@@ -14,6 +14,7 @@ protocol UserServiceProtocol {
         func currentUser() -> AnyPublisher<User?, Never>
         func signInAnonymously() -> AnyPublisher<User, IncrementingErrors>
         func observeAuthChanges() -> AnyPublisher<User?, Never>
+        func linkAccount(email: String, password: String) -> AnyPublisher<Void,IncrementingErrors>
 }
 
 class UserService: UserServiceProtocol {
@@ -37,5 +38,25 @@ class UserService: UserServiceProtocol {
     ///Observe Auth Changes
     func observeAuthChanges() -> AnyPublisher<User?, Never> {
         Publishers.AuthPublisher().eraseToAnyPublisher()
+    }
+    
+    ///link anon account to userAccount
+    func linkAccount(email: String, password: String) -> AnyPublisher<Void, IncrementingErrors> {
+        
+        ///create email credentials
+        let emailCredential = EmailAuthProvider.credential(withEmail: email, password: password)
+        
+        return Future<Void, IncrementingErrors> { promise in
+            ///get current user and use .linkWith method of Firebase to associate with 3rd party account)
+            Auth.auth().currentUser?.link(with: emailCredential, completion: { result, error in
+                ///return failure or success
+                if let error = error {
+                    ///report errors from firebase
+                    return promise(.failure(.default(description: error.localizedDescription)))
+                } else {
+                    
+                }
+            })
+        }.eraseToAnyPublisher()
     }
 }
