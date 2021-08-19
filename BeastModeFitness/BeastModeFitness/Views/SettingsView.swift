@@ -35,7 +35,8 @@ struct SettingsView: View {
         .background(
         
             NavigationLink(
-                destination: LoginSignupPageView(loginSignupVM: LoginSignupViewModel.init(mode: .signup)),
+                ///create a binding with isPushed
+                destination: LoginSignupPageView(loginSignupVM: LoginSignupViewModel.init(mode: .signup, isPushed: $settingsVM.loginSignupPush)),
                 isActive: $settingsVM.loginSignupPush,
                 label: {
                     Text("Navigate")

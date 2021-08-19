@@ -6,7 +6,7 @@
 //  Copyright © 2021 Sal B. Amer. All rights reserved.
 //
 
-import Foundation
+import SwiftUI
 import Combine
 
 class LoginSignupViewModel: ObservableObject {
@@ -14,6 +14,8 @@ class LoginSignupViewModel: ObservableObject {
     @Published var emailText =  ""
     @Published var passwordText = ""
     @Published var isValid = false
+    
+    @Binding var isPushed: Bool
     
     ///user service
     private let userService: UserServiceProtocol
@@ -24,11 +26,16 @@ class LoginSignupViewModel: ObservableObject {
     let mode: Mode
     
     ///init custom enum for mode
-    init(mode: Mode,userService: UserServiceProtocol = UserService())
+    init(
+        mode: Mode,
+        userService: UserServiceProtocol = UserService(),
+        isPushed: Binding<Bool>)
     {
         self.mode = mode
         ///inject userservice
         self.userService = userService
+        /// underscore means "ignore this". ignore parameters
+        self._isPushed = isPushed
     }
     
     var title: String {
@@ -77,17 +84,16 @@ class LoginSignupViewModel: ObservableObject {
             
         case .signup:
             ///userService.linkAcoount(email,pass)
-            userService.linkAccount(email: emailText, password: passwordText).sink { completion in
+            userService.linkAccount(email: emailText, password: passwordText).sink { [weak self] completion in
                 switch completion {
                 case let .failure(error):
                     print(error.localizedDescription)
-                case let .finished:
+                case .finished:
                     print("Finished")
+                    self?.isPushed = false
                 }
-            } receiveValue: { _ in
-            }
-
-            print("Signup ")
+            } receiveValue: { _ in }
+            .store(in: &cancellables)
         }
     }
     

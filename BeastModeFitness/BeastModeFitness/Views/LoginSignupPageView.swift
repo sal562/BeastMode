@@ -27,7 +27,8 @@ struct LoginSignupPageView: View {
                     TextField("Email", text: $loginSignupVM.emailText)
                         ///add custom modifier
                         .modifier(TextFieldCustomRoundedStyle())
-                        
+                        .disableAutocorrection(true)
+                        .autocapitalization(.none)
                     SecureField("Password", text: $loginSignupVM.passwordText)
                         ///add custom modifier
                         .modifier(TextFieldCustomRoundedStyle())
@@ -62,7 +63,7 @@ struct LoginSignupPageView: View {
 struct LoginpageView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            LoginSignupPageView(loginSignupVM: .init(mode: .login))
+            LoginSignupPageView(loginSignupVM: .init(mode: .login, isPushed: .constant(false)))
         }
     }
 }
