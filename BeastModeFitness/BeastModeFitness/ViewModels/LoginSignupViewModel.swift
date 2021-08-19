@@ -69,7 +69,13 @@ class LoginSignupViewModel: ObservableObject {
     
     ///Link anonynouys account with newly created info
     func tappedSigninActionButton() {
-        
+        switch mode {
+        case .login:
+            print("Logging in")
+            
+        case .signup:
+            ///userService.linkAcoount(email,pass)
+        }
     }
     
 }
