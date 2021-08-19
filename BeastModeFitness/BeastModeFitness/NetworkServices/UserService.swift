@@ -53,7 +53,7 @@ class UserService: UserServiceProtocol {
                     ///report errors from firebase
                     return promise(.failure(.default(description: error.localizedDescription)))
                 } else if let user = result?.user {
-                    ///update current user
+                    ///update current user with user from firebase
                     Auth.auth().updateCurrentUser(user) { error in
                         if let error = error {
                             return promise(.failure(.default(description: error.localizedDescription)))
