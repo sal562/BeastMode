@@ -8,7 +8,7 @@
 
 import SwiftUI
 import Combine
-
+import Firebase
 
 final class SettingsViewModel : ObservableObject {
 
@@ -19,8 +19,8 @@ final class SettingsViewModel : ObservableObject {
     @Published var loginSignupPush = false
     
     let title = "Settings"
-    
     private let userService: UserServiceProtocol
+    private var cancellables: [AnyCancellable] = []
     
     ///inject userService
     init(userService: UserServiceProtocol = UserService()) {
@@ -45,6 +45,15 @@ final class SettingsViewModel : ObservableObject {
             isDarkMode = !isDarkMode
             ///rebuilt setttings items
             buildItems()
+        case .logout:
+            userService.logout().sink { completion in
+                switch completion {
+                case let .failure(error):
+                    print(error.localizedDescription)
+                case let .finished: break
+                }
+            } receiveValue: { _ in }
+            .store(in: &cancellables)
         default:
             break
         }
@@ -62,7 +71,7 @@ final class SettingsViewModel : ObservableObject {
         
         ///setup ability to logout if logged in - only appears if logged in
         if userService.currentUser?.email != nil {
-            itemViewModels += [.init(title: "Logout", iconName: "bolt.slash", type: .logout)]
+            itemViewModels += [.init(title: "Logout", iconName: "arrowshape.turn.up.left.circle", type: .logout)]
         }
     }
     

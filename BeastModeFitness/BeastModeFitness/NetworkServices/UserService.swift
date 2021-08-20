@@ -16,6 +16,7 @@ protocol UserServiceProtocol {
         func signInAnonymously() -> AnyPublisher<User, IncrementingErrors>
         func observeAuthChanges() -> AnyPublisher<User?, Never>
         func linkAccount(email: String, password: String) -> AnyPublisher<Void,IncrementingErrors>
+        func logout() -> AnyPublisher<Void, IncrementingErrors>
 }
 
 class UserService: UserServiceProtocol {
@@ -67,6 +68,19 @@ class UserService: UserServiceProtocol {
                     }
                 }
             })
+        }.eraseToAnyPublisher()
+    }
+    
+    ///logout functio n
+    func logout() -> AnyPublisher<Void, IncrementingErrors> {
+        return Future<Void,IncrementingErrors> { promise in
+            do {
+                try Auth.auth().signOut()
+                promise(.success(()))
+            } catch {
+                promise(.failure(.default(description: error.localizedDescription)))
+            }
+            
         }.eraseToAnyPublisher()
     }
 }
