@@ -17,7 +17,7 @@ protocol UserServiceProtocol {
         func observeAuthChanges() -> AnyPublisher<User?, Never>
         func linkAccount(email: String, password: String) -> AnyPublisher<Void,IncrementingErrors>
         func logout() -> AnyPublisher<Void, IncrementingErrors>
-        func login() ->  AnyPublisher<Void, IncrementingErrors>
+    func login(email: String, password: String) ->  AnyPublisher<Void, IncrementingErrors>
 }
 
 class UserService: UserServiceProtocol {
@@ -83,5 +83,14 @@ class UserService: UserServiceProtocol {
             }
             
         }.eraseToAnyPublisher()
+    }
+    
+    ///login function
+    func login(email: String, password: String) -> AnyPublisher<Void, IncrementingErrors> {
+        return Future<Void, IncrementingErrors> { promise in
+            Auth.auth().signIn(withEmail: email, password: password) { results, error in
+                <#code#>
+            }
+        }
     }
 }
