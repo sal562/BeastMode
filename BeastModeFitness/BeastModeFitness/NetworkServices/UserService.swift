@@ -85,12 +85,17 @@ class UserService: UserServiceProtocol {
         }.eraseToAnyPublisher()
     }
     
-    ///login function
+    ///login function 
     func login(email: String, password: String) -> AnyPublisher<Void, IncrementingErrors> {
         return Future<Void, IncrementingErrors> { promise in
+            ///use firebase signin method passing in user/pass
             Auth.auth().signIn(withEmail: email, password: password) { results, error in
-                <#code#>
+                if let error = error {
+                    promise(.failure(.default(description: error.localizedDescription)))
+                } else {
+                    promise(.success(()))
+                }
             }
-        }
+        }.eraseToAnyPublisher()
     }
 }
