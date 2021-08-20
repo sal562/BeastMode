@@ -22,7 +22,7 @@ struct  ChallengeItemViewModel: Hashable {
         let endDate = Calendar.current.startOfDay(for: Date()
         )
         ///calculate days from start
-        guard let daysFromStart = Calendar.current.dateComponents([.day], from: challenge.startDate, to: Date()).day else {  return 0 }
+        guard let daysFromStart = Calendar.current.dateComponents([.day], from: startDate, to: endDate).day else { return 0 }
         return abs(daysFromStart)
     }
     

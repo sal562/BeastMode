@@ -50,7 +50,7 @@ class AppState: ObservableObject {
         self.userService = userService
         
         ///To logout manually from FB - For Testing Only
-        try? Auth.auth().signOut()
+//        try? Auth.auth().signOut()
         
         ///start observing publisher
         userService.observeAuthChanges() ///gives us option user
