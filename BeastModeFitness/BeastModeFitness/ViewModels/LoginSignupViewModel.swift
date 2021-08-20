@@ -39,9 +39,12 @@ class LoginSignupViewModel: ObservableObject {
         
         ///use combine vor email field validation -> mapped to bool
         Publishers.CombineLatest($emailText, $passwordText)
-            .map {
+            .map { [weak self] email, password in
                 ///if email and password are valid return true
+                return self?.isValidEmail(email) == true && self?.isValidPassword(password) == true
             }
+            ///assign to isValid propertuy
+            .assign(to: &$isValid)
         
     }
     
@@ -122,11 +125,14 @@ extension LoginSignupViewModel {
         case signup
     }
 }
+///use regEx to validate - https://stackoverflow.com/questions/25471114/how-to-validate-an-e-mail-address-in-swift/25471164#25471164
 extension LoginSignupViewModel {
     func isValidEmail(_ email: String) -> Bool {
-        
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailPred.evaluate(with: email) && email.count > 5
     }
     func isValidPassword(_ password: String) -> Bool {
-        
+        return password.count > 5
     }
 }
