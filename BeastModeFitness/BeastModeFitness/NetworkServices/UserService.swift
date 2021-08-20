@@ -81,7 +81,6 @@ class UserService: UserServiceProtocol {
             } catch {
                 promise(.failure(.default(description: error.localizedDescription)))
             }
-            
         }.eraseToAnyPublisher()
     }
     

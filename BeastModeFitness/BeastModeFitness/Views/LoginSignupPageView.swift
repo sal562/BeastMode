@@ -12,7 +12,6 @@ struct LoginSignupPageView: View {
     
     @ObservedObject var loginSignupVM: LoginSignupViewModel
     
-    
     var body: some View {
         VStack {
             Text(loginSignupVM.title)
@@ -49,6 +48,9 @@ struct LoginSignupPageView: View {
                     .foregroundColor(.white)
                     .background(Color.red)
                     .shadow(radius: 10)
+                    ///disable button if email or pass is invalid
+                    .disabled(!loginSignupVM.isValid)
+                    .opacity(loginSignupVM.isValid ?  1 : 0.4)
                 })
                 ///end of button
                 .cornerRadius(12.0)
