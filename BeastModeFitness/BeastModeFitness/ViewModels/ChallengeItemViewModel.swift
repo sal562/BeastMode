@@ -24,7 +24,7 @@ struct  ChallengeItemViewModel: Hashable {
     
     ///measure if task is completed ( from start date) true if length is less than 1
     var isComplete: Bool {
-        daysFromStart - challenge.length > 0
+        daysFromStart - challenge.length >= 0
     }
     
     ///create daily status
