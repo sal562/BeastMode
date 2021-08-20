@@ -89,6 +89,7 @@ class LoginSignupViewModel: ObservableObject {
                 case .finished: break
                 }
             } receiveValue: { _ in } ///ignoring recieved value for testing
+            .store(in: &cancellables)
 
         case .signup:
             ///userService.linkAcoount(email,pass)
