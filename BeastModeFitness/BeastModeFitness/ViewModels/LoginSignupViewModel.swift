@@ -82,6 +82,14 @@ class LoginSignupViewModel: ObservableObject {
         case .login:
             print("Logging in")
             ///userService.login
+            userService.login(email: emailText, password: passwordText).sink { completion in
+                switch completion {
+                case let .failure(error):
+                    print(error.localizedDescription)
+                case .finished: break
+                }
+            } receiveValue: { _ in } ///ignoring recieved value for testing
+
         case .signup:
             ///userService.linkAcoount(email,pass)
             userService.linkAccount(email: emailText, password: passwordText).sink { [weak self] completion in
