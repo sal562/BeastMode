@@ -20,6 +20,13 @@ final class SettingsViewModel : ObservableObject {
     
     let title = "Settings"
     
+    private let userService: UserServiceProtocol
+    
+    ///inject userService
+    init(userService: UserServiceProtocol = UserService()) {
+        self.userService = userService
+    }
+    
     ///new way using item(at) function to pass position
     func item(at index: Int) -> SettingsItemViewModel {
         ///grab index from itemViewModel
