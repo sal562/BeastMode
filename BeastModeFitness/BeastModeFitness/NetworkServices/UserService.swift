@@ -11,13 +11,17 @@ import Combine
 import FirebaseAuth
 
 protocol UserServiceProtocol {
-        func currentUser() -> AnyPublisher<User?, Never>
+        var currentUser: User? { get }
+        func currentUserPublisher() -> AnyPublisher<User?, Never>
         func signInAnonymously() -> AnyPublisher<User, IncrementingErrors>
         func observeAuthChanges() -> AnyPublisher<User?, Never>
         func linkAccount(email: String, password: String) -> AnyPublisher<Void,IncrementingErrors>
 }
 
 class UserService: UserServiceProtocol {
+    
+    let currentUser: Auth.auth().currentUser
+    
     func currentUser() -> AnyPublisher<User?, Never> {
         Just(Auth.auth().currentUser).eraseToAnyPublisher()
     }
