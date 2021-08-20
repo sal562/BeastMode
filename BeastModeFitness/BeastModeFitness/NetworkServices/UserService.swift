@@ -17,6 +17,7 @@ protocol UserServiceProtocol {
         func observeAuthChanges() -> AnyPublisher<User?, Never>
         func linkAccount(email: String, password: String) -> AnyPublisher<Void,IncrementingErrors>
         func logout() -> AnyPublisher<Void, IncrementingErrors>
+        func login() ->  AnyPublisher<Void, IncrementingErrors>
 }
 
 class UserService: UserServiceProtocol {

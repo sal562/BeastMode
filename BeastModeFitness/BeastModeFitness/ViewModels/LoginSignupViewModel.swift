@@ -81,7 +81,7 @@ class LoginSignupViewModel: ObservableObject {
         switch mode {
         case .login:
             print("Logging in")
-            
+            ///userService.login
         case .signup:
             ///userService.linkAcoount(email,pass)
             userService.linkAccount(email: emailText, password: passwordText).sink { [weak self] completion in
