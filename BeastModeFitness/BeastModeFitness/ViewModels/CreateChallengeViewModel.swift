@@ -91,7 +91,7 @@ class CreateChallengeViewModel: ObservableObject {
     //get currrent userID
     func currentUserId() -> AnyPublisher<UserId, IncrementingErrors> {
         print("Getting user id...")
-        return userService.currentUser().flatMap { user -> AnyPublisher<UserId, IncrementingErrors> in
+        return userService.currentUserPublisher().flatMap { user -> AnyPublisher<UserId, IncrementingErrors> in
             ///FOR TESTING FAILURE ALERT ONLY - DISABLE
 //            return Fail(error: .default(description: "Some firebase autg errir ")).eraseToAnyPublisher()
             if let userId = user?.uid {

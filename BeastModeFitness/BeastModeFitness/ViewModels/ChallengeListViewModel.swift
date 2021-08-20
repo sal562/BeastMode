@@ -59,7 +59,7 @@ final class ChallengeListViewModel: ObservableObject {
      private func observeChallenges() {
         ///set isLoading to true
         isLoading = true
-        userService.currentUser()
+        userService.currentUserPublisher()
             .compactMap { $0?.uid }
             .flatMap { [weak self] userId -> AnyPublisher<[Challenge], IncrementingErrors> in
                 ///Value of optional type 'ChallengeListViewModel?' must be unwrapped to refer to member 'challengeService' of wrapped base type 'ChallengeListViewModel'

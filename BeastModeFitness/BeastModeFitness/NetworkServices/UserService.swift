@@ -20,9 +20,9 @@ protocol UserServiceProtocol {
 
 class UserService: UserServiceProtocol {
     
-    let currentUser: Auth.auth().currentUser
+    let currentUser = Auth.auth().currentUser
     
-    func currentUser() -> AnyPublisher<User?, Never> {
+    func currentUserPublisher() -> AnyPublisher<User?, Never> {
         Just(Auth.auth().currentUser).eraseToAnyPublisher()
     }
     
