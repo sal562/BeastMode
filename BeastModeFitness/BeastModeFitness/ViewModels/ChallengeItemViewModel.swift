@@ -17,6 +17,10 @@ struct  ChallengeItemViewModel: Hashable {
     
     ///computed property to figure our home many days from start
     var daysFromStart: Int {
+        ///create start & end date
+        let startDate = Calendar.current.startOfDay(for: challenge.startDate)
+        let endDate = Calendar.current.startOfDay(for: Date()
+        )
         ///calculate days from start
         guard let daysFromStart = Calendar.current.dateComponents([.day], from: challenge.startDate, to: Date()).day else {  return 0 }
         return abs(daysFromStart)
