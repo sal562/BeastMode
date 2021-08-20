@@ -36,6 +36,13 @@ class LoginSignupViewModel: ObservableObject {
         self.userService = userService
         /// underscore means "ignore this". ignore parameters
         self._isPushed = isPushed
+        
+        ///use combine vor email field validation -> mapped to bool
+        Publishers.CombineLatest($emailText, $passwordText)
+            .map {
+                ///if email and password are valid return true
+            }
+        
     }
     
     var title: String {
@@ -113,5 +120,13 @@ extension LoginSignupViewModel {
     enum Mode {
         case login
         case signup
+    }
+}
+extension LoginSignupViewModel {
+    func isValidEmail(_ email: String) -> Bool {
+        
+    }
+    func isValidPassword(_ password: String) -> Bool {
+        
     }
 }
