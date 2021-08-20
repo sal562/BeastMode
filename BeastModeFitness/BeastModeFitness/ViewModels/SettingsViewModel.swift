@@ -51,7 +51,9 @@ final class SettingsViewModel : ObservableObject {
     private func buildItems() {
         itemViewModels = [
             ///initialize the settings items
-            .init(title: "Create Account", iconName: "person.circle", type: .account),
+//            .init(title: "Create Account", iconName: "person.circle", type: .account),
+            ///user userService to display currentUser email from firebase instead of asking to Create Account
+            .init(title: userService.currentUser?.email ?? "Create Account", iconName: "person.circle", type: .account),
             .init(title: "Switch to \(isDarkMode ? "Light" : "Dark") Mode", iconName: "lightbulb", type: .mode),
             .init(title: "Privacy Policy", iconName: "lock.shield", type: .privacy)
         ]
