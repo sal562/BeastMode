@@ -37,6 +37,8 @@ final class SettingsViewModel : ObservableObject {
         switch itemViewModels[index].type {
         
         case .account:
+            ///will prevent user from going to signup page if email already exists (logged in)
+            guard userService.currentUser?.email == nil else { return }
             loginSignupPush = true
         case .mode:
             ///change from light to dark
@@ -57,6 +59,11 @@ final class SettingsViewModel : ObservableObject {
             .init(title: "Switch to \(isDarkMode ? "Light" : "Dark") Mode", iconName: "lightbulb", type: .mode),
             .init(title: "Privacy Policy", iconName: "lock.shield", type: .privacy)
         ]
+        
+        ///setup ability to logout if logged in - only appears if logged in
+        if userService.currentUser?.email != nil {
+            itemViewModels += [.init(title: "Logout", iconName: "bolt.slash", type: .logout)]
+        }
     }
     
     ///func to trigger onApper and init default settings
