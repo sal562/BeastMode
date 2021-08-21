@@ -18,16 +18,22 @@ struct ProgressCircleViewModel {
 }
 
 struct ProgressCircleView: View {
-    ///instanciate progressCircleVM
+    ///.progressCircleVM
     let progressCircleVM: ProgressCircleViewModel
     
     var body: some View {
-        Circle()
+        
+        ///circle inside a circle
+        ZStack {
+            ///outside circle
+            Circle()
+                .stroke(style: .init(lineWidth: 10, lineCap: .round, lineJoin: .round))
+        }
     }
 }
 
 struct ProgressCircleView_Previews: PreviewProvider {
     static var previews: some View {
-        ProgressCircleView()
+        ProgressCircleView(progressCircleVM: .init(title: "Day", message: "3 of 7", percentageComplete: 0.43))
     }
 }
