@@ -26,6 +26,7 @@
 		36A1B32726C00411005BA563 /* ChallengeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A1B32626C00411005BA563 /* ChallengeListView.swift */; };
 		36A1B32926C00426005BA563 /* ChallengeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A1B32826C00426005BA563 /* ChallengeListViewModel.swift */; };
 		36A1B32B26C004C7005BA563 /* QuerySnapshotPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A1B32A26C004C7005BA563 /* QuerySnapshotPublisher.swift */; };
+		36A4B8DE26D0F78B007270FB /* ProgressCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A4B8DD26D0F78B007270FB /* ProgressCircleView.swift */; };
 		36B9652E26986A030058A8A3 /* CreateChallengeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B9652D26986A030058A8A3 /* CreateChallengeViewModel.swift */; };
 		36B9653026986B030058A8A3 /* DropdownItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B9652F26986B030058A8A3 /* DropdownItemProtocol.swift */; };
 		36B96541269D66BC0058A8A3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 36B96540269D66BC0058A8A3 /* GoogleService-Info.plist */; };
@@ -67,6 +68,7 @@
 		36A1B32626C00411005BA563 /* ChallengeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeListView.swift; sourceTree = "<group>"; };
 		36A1B32826C00426005BA563 /* ChallengeListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeListViewModel.swift; sourceTree = "<group>"; };
 		36A1B32A26C004C7005BA563 /* QuerySnapshotPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuerySnapshotPublisher.swift; sourceTree = "<group>"; };
+		36A4B8DD26D0F78B007270FB /* ProgressCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCircleView.swift; sourceTree = "<group>"; };
 		36B9652D26986A030058A8A3 /* CreateChallengeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateChallengeViewModel.swift; sourceTree = "<group>"; };
 		36B9652F26986B030058A8A3 /* DropdownItemProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownItemProtocol.swift; sourceTree = "<group>"; };
 		36B9653F269D5F830058A8A3 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 				36A1B32626C00411005BA563 /* ChallengeListView.swift */,
 				365BBE7D26CBBCAE00D3A74E /* SettingsView.swift */,
 				365BBE9A26CCCFDE00D3A74E /* LoginSignupPageView.swift */,
+				36A4B8DD26D0F78B007270FB /* ProgressCircleView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 				365BBE9B26CCCFDE00D3A74E /* LoginSignupPageView.swift in Sources */,
 				365BBE9D26CCD4C800D3A74E /* LandingpageViewModel.swift in Sources */,
 				3680404926B29D79007F4218 /* IncrementingErrors.swift in Sources */,
+				36A4B8DE26D0F78B007270FB /* ProgressCircleView.swift in Sources */,
 				365BBEA226CD0C6C00D3A74E /* TextFieldCustomRoundedStyle.swift in Sources */,
 				3672B6BB2698452E00026B89 /* MainButton.swift in Sources */,
 				365BBE7A26CBBC6400D3A74E /* SettingsViewModel.swift in Sources */,
