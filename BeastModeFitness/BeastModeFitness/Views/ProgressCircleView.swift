@@ -28,6 +28,8 @@ struct ProgressCircleView: View {
             ///outside circle
             Circle()
                 .stroke(style: .init(lineWidth: 10, lineCap: .round, lineJoin: .round))
+                ///
+                .fill()
         }
     }
 }
