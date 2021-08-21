@@ -18,6 +18,9 @@ struct ProgressCircleViewModel {
 }
 
 struct ProgressCircleView: View {
+    ///instanciate progressCircleVM
+    let progressCircleVM: ProgressCircleViewModel
+    
     var body: some View {
         Circle()
     }
