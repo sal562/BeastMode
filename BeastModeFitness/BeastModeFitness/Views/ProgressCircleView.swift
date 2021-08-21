@@ -52,14 +52,22 @@ struct ProgressCircleView: View {
                 .fill(Color.circleTrack)
                 ///change the location of the start
                 .rotationEffect(.init(degrees: -90))
+            
+            VStack {
+                if progressCircleVM.shouldKnowTitleAfterDone {
+                    Text(progressCircleVM.title)
+                }
+                Text(progressCircleVM.message)
+            }.padding(25)
+            .font(.system(size: 45, weight: .semibold, design: .rounded))
         }
     }
 }
 
 struct ProgressCircleView_Previews: PreviewProvider {
     static var previews: some View {
-        ProgressCircleView(progressCircleVM: .init(title: "Day", message: "3 of 7", percentageComplete: 0.43))
+        ProgressCircleView(progressCircleVM: .init(title: "Day", message: "3 of 7", percentageComplete: 1.1))
             .frame(width: 300, height: 300)
-//            .preferredColorScheme(.dark) //FOR TESTING DARK MODE
+            .preferredColorScheme(.dark) //FOR TESTING DARK MODE
     }
 }
