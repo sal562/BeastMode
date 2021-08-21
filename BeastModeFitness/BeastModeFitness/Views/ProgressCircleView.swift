@@ -8,6 +8,8 @@
 
 import SwiftUI
 
+///REQUIRES 2 custom colors for light and dark mode + outline CircleOutline,CircleTrack
+
 struct ProgressCircleViewModel {
     let title: String
     let message: String
@@ -28,8 +30,8 @@ struct ProgressCircleView: View {
             ///outside circle
             Circle()
                 .stroke(style: .init(lineWidth: 10, lineCap: .round, lineJoin: .round))
-                ///
-                .fill()
+                ///use customColor for circle outline
+                .fill(Color("CircleOutline"))
         }
     }
 }
