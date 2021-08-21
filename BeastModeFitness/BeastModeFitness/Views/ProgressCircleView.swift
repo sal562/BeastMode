@@ -42,6 +42,16 @@ struct ProgressCircleView: View {
                 ///use customColor for circle outline
 //                .fill(Color("CircleOutline"))///Hard Coded - use constants
                 .fill(Color.circleOutline)
+            
+            ///Circle Tract
+            Circle()
+                ///use trim to show progress bases on double
+                .trim(from: 0, to: CGFloat(progressCircleVM.percentageComplete))
+                .stroke(style: .init(lineWidth: 10, lineCap: .round, lineJoin: .round))
+                ///use customColor for circle outline
+                .fill(Color.circleTrack)
+                ///change the location of the start
+                .rotationEffect(.init(degrees: -90))
         }
     }
 }
@@ -49,6 +59,7 @@ struct ProgressCircleView: View {
 struct ProgressCircleView_Previews: PreviewProvider {
     static var previews: some View {
         ProgressCircleView(progressCircleVM: .init(title: "Day", message: "3 of 7", percentageComplete: 0.43))
+            .frame(width: 300, height: 300)
 //            .preferredColorScheme(.dark) //FOR TESTING DARK MODE
     }
 }
