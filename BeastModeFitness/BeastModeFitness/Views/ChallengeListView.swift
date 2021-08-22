@@ -48,7 +48,7 @@ struct ChallengeListView: View {
                 ///spacing is for horizontal and vertical spacing between 2 gridItems (each row)
                 LazyVGrid(columns: [.init(.flexible(), spacing: 20),.init(.flexible(), spacing: 20)]) {
                     ///loop through view.itemViewModels
-                    ForEach(viewModel.itemViewModels, id:\.self) { viewModel in
+                    ForEach(viewModel.itemViewModels, id:\.id) { viewModel in
                         //Call ChallengeItemView
                         ChallengeItemView(viewModel: viewModel)
                     }
