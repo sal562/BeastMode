@@ -15,8 +15,11 @@ protocol ChallengeServiceProtocol {
     func create(_ challenge: Challenge) -> AnyPublisher<Void, IncrementingErrors>
     ///observe changes
     func observeChallenge(userId: UserId) -> AnyPublisher<[Challenge], IncrementingErrors>
+    ///create method to delete
+    func deleteChallenge(_ challengeId: String) -> AnyPublisher<Void, IncrementingErrors>
             
     }
+
     
     final class ChallengeService: ChallengeServiceProtocol {
         
@@ -60,5 +63,11 @@ protocol ChallengeServiceProtocol {
                             .eraseToAnyPublisher()
                     }
                 }.eraseToAnyPublisher()
+        }
+        
+        ///delete challenge from Firebase
+        func deleteChallenge(_ challengeId: String) -> AnyPublisher<Void, IncrementingErrors> {
+            
+            
         }
     }

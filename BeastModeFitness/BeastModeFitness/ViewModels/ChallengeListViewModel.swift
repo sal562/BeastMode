@@ -90,6 +90,8 @@ final class ChallengeListViewModel: ObservableObject {
     }
     
     private func deleteChallenge(_ challengeId: String) {
-        print(challengeId)
+//        print(challengeId)
+        ///method on challengeService (Delete)
+        
     }
 }
