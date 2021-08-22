@@ -8,8 +8,13 @@
 
 import Foundation
 
-struct  ChallengeItemViewModel: Hashable {
+struct  ChallengeItemViewModel: Identifiable {
     private let challenge: Challenge
+    
+    ///Pass document ID
+    var id: String {
+        challenge.id!
+    }
     
     var title: String {
         challenge.exercise.capitalized

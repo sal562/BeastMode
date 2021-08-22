@@ -9,9 +9,9 @@
 import SwiftUI
 import FirebaseFirestoreSwift
 
-struct Challenge: Codable, Hashable {
-    
-    ///use @Documentidf from Firebase to track ID
+struct Challenge: Codable {
+     
+    ///use @Documentidf from Firebase to track ID - Remove Hashable and use identifiable 
     @DocumentID var id: String?
     
     let userId: String
