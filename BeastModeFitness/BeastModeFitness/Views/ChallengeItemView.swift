@@ -69,7 +69,10 @@ struct ChallengeItemView: View {
 
 
 struct ChallengeItemView_Previews: PreviewProvider {
+    
     static var previews: some View {
-        ChallengeItemView(viewModel: ChallengeItemViewModel.)
+        ChallengeItemView(viewModel:  ChallengeItemViewModel(Challenge(userId: "12121", startDate: Date(), exercise: "Pullups", startAmount: 2, increase: 1, length: 14)))
+            .frame(width: 300, height: 300)
+            .preferredColorScheme(.dark) //FOR TESTING DARK MODE
     }
 }
