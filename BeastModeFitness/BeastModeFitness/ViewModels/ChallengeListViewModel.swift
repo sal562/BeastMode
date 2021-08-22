@@ -91,7 +91,7 @@ final class ChallengeListViewModel: ObservableObject {
     
     private func deleteChallenge(_ challengeId: String) {
 //        print(challengeId)
-        ///method on challengeService (Delete)
+        ///method on challengeService (Delete) - subscribe 
         challengeService.deleteChallenge(challengeId).sink { completion in
             switch completion {
             case let .failure(error):
