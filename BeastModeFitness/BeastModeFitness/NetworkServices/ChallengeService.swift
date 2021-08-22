@@ -68,6 +68,16 @@ protocol ChallengeServiceProtocol {
         ///delete challenge from Firebase
         func deleteChallenge(_ challengeId: String) -> AnyPublisher<Void, IncrementingErrors> {
             
-            
+            return Future<Void, IncrementingErrors> { promise in
+                ///get challenges collection, pass challengeId and delete
+                self.db.collection("challenges").document(challengeId).delete { error in
+                    if let error = error {
+                        promise(.failure(.default(description: error.localizedDescription)))
+                    } else {
+                        promise(.success(()))
+                    }
+                }
+                
+            }.eraseToAnyPublisher()
         }
     }
