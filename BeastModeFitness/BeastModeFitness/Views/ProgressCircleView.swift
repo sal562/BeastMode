@@ -32,6 +32,9 @@ struct ProgressCircleView: View {
     ///.progressCircleVM
     let progressCircleVM: ProgressCircleViewModel
     
+    ///state for animation
+    @State private var percentage: CGFloat = 0
+    
     var body: some View {
         
         ///circle inside a circle
@@ -46,7 +49,11 @@ struct ProgressCircleView: View {
             ///Circle Tract
             Circle()
                 ///use trim to show progress bases on double
-                .trim(from: 0, to: CGFloat(progressCircleVM.percentageComplete))
+//                .trim(from: 0, to: CGFloat(progressCircleVM.percentageComplete))
+                ///if animating use @StateVariable
+                .trim(from: 0, to: percentage)
+                
+                
                 .stroke(style: .init(lineWidth: 10, lineCap: .round, lineJoin: .round))
                 ///use customColor for circle outline
                 .fill(Color.circleTrack)
@@ -59,14 +66,20 @@ struct ProgressCircleView: View {
                 }
                 Text(progressCircleVM.message)
             }.padding(25)
-            .font(.system(size: 45, weight: .semibold, design: .rounded))
+            .font(Font.caption.weight(.semibold))
         }
+        ///on appear for set to percentage - animated
+        .onAppear(perform: {
+            withAnimation(.spring(response: 5)) {
+                percentage = CGFloat(progressCircleVM.percentageComplete)
+            }
+        })
     }
 }
 
 struct ProgressCircleView_Previews: PreviewProvider {
     static var previews: some View {
-        ProgressCircleView(progressCircleVM: .init(title: "Day", message: "3 of 7", percentageComplete: 1.1))
+        ProgressCircleView(progressCircleVM: .init(title: "Day", message: "3 of 7", percentageComplete: 0.45))
             .frame(width: 300, height: 300)
             .preferredColorScheme(.dark) //FOR TESTING DARK MODE
     }

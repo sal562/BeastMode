@@ -15,6 +15,13 @@ struct  ChallengeItemViewModel: Hashable {
         challenge.exercise.capitalized
     }
     
+    var progressCircleVM: ProgressCircleViewModel {
+            let dayNumber = daysFromStart + 1
+        let title = "Day"
+        let message = isComplete ? "Done" : "\(dayNumber) of \(challenge.length)"
+        return .init(title: title, message: message, percentageComplete: Double(dayNumber) / Double(challenge.length))
+    }
+    
     ///computed property to figure our home many days from start
     var daysFromStart: Int {
         ///create start & end date
