@@ -7,9 +7,13 @@
 //
 
 import SwiftUI
-
+import FirebaseFirestoreSwift
 
 struct Challenge: Codable, Hashable {
+    
+    ///use @Documentidf from Firebase to track ID
+    @DocumentID var id: String?
+    
     let userId: String
     let startDate: Date
     let exercise: String
@@ -18,11 +22,11 @@ struct Challenge: Codable, Hashable {
     let length: Int
     
     //create dummy Challenge
-    static let dummyChallenge = [
-    
-        Challenge(userId: "user2", startDate: Date(), exercise: "Pullups", startAmount: 5, increase: 4, length: 5)
-        
-    ]
+//    static let dummyChallenge = [
+//
+//        Challenge(userId: "user2", startDate: Date(), exercise: "Pullups", startAmount: 5, increase: 4, length: 5)
+//
+//    ]
 }
 
 

@@ -49,12 +49,20 @@ struct  ChallengeItemViewModel: Hashable {
         return "+ \(challenge.increase) daily"
     }
     
-    //init challenge due to Private let
-    init(_ challenge: Challenge) {
+    private let onDelete: (String) -> Void
+    
+    ///init challenge due to Private let
+    init(
+        _ challenge: Challenge,
+        onDelete: @escaping (String) -> Void)
+    {
         self.challenge = challenge
+        self.onDelete = onDelete
     }
     
+    ///create function for tapping to delete
     func tapToDelete() {
-        
+        //callback to pass challengeID - and delete from challengeservice
+        onDelete("")
     }
 }
