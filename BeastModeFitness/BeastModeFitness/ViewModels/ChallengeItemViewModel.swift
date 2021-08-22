@@ -68,6 +68,8 @@ struct  ChallengeItemViewModel: Identifiable {
     ///create function for tapping to delete
     func tapToDelete() {
         //callback to pass challengeID - and delete from challengeservice
-        onDelete("")
+        if let id = challenge.id {
+            onDelete(id)
+        }
     }
 }
