@@ -53,4 +53,8 @@ struct  ChallengeItemViewModel: Hashable {
     init(_ challenge: Challenge) {
         self.challenge = challenge
     }
+    
+    func tapToDelete() {
+        
+    }
 }

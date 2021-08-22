@@ -24,6 +24,7 @@ struct ChallengeItemView: View {
             Spacer()
             Button(action: {
                 ///trash challenge
+//                viewModel.tappedDelete()
             }, label: {
                 Image(systemName: "trash")
                     .resizable()
