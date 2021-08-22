@@ -47,7 +47,8 @@ protocol ChallengeServiceProtocol {
         
         ///call observeChallenge
         func observeChallenge(userId: UserId) -> AnyPublisher<[Challenge], IncrementingErrors> {
-            let query = db.collection("challenges").whereField("userId", isEqualTo: userId).order(by: "startDate", descending: true) ///added order logic to query using start date
+            /////added order logic to query using start date - Requires setting index in Firestore Otherwise error 
+            let query = db.collection("challenges").whereField("userId", isEqualTo: userId).order(by: "startDate", descending: true)
             return Publishers.QuerySnapshotPublisher(query: query)
                 .flatMap { snapshot -> AnyPublisher<[Challenge], IncrementingErrors> in
                     do {
