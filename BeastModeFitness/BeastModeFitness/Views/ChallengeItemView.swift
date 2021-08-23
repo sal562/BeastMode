@@ -46,11 +46,12 @@ struct ChallengeItemView: View {
         
         Group {
             Divider()
-            Text("Today")
+            ///set title
+            Text(viewModel.todayTitle)
                 .font(.title3)
                 .fontWeight(.medium)
-            
-            Text("1 Pullup")
+            ///set rep title
+            Text(viewModel.repsBeingDoneTitle)
                 .font(.system(size: 24, weight: .bold, design: .rounded))
             Button(action: {
                 ///mark as done
@@ -83,9 +84,11 @@ struct ChallengeItemView: View {
             }
             Spacer()
             DailyIncreaseRow
-            ///add todayView
-            todayView
-            
+            ///add todayView w/check to see if its completd or not
+                if viewModel.shouldShowTodayView {
+                    todayView
+                }
+           
         }///end of vstack
         .padding(.vertical, 10)
             Spacer()
