@@ -36,6 +36,10 @@ struct ChallengeListView: View {
                 }
             } else {
                 mainContentView
+                ///update view with most recent data
+                    .onReceive(NotificationCenter.default.publisher(for: UIApplication.significantTimeChangeNotification), perform: { _ in
+                        viewModel.send(action: .timeChange)
+                    })
             }
         }
     }

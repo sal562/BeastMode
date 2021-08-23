@@ -28,6 +28,7 @@ final class ChallengeListViewModel: ObservableObject {
     enum Action {
         case retry
         case create
+        case timeChange
     }
     
     ///init challenge Service and userService
@@ -47,6 +48,9 @@ final class ChallengeListViewModel: ObservableObject {
             observeChallenges()
         case .create:
             createChallenges()
+        case .timeChange:
+            cancellables.removeAll()
+            observeChallenges()
         }
     }
     
