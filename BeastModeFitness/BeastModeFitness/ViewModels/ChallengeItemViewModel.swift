@@ -73,7 +73,7 @@ struct  ChallengeItemViewModel: Identifiable {
         } else {
             exercise = challenge.exercise
         }
-        return "\(repNumber)" + exercise
+        return "\(repNumber) " + exercise
     }
     
     ///show in todayView section

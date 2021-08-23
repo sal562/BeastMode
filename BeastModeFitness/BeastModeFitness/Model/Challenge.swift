@@ -21,6 +21,8 @@ struct Challenge: Codable {
     let increase: Int
     let length: Int
     
+    let activities: [Activity]
+    
     //create dummy Challenge
 //    static let dummyChallenge = [
 //
@@ -29,4 +31,8 @@ struct Challenge: Codable {
 //    ]
 }
 
-
+///create activity struct to check for status
+struct Activity: Codable {
+    let date: Date
+    let isCompleted: Bool
+}
