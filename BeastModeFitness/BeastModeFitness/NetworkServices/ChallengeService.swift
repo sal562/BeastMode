@@ -88,8 +88,8 @@ protocol ChallengeServiceProtocol {
             return Future<Void, IncrementingErrors> { promise in
                 ///get challenges collection, pass challengeId and delete
                 self.db.collection("challenges").document(challengeId).updateData(
-                    ["activitites": activities.map({
-                        return ["date" : $0.date, "isCompleted": $0.isComplete]
+                    ["activities": activities.map({
+                        return ["date" : $0.date, "isComplete": $0.isComplete]
                     })]
                 ) { error in
                     if let error = error {

@@ -91,7 +91,6 @@ final class ChallengeListViewModel: ObservableObject {
                         },
                         onToggleComplete: { [weak self] id, activities in
                             self?.updateChallenge(id: id, activities: activities)
-                            
                         }
                     )
                 }
@@ -102,7 +101,8 @@ final class ChallengeListViewModel: ObservableObject {
         challengeService.updateChallenge(id, activities: activities).sink { completion in
             switch completion {
             case let .failure(error):
-                print(error.localizedDescription)
+                self.error = error
+//                print(error.localizedDescription)
             case .finished:  break
             }
         } receiveValue: { _ in
@@ -117,7 +117,8 @@ final class ChallengeListViewModel: ObservableObject {
         challengeService.deleteChallenge(challengeId).sink { completion in
             switch completion {
             case let .failure(error):
-                print(error.localizedDescription)
+                self.error = error
+//                print(error.localizedDescription)
             case .finished:  break
             }
         } receiveValue: { _ in

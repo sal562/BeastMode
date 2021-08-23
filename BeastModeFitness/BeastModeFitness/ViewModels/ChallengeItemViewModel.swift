@@ -111,9 +111,10 @@ struct  ChallengeItemViewModel: Identifiable {
 //        }
 //    }
 //
-    ///send action
+    ///send action via Enumt
     func send(action: Action) {
         guard let id = challenge.id else { return }
+        
         switch action {
         case .delete:
             onDelete(id)
