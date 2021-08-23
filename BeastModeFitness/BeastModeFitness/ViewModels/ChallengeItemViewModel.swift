@@ -55,6 +55,7 @@ struct  ChallengeItemViewModel: Identifiable {
     }
     
     private let onDelete: (String) -> Void
+    private let onToggleComplete
     
     let todayTitle = "Today"
     
@@ -99,15 +100,16 @@ struct  ChallengeItemViewModel: Identifiable {
     }
     
     ///create function for tapping to delete
-    func tapToDelete() {
-        //callback to pass challengeID - and delete from challengeservice
-        if let id = challenge.id {
-            onDelete(id)
-        }
-    }
-    
+//    func tapToDelete() {
+//        //callback to pass challengeID - and delete from challengeservice
+//        if let id = challenge.id {
+//            onDelete(id)
+//        }
+//    }
+//
     ///send action from view
     func send(action: Action) {
+        guard let id = challenge.id else { return }
         switch action {
         case .delete:
             onDelete(id)
