@@ -81,6 +81,12 @@ struct  ChallengeItemViewModel: Identifiable {
         ///check if challengeComplet - if it isnt keep showing -if complete hide the view
         !isComplete
     }
+    ///check to see if dayTask is Completed
+    var isDayComplete: Bool {
+        let today = Calendar.current.startOfDay(for: Date())
+        return challenge.activities.first(where: { $0.date == today })?.isCompleted == true
+        
+    }
 
     
     ///init challenge due to Private let
