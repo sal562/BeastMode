@@ -40,6 +40,17 @@ struct ChallengeItemView: View {
                 .font(.system(size: 24, weight: .bold, design: .rounded)).allowsTightening(true)
         }
     }
+    
+    ///Today View - Upate
+    var todayView: some View {
+        Divider()
+        Text("Today")
+            .font(.title3)
+            .fontWeight(.medium)
+        
+        Text("1 Pullup")
+            .font(.system(size: 24, weight: .bold, design: .rounded))
+    }
 
     
     var body: some View {
