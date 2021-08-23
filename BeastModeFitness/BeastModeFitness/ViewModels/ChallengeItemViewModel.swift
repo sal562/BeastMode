@@ -74,7 +74,7 @@ struct  ChallengeItemViewModel: Identifiable {
         } else {
             exercise = challenge.exercise
         }
-        return "\(repNumber) " + exercise
+        return isComplete ? "Completed" : "\(repNumber) " + exercise
     }
     
     ///show in todayView section

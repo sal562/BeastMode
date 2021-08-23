@@ -66,8 +66,9 @@ struct ChallengeItemView: View {
             .padding(.vertical, 10)
             .padding(.horizontal, 15)
             .font(Font.caption.weight(.semibold))
-            .background(viewModel.isDayComplete ? Color.circleTrack : Color.primaryButton)
+            .background(viewModel.isDayComplete || viewModel.isComplete ? Color.circleTrack : Color.primaryButton)
             .cornerRadius(10)
+            .disabled(viewModel.isComplete)
         }
         
     }
@@ -88,10 +89,11 @@ struct ChallengeItemView: View {
             }
             Spacer()
             DailyIncreaseRow
-            ///add todayView w/check to see if its completd or not
-                if viewModel.shouldShowTodayView {
-                    todayView
-                }
+            todayView
+//            ///add todayView w/check to see if its completd or not - Disabled due to Done Circle being too large
+//                if viewModel.shouldShowTodayView {
+//
+//                }
            
         }///end of vstack
         .padding(.vertical, 10)
