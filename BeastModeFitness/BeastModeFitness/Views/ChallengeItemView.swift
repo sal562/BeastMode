@@ -54,13 +54,15 @@ struct ChallengeItemView: View {
                 .font(.system(size: 24, weight: .bold, design: .rounded))
             Button(action: {
                 ///mark as done
+                print("Done")
             }, label: {
                 Text("Mark Done")
             })
-            .padding(.vertical, 10)
-            .padding(.horizontal, 15)
-            .font(Font.caption.weight(.semibold))
-            .cornerRadius(10)
+            .buttonStyle(MainButtonCustomStyle())
+//            .padding(.vertical, 10)
+//            .padding(.horizontal, 15)
+//            .font(Font.caption.weight(.semibold))
+//            .cornerRadius(10)
         }
         
     }
@@ -69,7 +71,7 @@ struct ChallengeItemView: View {
     var body: some View {
         HStack {
             Spacer()
-        VStack {
+            VStack(spacing:25) {
             TitleRow
             Spacer()
             HStack(alignment: .center) {
@@ -77,7 +79,7 @@ struct ChallengeItemView: View {
 //                    .font(.system(size: 12, weight: .regular, design: .rounded)).allowsTightening(true)
                 ///use progress Cirvle view
                 ProgressCircleView(progressCircleVM: viewModel.progressCircleVM)
-                    .padding(.vertical, 25)
+//                    .padding(.vertical, 25)
             }
             Spacer()
             DailyIncreaseRow
@@ -97,7 +99,7 @@ struct ChallengeItemView: View {
 
 
 //struct ChallengeItemView_Previews: PreviewProvider {
-//    
+//
 //    static var previews: some View {
 //        ChallengeItemView(viewModel:  ChallengeItemViewModel(Challenge(userId: "12121", startDate: Date(), exercise: "Pullups", startAmount: 2, increase: 1, length: 14), onDelete: _))
 //            .frame(width: 300, height: 300)
