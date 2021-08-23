@@ -75,6 +75,12 @@ struct  ChallengeItemViewModel: Identifiable {
         }
         return "\(repNumber)" + exercise
     }
+    
+    ///show in todayView section
+    var shouldShowTodayView: Bool {
+        ///check if challengeComplet - if it isnt keep showing -if complete hide the view
+        !isComplete
+    }
 
     
     ///init challenge due to Private let
