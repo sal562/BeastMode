@@ -43,22 +43,26 @@ struct ChallengeItemView: View {
     
     ///Today View - Upate
     var todayView: some View {
-        Divider()
-        Text("Today")
-            .font(.title3)
-            .fontWeight(.medium)
         
-        Text("1 Pullup")
-            .font(.system(size: 24, weight: .bold, design: .rounded))
-        Button(action: {
-            ///mark as done
-        }, label: {
-            Text("Mark Done")
-        })
-        .padding(.vertical, 10)
-        .padding(.horizontal, 15)
-        .font(Font.caption.weight(.semibold))
-        .cornerRadius(10)
+        Group {
+            Divider()
+            Text("Today")
+                .font(.title3)
+                .fontWeight(.medium)
+            
+            Text("1 Pullup")
+                .font(.system(size: 24, weight: .bold, design: .rounded))
+            Button(action: {
+                ///mark as done
+            }, label: {
+                Text("Mark Done")
+            })
+            .padding(.vertical, 10)
+            .padding(.horizontal, 15)
+            .font(Font.caption.weight(.semibold))
+            .cornerRadius(10)
+        }
+        
     }
 
     
@@ -77,6 +81,9 @@ struct ChallengeItemView: View {
             }
             Spacer()
             DailyIncreaseRow
+            ///add todayView
+            todayView
+            
         }///end of vstack
         .padding(.vertical, 10)
             Spacer()
@@ -92,7 +99,7 @@ struct ChallengeItemView: View {
 //struct ChallengeItemView_Previews: PreviewProvider {
 //    
 //    static var previews: some View {
-//        ChallengeItemView(viewModel:  ChallengeItemViewModel(Challenge(userId: "12121", startDate: Date(), exercise: "Pullups", startAmount: 2, increase: 1, length: 14)))
+//        ChallengeItemView(viewModel:  ChallengeItemViewModel(Challenge(userId: "12121", startDate: Date(), exercise: "Pullups", startAmount: 2, increase: 1, length: 14), onDelete: _))
 //            .frame(width: 300, height: 300)
 //            .preferredColorScheme(.dark) //FOR TESTING DARK MODE
 //    }
