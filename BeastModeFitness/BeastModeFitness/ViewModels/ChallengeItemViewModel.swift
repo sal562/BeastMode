@@ -61,7 +61,15 @@ struct  ChallengeItemViewModel: Identifiable {
     ////calcualte reps done today
     var repsBeingDoneTitle: String {
         ///figure out how many reps user has to do
-        let repNumber = challenge.startDate + (daysFromStart * challenge.increase)
+        let repNumber = challenge.startAmount + (daysFromStart * challenge.increase)
+        let exercise: String
+        if repNumber == 1 {
+            ///get title
+            var challengeExercise = challenge.exercise
+            ///remove the "s" at the end
+            challengeExercise.removeLast()
+            ///assign to exercise
+        }
     }
 
     
