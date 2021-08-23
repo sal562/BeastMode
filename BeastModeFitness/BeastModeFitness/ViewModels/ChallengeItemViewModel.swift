@@ -111,7 +111,7 @@ struct  ChallengeItemViewModel: Identifiable {
 //        }
 //    }
 //
-    ///send action via Enumt
+    ///send action via Action Enum
     func send(action: Action) {
         guard let id = challenge.id else { return }
         
