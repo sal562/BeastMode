@@ -93,12 +93,14 @@ struct  ChallengeItemViewModel: Identifiable {
     ///init challenge due to Private let
     init(
         _ challenge: Challenge,
-        onDelete: @escaping (String) -> Void)
+        onDelete: @escaping (String) -> Void,
         ///inject onToggle
         onToggleComplete: @escaping (String, [Activity]) -> Void
+    )
     {
         self.challenge = challenge
         self.onDelete = onDelete
+        self.onToggleComplete = onToggleComplete
     }
     
     ///create function for tapping to delete
@@ -116,7 +118,15 @@ struct  ChallengeItemViewModel: Identifiable {
         case .delete:
             onDelete(id)
         case .toggleComplete:
-            let activities = [Activity]()
+            let today = Calendar.current.startOfDay(for: Date())
+            let activities = challenge.activities.map {  activity -> Activity in
+                if today == activity.date {
+                    ///return new activiy with isCompleted reset
+                    return .init(date: today, isCompleted: !activity.isCompleted)
+                } else {
+                    return activity
+                }
+            }
             onToggleComplete(id, activities)
         }
     }

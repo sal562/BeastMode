@@ -56,7 +56,7 @@ final class ChallengeListViewModel: ObservableObject {
     }
     
     ///Observe & store challenges
-     private func observeChallenges() {
+    private func observeChallenges() {
         ///set isLoading to true
         isLoading = true
         userService.currentUserPublisher()
@@ -77,7 +77,7 @@ final class ChallengeListViewModel: ObservableObject {
                     print("finished")
                 }
             } receiveValue: { [weak self] challenges in
-//                print(challenges) ///use weakself to avoid retain cycle and force unwrap self
+                //                print(challenges) ///use weakself to avoid retain cycle and force unwrap self
                 guard let self = self else { return }
                 self.isLoading = false
                 self.error = nil
@@ -85,7 +85,7 @@ final class ChallengeListViewModel: ObservableObject {
                 self.itemViewModels = challenges.map { challenge in
                     
                     .init(
-                    challenge,
+                        challenge,
                         onDelete:  { [weak self] id in
                             self?.deleteChallenge(id)
                         },
@@ -93,9 +93,9 @@ final class ChallengeListViewModel: ObservableObject {
                             self?.updateChallenge(id: id, activities: activities)
                             
                         }
-                )}
+                    )
+                }
             } .store(in: &cancellables)
-
     }
     
     private func updateChallenge(id: String, activities: [Activity]) {
