@@ -21,6 +21,7 @@ struct Challenge: Codable {
     let increase: Int
     let length: Int
     
+    ///activitess
     let activities: [Activity]
     
     //create dummy Challenge

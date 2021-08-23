@@ -57,13 +57,15 @@ struct ChallengeItemView: View {
                 ///mark as done
                 print("Done")
             }, label: {
-                Text("Mark Done")
+//                Text("Mark Done")
+                ///dynamicly updated based on Status of Task
+                Text(viewModel.isComplete ? "Completed" : "Mark Done")
             })
             .buttonStyle(MainButtonCustomStyle())
-//            .padding(.vertical, 10)
-//            .padding(.horizontal, 15)
-//            .font(Font.caption.weight(.semibold))
-//            .cornerRadius(10)
+            .padding(.vertical, 10)
+            .padding(.horizontal, 15)
+            .font(Font.caption.weight(.semibold))
+            .cornerRadius(10)
         }
         
     }

@@ -87,15 +87,20 @@ class CreateChallengeViewModel: ObservableObject {
         let startDate = Calendar.current.startOfDay(for: Date())
         
         ///return challenge object - from Firebase
-        let challenge = Challenge(userId: userId, startDate: startDate, exercise: exercise, startAmount: startAmount, increase: increase, length: length, activities: (0..<length).compactMap({ dayNum in
-            if let dateForDayNumber = Calendar.current.date(byAdding: .day, value: dayNum, to: startDate) {
-                ///return an activity
-                return .init(date: dateForDayNumber, isCompleted: false)
-            } else {
-                ///return is optional so it needs to be handled
-                return nil
-            }
-        }))
+        let challenge = Challenge(
+            userId: userId,
+            startDate: startDate,
+            exercise: exercise,
+            startAmount: startAmount,
+            increase: increase,
+            length: length,
+            activities: (0..<length).compactMap { dayNum in
+                if let dateForDayNumber = Calendar.current.date(byAdding: .day, value: dayNum, to: startDate) {
+                    return .init(date: dateForDayNumber, isCompleted: false)
+                } else {
+                    return nil
+                }
+            })
         ///pass into challengeService
         return challengeService.create(challenge).eraseToAnyPublisher()
     }

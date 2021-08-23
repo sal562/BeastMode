@@ -64,7 +64,7 @@ struct  ChallengeItemViewModel: Identifiable {
         let repNumber = challenge.startAmount + (daysFromStart * challenge.increase)
         let exercise: String
         if repNumber == 1 {
-            ///get title
+            ///get title/type
             var challengeExercise = challenge.exercise
             ///remove the "s" at the end
             challengeExercise.removeLast()
