@@ -105,4 +105,22 @@ struct  ChallengeItemViewModel: Identifiable {
             onDelete(id)
         }
     }
+    
+    ///send action from view
+    func send(action: Action) {
+        switch action {
+        case .delete:
+            onDelete(id)
+        case .toggleComplete:
+            let activities = [Activity]()
+            onToggleComplete(id, activities)
+        }
+    }
+}
+
+extension ChallengeItemViewModel {
+    enum Action {
+        case delete
+        case toggleComplete
+    }
 }

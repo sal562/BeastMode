@@ -59,12 +59,13 @@ struct ChallengeItemView: View {
             }, label: {
 //                Text("Mark Done")
                 ///dynamicly updated based on Status of Task
-                Text(viewModel.isComplete ? "Completed" : "Mark Done")
+                Text(viewModel.isDayComplete ? "Completed" : "Mark Done")
             })
-            .buttonStyle(MainButtonCustomStyle())
             .padding(.vertical, 10)
             .padding(.horizontal, 15)
             .font(Font.caption.weight(.semibold))
+            .background(viewModel.isDayComplete ? Color.circleTrack : Color.primaryButton)
+            .foregroundColor(viewModel.isDayComplete ? Color.primary : Color.secondary)
             .cornerRadius(10)
         }
         
