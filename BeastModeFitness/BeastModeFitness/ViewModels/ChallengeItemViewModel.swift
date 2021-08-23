@@ -56,6 +56,15 @@ struct  ChallengeItemViewModel: Identifiable {
     
     private let onDelete: (String) -> Void
     
+    let todayTitle = "Today"
+    
+    ////calcualte reps done today
+    var repsBeingDoneTitle: String {
+        ///figure out how many reps user has to do
+        let repNumber = challenge.startDate + (daysFromStart * challenge.increase)
+    }
+
+    
     ///init challenge due to Private let
     init(
         _ challenge: Challenge,
