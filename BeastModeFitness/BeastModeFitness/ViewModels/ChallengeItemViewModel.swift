@@ -69,7 +69,11 @@ struct  ChallengeItemViewModel: Identifiable {
             ///remove the "s" at the end
             challengeExercise.removeLast()
             ///assign to exercise
+            exercise = challengeExercise
+        } else {
+            exercise = challenge.exercise
         }
+        return "\(repNumber)" + exercise
     }
 
     
