@@ -50,6 +50,15 @@ struct ChallengeItemView: View {
         
         Text("1 Pullup")
             .font(.system(size: 24, weight: .bold, design: .rounded))
+        Button(action: {
+            ///mark as done
+        }, label: {
+            Text("Mark Done")
+        })
+        .padding(.vertical, 10)
+        .padding(.horizontal, 15)
+        .font(Font.caption.weight(.semibold))
+        .cornerRadius(10)
     }
 
     
