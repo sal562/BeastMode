@@ -96,7 +96,7 @@ class CreateChallengeViewModel: ObservableObject {
             length: length,
             activities: (0..<length).compactMap { dayNum in
                 if let dateForDayNumber = Calendar.current.date(byAdding: .day, value: dayNum, to: startDate) {
-                    return .init(date: dateForDayNumber, isCompleted: false)
+                    return .init(date: dateForDayNumber, isComplete: false)
                 } else {
                     return nil
                 }

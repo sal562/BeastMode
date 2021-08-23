@@ -89,7 +89,7 @@ protocol ChallengeServiceProtocol {
                 ///get challenges collection, pass challengeId and delete
                 self.db.collection("challenges").document(challengeId).updateData(
                     ["activitites": activities.map({
-                        return ["date" : $0.date, "isCompleted": $0.isCompleted]
+                        return ["date" : $0.date, "isCompleted": $0.isComplete]
                     })]
                 ) { error in
                     if let error = error {

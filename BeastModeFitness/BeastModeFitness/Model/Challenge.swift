@@ -35,5 +35,5 @@ struct Challenge: Codable {
 ///create activity struct to check for status
 struct Activity: Codable {
     let date: Date
-    let isCompleted: Bool
+    let isComplete: Bool
 }

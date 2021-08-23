@@ -85,7 +85,7 @@ struct  ChallengeItemViewModel: Identifiable {
     ///check to see if dayTask is Completed
     var isDayComplete: Bool {
         let today = Calendar.current.startOfDay(for: Date())
-        return challenge.activities.first(where: { $0.date == today })?.isCompleted == true
+        return challenge.activities.first(where: { $0.date == today })?.isComplete == true
         
     }
 
@@ -111,7 +111,7 @@ struct  ChallengeItemViewModel: Identifiable {
 //        }
 //    }
 //
-    ///send action from view
+    ///send action
     func send(action: Action) {
         guard let id = challenge.id else { return }
         switch action {
@@ -119,10 +119,11 @@ struct  ChallengeItemViewModel: Identifiable {
             onDelete(id)
         case .toggleComplete:
             let today = Calendar.current.startOfDay(for: Date())
+            
             let activities = challenge.activities.map {  activity -> Activity in
                 if today == activity.date {
                     ///return new activiy with isCompleted reset
-                    return .init(date: today, isCompleted: !activity.isCompleted)
+                    return .init(date: today, isComplete: !activity.isComplete)
                 } else {
                     return activity
                 }
