@@ -82,8 +82,12 @@ class CreateChallengeViewModel: ObservableObject {
               let length = lengthDropdown.number else {
             return Fail(error: .default(description: "Pass error from create exercise type")).eraseToAnyPublisher()
         }
+        
+        ///start date for activities
+        let startDate = Calendar.current.startOfDay(for: Date())
+        
         ///return challenge object
-        let challenge = Challenge(userId: userId, startDate: Date(), exercise: exercise, startAmount: startAmount, increase: increase, length: length)
+        let challenge = Challenge(userId: userId, startDate: Date(), exercise: exercise, startAmount: startAmount, increase: increase, length: length, activities: <#[Activity]#>)
         ///pass into challengeService
         return challengeService.create(challenge).eraseToAnyPublisher()
     }
