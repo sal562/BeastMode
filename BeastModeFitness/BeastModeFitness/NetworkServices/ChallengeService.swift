@@ -17,7 +17,8 @@ protocol ChallengeServiceProtocol {
     func observeChallenge(userId: UserId) -> AnyPublisher<[Challenge], IncrementingErrors>
     ///create method to delete
     func deleteChallenge(_ challengeId: String) -> AnyPublisher<Void, IncrementingErrors>
-            
+    func updateChallenge(_ challengeId: String, activities: [Activity]) -> AnyPublisher<Void, IncrementingErrors>
+                
     }
 
     
@@ -72,6 +73,25 @@ protocol ChallengeServiceProtocol {
             return Future<Void, IncrementingErrors> { promise in
                 ///get challenges collection, pass challengeId and delete
                 self.db.collection("challenges").document(challengeId).delete { error in
+                    if let error = error {
+                        promise(.failure(.default(description: error.localizedDescription)))
+                    } else {
+                        promise(.success(()))
+                    }
+                }
+                
+            }.eraseToAnyPublisher()
+        }
+        
+        ///update Challenge
+        func updateChallenge(_ challengeId: String, activities: [Activity]) -> AnyPublisher<Void, IncrementingErrors> {
+            return Future<Void, IncrementingErrors> { promise in
+                ///get challenges collection, pass challengeId and delete
+                self.db.collection("challenges").document(challengeId).updateData(
+                    ["activitites": activities.map({
+                        return ["date" : $0.date, "isCompleted": $0.isCompleted]
+                    })]
+                ) { error in
                     if let error = error {
                         promise(.failure(.default(description: error.localizedDescription)))
                     } else {

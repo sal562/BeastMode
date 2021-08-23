@@ -55,7 +55,7 @@ struct  ChallengeItemViewModel: Identifiable {
     }
     
     private let onDelete: (String) -> Void
-    private let onToggleComplete
+    private let onToggleComplete: (String, [Activity]) -> Void
     
     let todayTitle = "Today"
     
@@ -94,6 +94,8 @@ struct  ChallengeItemViewModel: Identifiable {
     init(
         _ challenge: Challenge,
         onDelete: @escaping (String) -> Void)
+        ///inject onToggle
+        onToggleComplete: @escaping (String, [Activity]) -> Void
     {
         self.challenge = challenge
         self.onDelete = onDelete
