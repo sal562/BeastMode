@@ -71,7 +71,7 @@ struct LoginSignupPageView: View {
 struct LoginpageView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            LoginSignupPageView(loginSignupVM: .init(mode: .login, isPushed: .constant(false)))
+            LoginSignupPageView(mode: .login, isPushed: .constant(false))
         }
     }
 }
