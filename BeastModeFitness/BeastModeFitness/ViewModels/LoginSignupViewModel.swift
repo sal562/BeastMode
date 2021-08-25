@@ -15,7 +15,7 @@ class LoginSignupViewModel: ObservableObject {
     @Published var passwordText = ""
     @Published var isValid = false
     
-    @Binding var isPushed: Bool
+    @Published var isPushed: Bool = true
     
     ///user service
     private let userService: UserServiceProtocol
@@ -28,14 +28,13 @@ class LoginSignupViewModel: ObservableObject {
     ///init custom enum for mode
     init(
         mode: Mode,
-        userService: UserServiceProtocol = UserService(),
-        isPushed: Binding<Bool>)
+        userService: UserServiceProtocol = UserService())
     {
         self.mode = mode
         ///inject userservice
         self.userService = userService
         /// underscore means "ignore this". ignore parameters
-        self._isPushed = isPushed
+       
         
         ///use combine vor email field validation -> mapped to bool
         Publishers.CombineLatest($emailText, $passwordText)
