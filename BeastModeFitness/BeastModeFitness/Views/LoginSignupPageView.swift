@@ -67,6 +67,9 @@ struct LoginSignupPageView: View {
             .padding(.horizontal)
             Spacer()
         }
+        .onReceive(loginSignupVM.$isPushed, perform: { isPushed in
+            self.isPushed = isPushed
+        })
         .navigationTitle("")
     }
 }
