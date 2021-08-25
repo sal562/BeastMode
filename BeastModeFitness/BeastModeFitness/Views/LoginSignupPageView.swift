@@ -12,10 +12,13 @@ struct LoginSignupPageView: View {
     
     @StateObject private var loginSignupVM: LoginSignupViewModel
     
+    @Binding var isPushed: Bool
+    
     ///initialize loginSignupVM
     init(mode: LoginSignupViewModel.Mode, isPushed: Binding<Bool>) {
         ///initialize stateObject
-        self._loginSignupVM = .init(wrappedValue: .init(mode: mode, isPushed: isPushed))
+        self._loginSignupVM = .init(wrappedValue: .init(mode: mode))
+        self._isPushed = isPushed
     }
     
     var body: some View {
