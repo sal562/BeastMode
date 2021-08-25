@@ -10,7 +10,13 @@ import SwiftUI
 
 struct LoginSignupPageView: View {
     
-    @StateObject var loginSignupVM: LoginSignupViewModel
+    @StateObject private var loginSignupVM: LoginSignupViewModel
+    
+    ///initialize loginSignupVM
+    init(mode: LoginSignupViewModel.Mode, isPushed: Binding<Bool>) {
+        ///initialize stateObject
+        self._loginSignupVM = .init(wrappedValue: .init(mode: mode, isPushed: isPushed))
+    }
     
     var body: some View {
         VStack {
