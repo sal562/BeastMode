@@ -10,7 +10,7 @@ import SwiftUI
 
 struct LoginSignupPageView: View {
     
-    @ObservedObject var loginSignupVM: LoginSignupViewModel
+    @StateObject var loginSignupVM: LoginSignupViewModel
     
     var body: some View {
         VStack {
